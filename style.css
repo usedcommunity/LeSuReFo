@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #searchInput {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  #dataTable {
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #dataTable th,
+  #dataTable td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }  
