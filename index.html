@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSV-Tabelle anzeigen und filtern 2</title>
+    <title>CSV-Tabelle anzeigen</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <h1>CSV-Tabelle anzeigen und filtern</h1>
-    <input type="text" id="searchInput" placeholder="Schlagwortsuche" />
-    <br>
-    <br>
-    <table id="dataTable"></table>
-    <script src="script.js"></script>
+    <div id="table-container"></div>
   </body>
 </html>
