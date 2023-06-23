@@ -58,7 +58,7 @@ document.getElementById("searchInput").addEventListener("input", function(e) {
   filterTable(searchTerm);
 });
 
-var excelFileUrl = "https://github.com/usedcommunity/LeSuReFo/raw/main/data.xlsx";
+var excelFileUrl = "data.xlsx";
 var xhr = new XMLHttpRequest();
 xhr.open("GET", excelFileUrl, true);
 xhr.responseType = "arraybuffer";
