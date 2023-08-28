@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>used-Gesetzesfinder</title>
+ 
+  <link href="design.css" rel="stylesheet">
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.7.4/dist/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script><!-- html2canvas 1.0.0-alpha.11 or higher version is needed --> 
+</head>
+
+<body>
+  <h1>used-Gesetzesfinder</h1>
+
+  <div class="card">
+    <p>Der used-Gesetzesfinder zeigt Dir ganz einfach und schnell welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden. So behältst Du immer den Überblick und bleibst bei kommenden Gesetzen informiert. Neben den Gesetzen können auch die aus ihnen resultierenden Anforderungen angezeit werden. Setze die Filter, so dass sie den Attributen deines Unternehmens entsprechen. Benutze die Direktsuche innerhalb der Tabelle um nach einzelnen begriffen zu suchen.</p>
+    <p>Aktuelle Gesetze werden in der Tabelle weiß angezeigt, kommendegesetze Orange, Interpretierte Anforderungen Grau und Lösungsorientierte Anforderungen dunkelgrau.</p>
+    <p>Alle eingegebenen Daten werden Anonymisiert für die Forschung innerhalb der Community verwendet. Es kann nicht auf einzelne Personen oder Unternehmen rückgeschlossen werden.</p>
+    <p>Der Gesetzesfindern wird durch die used Community mit großer Sorgfalt erstellt und Aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden.</p>
+  </div>
+
+  <div class="card">
+
+    <h2>Filter</h2>
+    <div class="filter">
+    
+      <div>
+        <div class="checkbox-container">
+          <lable>Aktive Märkte:</lable>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Lass nur die Checkboxen angeschaltet, auf dessen Markt dein Unternehmen aktiv ist.
+              <br> UN = Vereinte Nationen, EU = Europäische Union, DE = Deutschland
+            </span>
+          </div>
+          <label for="checkbox-1">UN</label>
+          <input type="checkbox" id="checkbox-1" checked>
+          <label for="checkbox-2">EU</label>
+          <input type="checkbox" id="checkbox-2" checked>
+          <label for="checkbox-3">DE</label>
+          <input type="checkbox" id="checkbox-3" checked>
+        </div>
+
+        <div class="checkbox-container">
+          <lable>Anzeige:</lable>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext"> Wir haben für dich bereits Anforderungen und Lösungsorientierte Anforderungen aus den Gesetzen raus gearbeitet.
+              <br> Wenn du möchtest, dass sie unter den zugehörigen Gesetzen angezeit werden, dann klicke auf die Checkboxen.
+            </span>
+          </div>
+          <label for="checkbox-4">Interpretierte <br>Anforderungen</label>
+          <input type="checkbox" id="checkbox-4" unchecked>
+          <label for="checkbox-5">Lösungsorientierte <br>Anforderungen</label>
+          <input type="checkbox" id="checkbox-5" unchecked>
+        </div>
+
+        <!-- Kommende Regularien (Kunktioniert noch nicht)-->
+        <div class="filter-input">
+          <label for="dropdown-filter-kommend">Derzeitige oder kommende Regularien:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus ob du nach bereits in Kraft getretennen Regularien oder nach noch kommenden Regularien suchen möchtest. Wenn du diesen Filter frei lässt werden beide Arten angezeigt.</div>
+              <select id="dropdown-filter-kommend">
+            <option value="--">--</option>
+            <option value="In Kraft">In Kraft</option>
+            <option value="Kommend">Kommend</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-container">
+        <!-- Form -->
+        <div class="filter-input">
+          <label for="dropdown-filter-form">Geselschaftsform:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an welche Geselschaftsform dein Unternehmen besitzt. Bisher kann nur zwischen Kapitalgeselschaft und allen Anderen Geselschaftsformen gewählt werden.</span>
+          </div>
+          <select class="filter0" id="dropdown-filter-form">
+            <option value="--">--</option>
+            <option value="Kapitalgeselschaft">Kapitalgeselschaft</option>
+            <option value="Andere">Andere (keine KG)</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+
+        <!-- Sitz -->
+        <div class="filter-input">
+          <label for="dropdown-filter-sitz">Sitz oder Niderlassung:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus in welchem Land sich der Sitz oder eine Niederlassung deines Unternehmens befindet.</span>
+          </div>
+          <select class="filter1" id="dropdown-filter-sitz">
+            <option value="--">--</option>
+            <option value="Ausland">Ausland</option>
+            <option value="Deutschland">Deutschland</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- MA -->
+        <div class="filter-input">
+          <label for="dropdown-filter-ma">Anzahl der Mitarbeiter:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus wie viele Mitarbeiter in deinem Unternehmen arbeiten. <p></p>
+              Leiharbeiter werden meistens ab einer Beschäftigung von 6 Monaten berücksichtigt. Mitarbeiter von Konzernangehörigen Gesellschaften müssen ebenfalls berücksichtigt werden.
+              </span>
+          </div>
+          <select class="filter2" id="dropdown-filter-ma">
+            <option value="--">--</option>
+            <option value="0-249">0-249</option>
+            <option value="250-999">250-999</option>
+            <option value="1000-2999">1000-2999</option>
+            <option value=">2999">>2999</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Umsatz in Mio.€ -->
+        <div class="filter-input">
+          <label for="dropdown-filter-umsatz">Umsatz in Mio.€:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus wie viel Umsatz dein Unternehmen innerhalb eines Jahres macht. (in Mio. €)</span>
+          </div>
+          <select class="filter3" id="dropdown-filter-umsatz">
+            <option value="--">--</option>
+            <option value="Unter 20">Unter 20</option>
+            <option value="20-39">20-39</option>
+            <option value="40-59">40-59</option>
+            <option value="Ab 60">Ab 60</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Gesamtvermögen in Mio.€ -->
+        <div class="filter-input">
+          <label for="dropdown-filter-vermögen">Gesamtvermögen in Mio.€:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Bitte wähle hier das Gesamtvermögen der Unternehmung aus. <p></p>
+              Du möchtest dein Gesamtvermögen nicht angeben? Kein Problem! Lass diesen Filter aus und dir werden Ergebnisse unabhängig vom Gesamtvermögen angezeigt. 
+              </span>
+          </div>
+          <select class="filter4" id="dropdown-filter-vermögen">
+            <option value="--">--</option>
+            <option value="Unter 20">Unter 20</option>
+            <option value="20-39">20-39</option>
+            <option value="Ab 40">Ab 40</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Verpackung -->
+        <div class="filter-input">
+          <label for="dropdown-filter-verpackung">Verwendung von Verpackung:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an ob das Unternehmen Verpackungen jeglicher Art verwendet die im Müll landen.</span>
+          </div>
+          <select class="filter5" id="dropdown-filter-verpackung">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Abfall -->
+        <div class="filter-input">
+          <label for="dropdown-filter-abfall">Aufkommen von Abfällen:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an ob dein Unternehmen für das Aufkommen von Abfällen verantortlich ist oder ob es mit Abfällen arbeitet.</span>
+          </div>
+          <select class="filter6" id="dropdown-filter-abfall">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Energieverbrauchsrelevante Produkte -->
+        <div class="filter-input">
+          <label for="dropdown-filter-energie">Energieverbrauchsrelevante Produkte:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Energieverbrauchsrelevante Produkte sind Produkte, die einen direkten oder indirekten Einfluss auf den Energieverbrauch haben. Sie können entweder Energie erzeugen, übertragen, speichern oder verbrauchen. HIER findest du eine Liste auf welche Produkte dies zutrifft. Wähle aus ob die Produkte welche von deinem Unternehmen verwendet werden diesen entsprechen.</span>
+          </div>
+          <select class="filter7" id="dropdown-filter-energie">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Verpflichtend oder Freiwillig (Funktioniert noch nicht)
+        <div class="filter-input">
+          <label for="dropdown-filter-pflicht">Verpflichtent oder Freiwillig:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus ob du nach verpflichtenden oder freiwilligen Regularien suchen möchtest.</div>
+              <b>....................</b>
+              <select id="dropdown-filter-pflicht">
+            <option value="--">--</option>
+            <option value="Verpflichtend">Verpflichtend</option>
+            <option value="Freiwillig">Freiwillig</option>
+            
+          </select>
+        </div> -->
+      </div>
+    </div>
+
+    <div>
+      <button onclick="applyFilters()">Filter anwenden</button>
+    </div>
+  </div>
+
+
+  <div class="card">
+
+    <h2>Community Filter</h2>
+    <div class="communityfilter">
+      <div id="tagInputContainer">
+        <div class="filter-input">
+          <label>Schlagwortsuche:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Suche nach Schlagwörtern. Du kannst auch mehrere gleichzeitig auswählen. Klicke auf die ausgewählten Schlagworte um sie wieder abzuwählen.</span>
+          </div>
+          </div>
+        <input type="text" id="tagInput" placeholder="Schlagwort hinzufügen">
+        <div class="tag-list" id="tagList">
+          <div class="tag-list-item">Bericht</div>
+          <div class="tag-list-item">Lieferkette</div>
+          <div class="tag-list-item">Akkreditierung</div>
+          <div class="tag-list-item">Industriestandard</div>
+          <div class="tag-list-item">Freiwillig</div>
+          <div class="tag-list-item">Datenschutz</div>
+          <div class="tag-list-item">Meldewesen</div>
+          <div class="tag-list-item">Produktsicherheit</div>
+          <div class="tag-list-item">Kennzeichnung</div>
+          <div class="tag-list-item">Ökodesign</div>
+          <div class="tag-list-item">Produktgestaltung</div>
+          <div class="tag-list-item">Produktentwicklung</div>
+          <div class="tag-list-item">Zielsystem</div>
+          <div class="tag-list-item">Strategie</div>
+          <div class="tag-list-item">Kreislauffähigkeit</div>
+          <div class="tag-list-item">Verpackung</div>
+          <div class="tag-list-item">Versand</div>
+          <!-- Weitere Schlagworte hier hinzufügen -->
+        </div>
+      </div>
+    </div>
+      <div class="selected-tags" id="selectedTags"></div>
+    
+
+    <div>
+      <button class="button-abstand" id="filterButton">Communityfilter anwenden</button>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h2>Download</h2>
+    <button onclick="downloadFilteredTable()">Excel herunterladen</button>
+    <button onclick="downloadPDF()">PDF herunterladen</button>
+  </div>
+
+  <div class="card">
+    <h2>Tabelle</h2>
+    <input type="text" id="search-input" oninput="searchTable()" placeholder="Suche...">
+    <table id="excel-table">
+      <!-- Tabelle wird hier dynamisch generiert -->
+    </table>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
