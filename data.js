@@ -238,7 +238,7 @@ function loadTable() {
   [
     "1.4.1",
     "Lösungsorientierte Anforderung CSR",
-    "x",
+    "",
     "Verpflichtende Messung von CO2-Emissionen im Unternehmen - CSRD Beitragspflicht mit dem Co2 Rechner des Umweltbundesamtes",
     "Lösungsorientierte Anforderung",
     "",
