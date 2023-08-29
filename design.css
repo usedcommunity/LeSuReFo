@@ -124,10 +124,45 @@
     }
     
 
-    td:nth-child(14) {
+    td:nth-child(3) {
       display: none;
     }
-    th:nth-child(14) {
+    th:nth-child(3) {
+      display: none;
+    }    
+    
+    td:nth-child(6) {
+      display: none;
+    }
+    th:nth-child(6) {
+      display: none;
+    }
+
+    td:nth-child(10) {
+      display: none;
+    }
+    th:nth-child(10) {
+      display: none;
+    }
+
+    td:nth-child(11) {
+      display: none;
+    }
+    th:nth-child(11) {
+      display: none;
+    }
+
+    td:nth-child(12) {
+      display: none;
+    }
+    th:nth-child(12) {
+      display: none;
+    }
+
+    td:nth-child(13) {
+      display: none;
+    }
+    th:nth-child(13) {
       display: none;
     }
 

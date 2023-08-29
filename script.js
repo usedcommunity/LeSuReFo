@@ -53,13 +53,13 @@ if (cells[4].textContent.trim() === "Gesetz" || cells[4].textContent.trim() === 
   showRow = true;
 }
 
-if (!checkbox1.checked && cells[8].textContent.trim() === 'x') {
+if (!checkbox1.checked && cells[9].textContent.trim() === 'x') {
   showRow = false;
 }
-if (!checkbox2.checked && cells[9].textContent.trim() === 'x') {
+if (!checkbox2.checked && cells[10].textContent.trim() === 'x') {
   showRow = false;
 }
-if (!checkbox3.checked && cells[10].textContent.trim() === 'x') {
+if (!checkbox3.checked && cells[11].textContent.trim() === 'x') {
   showRow = false;
 }
 
@@ -90,52 +90,52 @@ if (selectedValue === 'Standard' && cells[14].textContent.trim() !== 'Standard')
 }
 */
 
-if (selectedValueForm === 'Andere' && cells[18].textContent.trim() === 'Kapitalgeselschaft') {   
+if (selectedValueForm === 'Andere' && cells[19].textContent.trim() === 'Kapitalgeselschaft') {   
   showRow = false;
 }
 
-if (selectedValueSitz === 'Ausland' && cells[19].textContent.trim() === 'Deutschland') {   
+if (selectedValueSitz === 'Ausland' && cells[20].textContent.trim() === 'Deutschland') {   
   showRow = false;
 }
 
-if (selectedValueSitz === 'Deutschland' && cells[19].textContent.trim() === 'England') {   //Ergenzen falls Gesetze mit spezifischem sitz im ausland hinzu kommen
+if (selectedValueSitz === 'Deutschland' && cells[20].textContent.trim() === 'England') {   //Ergenzen falls Gesetze mit spezifischem sitz im ausland hinzu kommen
   showRow = false;
 }
 
-if (selectedValueMA === '0-249' && parseInt(cells[21].textContent.trim()) > 249) {   
+if (selectedValueMA === '0-249' && parseInt(cells[22].textContent.trim()) > 249) {   
   showRow = false;
 }
-if (selectedValueMA === '250-999' && parseInt(cells[21].textContent.trim()) > 999) {   
+if (selectedValueMA === '250-999' && parseInt(cells[22].textContent.trim()) > 999) {   
   showRow = false;
 }
-if (selectedValueMA === '1000-2999' && parseInt(cells[21].textContent.trim()) > 2999) {   
-  showRow = false;
-}
-
-if (selectedValueUmsatz === 'Unter 20' && parseInt(cells[22].textContent.trim()) > 19) {   
-  showRow = false;
-}
-if (selectedValueUmsatz === '20-39' && parseInt(cells[22].textContent.trim()) > 39) {   
-  showRow = false;
-}
-if (selectedValueUmsatz === '40-59' && parseInt(cells[22].textContent.trim()) > 59) {   
+if (selectedValueMA === '1000-2999' && parseInt(cells[22].textContent.trim()) > 2999) {   
   showRow = false;
 }
 
-if (selectedValueVermögen === 'Unter 20' && parseInt(cells[23].textContent.trim()) > 19) {   
+if (selectedValueUmsatz === 'Unter 20' && parseInt(cells[23].textContent.trim()) > 19) {   
   showRow = false;
 }
-if (selectedValueVermögen === '20-39' && parseInt(cells[23].textContent.trim()) > 39) {   
+if (selectedValueUmsatz === '20-39' && parseInt(cells[23].textContent.trim()) > 39) {   
+  showRow = false;
+}
+if (selectedValueUmsatz === '40-59' && parseInt(cells[23].textContent.trim()) > 59) {   
   showRow = false;
 }
 
-if (selectedValueVerpackung === 'Nein' && cells[24].textContent.trim() === 'x') {   
+if (selectedValueVermögen === 'Unter 20' && parseInt(cells[24].textContent.trim()) > 19) {   
   showRow = false;
 }
-if (selectedValueAbfall === 'Nein' && cells[25].textContent.trim() === 'x') {   
+if (selectedValueVermögen === '20-39' && parseInt(cells[24].textContent.trim()) > 39) {   
   showRow = false;
 }
-if (selectedValueEnergie === 'Nein' && cells[26].textContent.trim() === 'x') {   
+
+if (selectedValueVerpackung === 'Nein' && cells[25].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValueAbfall === 'Nein' && cells[26].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValueEnergie === 'Nein' && cells[27].textContent.trim() === 'x') {   
   showRow = false;
 }
 
@@ -144,7 +144,7 @@ if (selectedValueEnergie === 'Nein' && cells[26].textContent.trim() === 'x') {
 // if (selectedValuePflicht === 'Freiwillig' && cells[??].textContent.trim() !== 'Freiwillig') {showRow = false;}
 
 const currentDate = new Date();
-const cellDate = new Date(cells[12].textContent.trim());
+const cellDate = new Date(cells[13].textContent.trim());
 if (selectedValueKommend === 'In Kraft' && cellDate >= currentDate) {
   showRow = false;
 }
@@ -225,7 +225,7 @@ function filterTable() {
     for (var i = 1; i < rows.length; i++) { // Starte bei Index 1, um die Kopfzeile zu überspringen
       var row = rows[i];
       var cells = row.getElementsByTagName('td');
-    const tagsInRow = row.querySelector('td:nth-child(29)').textContent;
+    const tagsInRow = row.querySelector('td:nth-child(30)').textContent;
     const tagsArray = tagsInRow.split(', ');
     const shouldDisplay = selectedTags.some(tag => tagsArray.includes(tag.textContent));
     row.style.display = shouldDisplay ? 'table-row' : 'none';
