@@ -132,7 +132,19 @@
     td:nth-child(4) {
       max-width: 100%;
     }
-    
+
+    td:nth-child(7) {
+      max-width: 350px;
+    }
+    th:nth-child(7) {
+      max-width: 350px;
+    } 
+    td:nth-child(9) {
+      max-width: 350px;
+    }
+    th:nth-child(9) {
+      max-width: 350px;
+    }  
 
     td:nth-child(3) {
       display: none;
