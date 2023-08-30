@@ -1,78 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
   }
-
-  .card {
-    width: 80%;
-    max-width: 500px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .big-card-container {
+    width: 80%; /* Breite der Karte im Verhältnis zum Viewport */
+    white-space: nowrap;
+    overflow-x: hidden; /* Verstecke die Standard-Scroll-Leiste */
+    background-color: white; /* Hintergrundfarbe der Karte */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Schatten für den Kartenbereich */
+    padding: 20px; /* Innenabstand innerhalb der Karte */
   }
-
-  .text {
-    flex: 1;
+  .big-card-content {
+    width: 200%; /* Breite des gesamten Inhalts (zur Erzwingung der horizontalen Scroll-Leiste) */
+    height: 500px; /* Höhe des Inhalts */
+    position: relative;
+    overflow-x: hidden; /* Verstecke die Standard-Scroll-Leiste */
   }
-
-  .button-container {
-    display: flex;
-    gap: 10px; /* Abstand zwischen den Buttons */
-    align-items: center;
-  }
-
-  .button {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    border: 1px solid #4CAF50;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .button img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  .button:hover {
-    background-color: #4CAF50;
+  .custom-scrollbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Höhe der benutzerdefinierten Scroll-Leiste */
+    background-color: lightgray;
+    z-index: 2;
   }
 </style>
 </head>
 <body>
-
-<div class="card">
-  <div class="text">
-    Hier ist dein Text.
+  <div class="big-card-container">
+    <div class="big-card-content">
+      <div class="custom-scrollbar"></div>
+      <!-- Hier kannst du den Inhalt deiner großen Karte platzieren -->
+    </div>
   </div>
-  <div class="button-container">
-    <a class="button" href="link_zu_erster_seite.html">
-      <img src="pfad_zum_bild1.jpg" alt="Bild 1">
-    </a>
-    <a class="button" href="link_zu_zweiter_seite.html">
-      <img src="pfad_zum_bild2.jpg" alt="Bild 2">
-    </a>
-  </div>
-</div>
+  <script>
+    const cardContent = document.querySelector('.big-card-content');
+    const customScrollbar = document.querySelector('.custom-scrollbar');
 
+    cardContent.addEventListener('scroll', () => {
+      const scrollPercentage = (cardContent.scrollLeft / (cardContent.scrollWidth - cardContent.clientWidth)) * 100;
+      customScrollbar.style.width = scrollPercentage + '%';
+    });
+  </script>
 </body>
 </html>

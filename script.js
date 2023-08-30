@@ -35,8 +35,6 @@ var selectedValueEnergie = dropdownFilterEnergie.value;
 var dropdownFilterKommend = document.getElementById('dropdown-filter-kommend');
 var selectedValueKommend = dropdownFilterKommend.value;
 
-var checkbox1 = document.getElementById('checkbox-1');
-var checkbox2 = document.getElementById('checkbox-2');
 var checkbox3 = document.getElementById('checkbox-3');
 var checkbox4 = document.getElementById('checkbox-4');
 var checkbox5 = document.getElementById('checkbox-5');
@@ -53,13 +51,8 @@ if (cells[4].textContent.trim() === "Gesetz" || cells[4].textContent.trim() === 
   showRow = true;
 }
 
-if (!checkbox1.checked && cells[9].textContent.trim() === 'x') {
-  showRow = false;
-}
-if (!checkbox2.checked && cells[10].textContent.trim() === 'x') {
-  showRow = false;
-}
-if (!checkbox3.checked && cells[11].textContent.trim() === 'x') {
+
+if (!checkbox3.checked) {
   showRow = false;
 }
 

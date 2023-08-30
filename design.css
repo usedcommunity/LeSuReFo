@@ -116,6 +116,7 @@
       overflow: auto;
       margin: 0 auto;
       margin-bottom: 20px;
+      
     }
 
     .filter-input {
@@ -183,20 +184,22 @@
     }
 
     td:nth-child(4) {
-      max-width: 100%;
+      word-wrap: break-word;
+      max-width: 220px;
+    }
+
+    td:nth-child(5) {
+      max-width: 120px;
     }
 
     td:nth-child(7) {
-      max-width: 350px;
+      max-width: 450px;
     }
-    th:nth-child(7) {
-      max-width: 350px;
-    } 
+
     td:nth-child(9) {
-      max-width: 350px;
-    }
-    th:nth-child(9) {
-      max-width: 350px;
+      word-wrap: break-word;
+      max-width: 120px;
+      font-size: 8px;
     }  
 
     td:nth-child(3) {
@@ -431,9 +434,9 @@
 
         .tooltip .tooltiptext {
             visibility: hidden;
-            width: 660px;
-            margin-left: 280px;
-            margin-top: 200px;
+            width: 290px;
+            margin-top: 100px;
+            margin-left: 60px;
             background-color: #333;
             color: #fff;
             text-align: center;
