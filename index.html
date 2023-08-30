@@ -22,13 +22,14 @@
             align-items: center;
         }
         .card {
-            background-color: hwb(0 84% 16%);
+            background-color: hwb(0 93% 7%);
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             padding: 30px;
             text-align: center;
             animation: slideIn 1s ease;
-            width: 425px;
+            width: 80%;
+            max-width: 500px;
             margin-bottom: 20px;
         }
         .card h1 {
@@ -40,10 +41,11 @@
             font-size: 16px;
             color: #000000;
             margin-bottom: 20px;
+
         }
         .logo {
-            max-width: 320px;
-            margin-bottom: 10px;
+            max-width: 420px;
+            margin-bottom: 30px;
         }
         .button-container {
             display: flex;
@@ -67,7 +69,7 @@
         }
         .button:before {
             content: '';
-            background-color: rgba(26, 204, 29, 0.608);
+            background-color: rgba(121, 121, 122, 0.608);
             position: absolute;
             top: 0;
             left: -100%;
@@ -80,21 +82,37 @@
             left: 0;
         }
         .share-button {
-            background-color: #e74c3c;
+            width: 50px;
+            height: 50px;
+            background-color: #c5cafe;
             color: white;
             border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #434343;
             border-radius: 5px;
-            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.5s ease;
-            transform: translateY(100%);
+
         }
+
+        .sb-Container{
+            display: flex;
+            gap: 10px; 
+            align-items: center;
+        }
+
+        .share-button img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
         .share-button:hover {
-            background-color: #c0392b;
+            background-color: #8e8ec3;
         }
-        .show-button {
-            transform: translateY(0);
-        }
+
         @keyframes slideIn {
             from {
                 transform: translateY(-100%);
@@ -107,7 +125,7 @@
 </head>
 <body>
     <div class="card-container">
-        <img class="logo" src="USED_logo__rgb_weiss.png" alt="Logo">
+        <a href=https://used.community target="_blank"><img class="logo" src="USED_logo__rgb_weiss.png" alt="Logo"></a>
         <div class="card">
             <h1>Gesetzes- und Zertifikatfinder</h1>
             <p>Der Gesetzes und Zertifikatfinder der used.Community zeigt Dir ganz einfach und schnell welche Gesetze oder Zertifikate zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden. </p>
@@ -117,13 +135,12 @@
                 <a class="button" href="seite2.html">Zertifikate</a>
             </div>
         </div>
-        <button class="share-button" id="shareButton">Teilen</button>
+        <div class="sb-Container">
+            <a class="share-button" id="shareButton1" href=https://used.community target="_blank"><img src="USED_logo__rgb_ot.png" alt="Bild 1"></a>
+            <a class="share-button" id="shareButton2" href=https://github.com/usedcommunity target="_blank"><img src="github-mark.png" alt="Bild 2"></a>
+        </div>
     </div>
     <script>
-        const shareButton = document.getElementById('shareButton');
-        setTimeout(() => {
-            shareButton.classList.add('show-button');
-        }, 1000);
     </script>
 </body>
 </html>
