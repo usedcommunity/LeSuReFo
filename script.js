@@ -226,7 +226,6 @@ function filterTable() {
   };
 }
 
-
 function openEmail() {
   var emailAddress = 'contact@used.community';
   var subject = 'Gesetzesfinder';
