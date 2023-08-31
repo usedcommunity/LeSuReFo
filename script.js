@@ -166,6 +166,7 @@ document.querySelector('button').addEventListener('click', function() {
 applyFilter();
 });
 
+
 //Abhier Community Filter
 
 const tagInput = document.getElementById('tagInput');
@@ -226,7 +227,17 @@ function filterTable() {
 }
 
 
+function openEmail() {
+  var emailAddress = 'contact@used.community';
+  var subject = 'Gesetzesfinder';
+  var body = '';
 
+  var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress) +
+                   '?subject=' + encodeURIComponent(subject) +
+                   '&body=' + encodeURIComponent(body);
+
+  window.location.href = mailtoLink;
+}
 
 function searchTable() {
   var searchInput = document.getElementById('search-input');
