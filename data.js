@@ -18,7 +18,7 @@ function loadTable() {
       "Gegenstand",
       "Art",
       "Beschreibung",
-      "Erfahrungen, Informationen, Diskusionen",
+      "Erfahrungen, Informationen, Diskussionen",
       "link",
       "UN",
       "EU",

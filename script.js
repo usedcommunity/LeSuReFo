@@ -167,6 +167,28 @@ applyFilter();
 });
 
 
+// filter zurücksetz button 
+function resetFilters() {
+
+
+
+  document.getElementById('dropdown-filter-kommend').value = '--';
+  document.getElementById('dropdown-filter-form').value = '--';
+  document.getElementById('dropdown-filter-sitz').value = '--';
+  document.getElementById('dropdown-filter-ma').value = '--';
+  document.getElementById('dropdown-filter-umsatz').value = '--';
+  document.getElementById('dropdown-filter-vermögen').value = '--';
+  document.getElementById('dropdown-filter-abfall').value = '--';
+  document.getElementById('dropdown-filter-verpackung').value = '--';
+  document.getElementById('dropdown-filter-energie').value = '--';
+  document.getElementById('checkbox-3').checked = true;
+  document.getElementById('checkbox-4').checked = true;
+  document.getElementById('checkbox-5').checked = true;
+  
+  applyFilter();
+}
+
+
 //Abhier Community Filter
 
 const tagInput = document.getElementById('tagInput');
