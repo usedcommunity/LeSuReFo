@@ -170,8 +170,6 @@ applyFilter();
 // filter zurücksetz button 
 function resetFilters() {
 
-
-
   document.getElementById('dropdown-filter-kommend').value = '--';
   document.getElementById('dropdown-filter-form').value = '--';
   document.getElementById('dropdown-filter-sitz').value = '--';
@@ -248,6 +246,20 @@ function filterTable() {
   };
 }
 
+// Abhier Communityfilter zurücksetzen
+//const filterButton2 = document.getElementById('filterButton2');
+
+//filterButton2.addEventListener('click', () => {
+ // removeComFilter();
+//});
+
+function removeComFilter() {
+  location.reload();
+
+}
+
+
+// Email für CONTACT Button
 function openEmail() {
   var emailAddress = 'contact@used.community';
   var subject = 'Gesetzesfinder';
