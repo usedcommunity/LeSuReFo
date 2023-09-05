@@ -356,7 +356,7 @@ function downloadFilteredTable() {
   // Erstelle einen unsichtbaren Link zum Download der Excel-Datei
   var a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = "gefilterte_tabelle.xlsx";
+  a.download = "used-Community Gesetzestabelle.xlsx";
   a.style.display = "none";
   document.body.appendChild(a);
 
@@ -366,32 +366,56 @@ function downloadFilteredTable() {
 }
 
 function downloadPDF() {
-let pdf = new jsPDF('l', 'pt', [3508, 2480]);
+  // Erstelle ein jsPDF-Objekt mit DIN A4-Größe (595.28 x 841.89 Punkte)
+  var pdf = new jsPDF('1', 'pt', [1683.78, 1190.56]);
 
-pdf.addPage();
-pdf.addPage();
-pdf.addPage();
-pdf.addPage();
+  // Füge eine Überschrift hinzu
+  var titleText = "used-Community Gesetzestabelle";
+  pdf.setFontSize(26);
+  pdf.text(titleText, 50, 80);
+
+  var filterInfo = "Filterinformationen:\n\n";
+  filterInfo += "Derzeitige oder kommende Regularien: " + document.getElementById('dropdown-filter-kommend').value + "\n";
+  filterInfo += "Gesellschaftsform: " + document.getElementById('dropdown-filter-form').value + "\n";
+  filterInfo += "Sitz oder Niederlassung: " + document.getElementById('dropdown-filter-sitz').value + "\n";
+  filterInfo += "Anzahl der Mitarbeiter: " + document.getElementById('dropdown-filter-ma').value + "\n";
+  filterInfo += "Umsatz in Mio.€: " + document.getElementById('dropdown-filter-umsatz').value + "\n";
+  filterInfo += "Gesamtvermögen in Mio.€: " + document.getElementById('dropdown-filter-vermögen').value + "\n";
+  filterInfo += "Verwendung von Verpackung: " + document.getElementById('dropdown-filter-verpackung').value + "\n";
+  filterInfo += "Aufkommen von Abfällen: " + document.getElementById('dropdown-filter-abfall').value + "\n";
+  filterInfo += "Energieverbrauchsrelevante Produkte: " + document.getElementById('dropdown-filter-energie').value + "\n";
+
+  pdf.setFontSize(18);
+  // Füge Filterinformationen hinzu
+  pdf.text(filterInfo, 50, 140);
+
+  // Anpassung der Position der Tabelle nach rechts und unten
+  var tableX = 50; // X-Position
+  var tableY = 400; // Y-Position
+
+  // Verkleinere die Tabelle
+  var table = document.getElementById('excel-table');
 
 
-var filterInfo = "Filterinformationen:\n\n";
-filterInfo += "Derzeitige oder kommende Regularien: " + document.getElementById('dropdown-filter-kommend').value + "\n";
-filterInfo += "Geselschaftsform: " + document.getElementById('dropdown-filter-form').value + "\n";
-filterInfo += "Sitz oder Niederlassung: " + document.getElementById('dropdown-filter-sitz').value + "\n";
-filterInfo += "Anzahl der Mitarbeiter: " + document.getElementById('dropdown-filter-ma').value + "\n";
-filterInfo += "Umsatz in Mio.€: " + document.getElementById('dropdown-filter-umsatz').value + "\n";
-filterInfo += "Gesamtvermögen in Mio.€: " + document.getElementById('dropdown-filter-vermögen').value + "\n";
-filterInfo += "Verwendung von Verpackung: " + document.getElementById('dropdown-filter-verpackung').value + "\n";
-filterInfo += "Aufkommen von Abfällen: " + document.getElementById('dropdown-filter-abfall').value + "\n";
-filterInfo += "Energieverbrauchsrelevante Produkte: " + document.getElementById('dropdown-filter-energie').value + "\n";
-//filterInfo += "Verpflichtend oder Freiwillig: " + document.getElementById('dropdown-filter-pflicht').value + "\n";
-
-// Füge Filterinformationen hinzu
-pdf.text(filterInfo, 50, 100);
-
-pdf.html(document.getElementById('excel-table'), {
+  // Fügen Sie die verkleinerte Tabelle zur PDF-Datei hinzu
+  pdf.html(table, {
     callback: function (pdf) {
-        pdf.save('test.pdf');
-    }
-});
+      pdf.save('used-Community Gesetzestabelle.pdf');
+    },
+    x: tableX,
+    y: tableY
+  });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

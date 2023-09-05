@@ -159,7 +159,7 @@
       margin-left: 15px
     }
     table {
-      width: 100%;
+      width: 80%;
       border-collapse: collapse;
       margin-top: 10px;
     }
@@ -177,6 +177,14 @@
       background-color: #b5afff;
     }
 
+    td:first-child{
+      border-left: 1px solid #000000;
+    }
+
+    th:first-child{
+      border-left: 1px solid #000000;
+    }
+    
     td:not(:last-child){
       border-right: 1px solid #000000;
     }
