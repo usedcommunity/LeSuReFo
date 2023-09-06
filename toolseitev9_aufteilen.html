@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>used-Gesetzesfinder</title>
  
   <link href="design.css" rel="stylesheet">
@@ -16,6 +18,8 @@
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script><!-- html2canvas 1.0.0-alpha.11 or higher version is needed --> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.6/jspdf.plugin.autotable.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.153/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tableexport@5.2.0/dist/js/tableexport.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -292,7 +296,7 @@
 
   <div class="card">
     <h2>Download</h2>
-    <button onclick="downloadFilteredTable()">Excel herunterladen</button>
+    <button id="exportButton">Excel herunterladen</button>
     <button onclick="downloadPDF()">PDF herunterladen</button>
 
   </div>

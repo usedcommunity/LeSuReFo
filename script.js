@@ -294,17 +294,34 @@ function toggleColumn(index) {
   visibleColumns[index] = !visibleColumns[index];
 }
 
-function downloadFilteredTable() {
-  var table = document.getElementById('excel-table');
+document.getElementById("exportButton").addEventListener("click", function () {
+  const table = document.getElementById("excel-table");
 
-  // Kopiere die Tabelle, um die sichtbaren Spalten zu extrahieren
-  var filteredTable = table.cloneNode(true);
+  // Erstellen Sie eine Kopie der Tabelle und behalten Sie nur die Tabellenköpfe und Zellen für die Spalten 1, 2 und 5.
+  const clonedTable = table.cloneNode(true);
 
-        // Erzeuge ein neues Workbook
-        var wb = XLSX.utils.table_to_book(filteredTable);
+    // Erzeuge ein neues Workbook
+    //var wb = XLSX.utils.table_to_book(clonedTable);
 
-   // Füge eine neue Arbeitsmappe hinzu, um die Filterinformationen zu speichern
-  var infoSheet = XLSX.utils.aoa_to_sheet([
+  const rows = clonedTable.getElementsByTagName("tr");
+  for (let i = 0; i < rows.length; i++) {
+      const cells = rows[i].getElementsByTagName("td");
+      for (let j = cells.length - 1; j >= 0; j--) {
+          if (j !== 0 && j !== 1 && j !== 3 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
+              rows[i].removeChild(cells[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
+          }
+      }
+      const heads = rows[i].getElementsByTagName("th");
+      for (let j = heads.length - 1; j >= 0; j--) {
+          if (j !== 0 && j !== 1 && j !== 3 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
+              rows[i].removeChild(heads[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
+          }
+      }
+  }
+
+  const wb = XLSX.utils.table_to_book(clonedTable, { sheet: "Tabelle" });
+
+  const infoSheet = XLSX.utils.aoa_to_sheet([
     ["Filterinformationen:"],    
     ["Derzeitige oder kommende Regularien:", document.getElementById('dropdown-filter-kommend').value],
     ["Geselschaftsform:", document.getElementById('dropdown-filter-form').value],
@@ -320,49 +337,31 @@ function downloadFilteredTable() {
   // Füge das infoSheet zur Arbeitsmappe hinzu
   XLSX.utils.book_append_sheet(wb, infoSheet, "Filterinfo");
 
-  
-  var thList = filteredTable.getElementsByTagName("th");
-  var tdList = filteredTable.getElementsByTagName("td");
+  const wbout = XLSX.write(wb, { bookType: "xlsx", type: "binary" });
+  const blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
 
-  // Entferne die nicht sichtbaren Spalten aus dem Tabellenkopf (Funktioniert nicht)
-  for (var i = visibleColumns.length - 1; i >= 0; i--) {
-    if (!visibleColumns[i]) {
-      thList[i].parentNode.removeChild(thList[i]);
-    }
-  }
+  const url = URL.createObjectURL(blob);
 
-  // Entferne die nicht sichtbaren Spalten aus den Tabellenzellen (Funktioniert nicht)
-  for (var j = tdList.length - 1; j >= 0; j--) {
-    var cellIndex = j % visibleColumns.length;
-    if (!visibleColumns[cellIndex]) {
-      tdList[j].parentNode.removeChild(tdList[j]);
-    }
-  }
-
-  // Konvertiere das Workbook in ein Excel-Datei-Objekt
-  var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
-
-  // Funktion zum Konvertieren des binären Datenstroms in eine herunterladbare Datei
-  function s2ab(s) {
-    var buf = new ArrayBuffer(s.length);
-    var view = new Uint8Array(buf);
-    for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-    return buf;
-  }
-
-  // Erstelle einen Blob mit den Excel-Daten
-  var blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
-
-  // Erstelle einen unsichtbaren Link zum Download der Excel-Datei
-  var a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "used-Community Gesetzestabelle.xlsx";
+  // Erstellen Sie einen unsichtbaren Link und klicken Sie auf ihn, um den Download auszulösen.
+  const a = document.createElement("a");
   a.style.display = "none";
+  a.href = url;
+  a.download = "tabelle.xlsx";
   document.body.appendChild(a);
-
-  // Klicke auf den Link, um den Download auszulösen, und entferne ihn anschließend
   a.click();
-  document.body.removeChild(a);
+
+  setTimeout(function () {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+  }, 100);
+});
+
+// Funktion zum Konvertieren des binären Datenstroms in eine herunterladbare Datei
+function s2ab(s) {
+  const buf = new ArrayBuffer(s.length);
+  const view = new Uint8Array(buf);
+  for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+  return buf;
 }
 
 function downloadPDF() {
@@ -395,7 +394,6 @@ function downloadPDF() {
 
   // Verkleinere die Tabelle
   var table = document.getElementById('excel-table');
-
 
   // Fügen Sie die verkleinerte Tabelle zur PDF-Datei hinzu
   pdf.html(table, {
