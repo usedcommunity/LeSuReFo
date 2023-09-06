@@ -2,9 +2,6 @@ var visibleColumns = [true, true, true, true, true, true, true, true, true, true
 
 function applyFilter() {
 
-//var dropdownFilter = document.getElementById('dropdown-filter');
-//var selectedValue = dropdownFilter.value;
-
 var dropdownFilterForm = document.getElementById('dropdown-filter-form');
 var selectedValueForm = dropdownFilterForm.value;
 
@@ -28,9 +25,6 @@ var selectedValueAbfall = dropdownFilterAbfall.value;
 
 var dropdownFilterEnergie = document.getElementById('dropdown-filter-energie');
 var selectedValueEnergie = dropdownFilterEnergie.value;
-
-//var dropdownFilterPflicht = document.getElementById('dropdown-filter-pflicht');
-//var selectedValuePflicht = dropdownFilterPflicht.value;
 
 var dropdownFilterKommend = document.getElementById('dropdown-filter-kommend');
 var selectedValueKommend = dropdownFilterKommend.value;
@@ -63,25 +57,6 @@ if (!checkbox4.checked && cells[4].textContent.trim() === 'Interpretierte Anford
 if (!checkbox5.checked && cells[4].textContent.trim() === 'Lösungsorientierte Anforderung') {
   showRow = false;
 } 
-
-// hier muss noch die if schleife für die verweise hin. checkbox 4 und 5
-//if (checkbox4.unchecked && cells[4].textContent.trim() === "Interpretierte Anforderung" && cells[15].textContent.trim() === ($(this).find('td:nth-child(1)').text())) {
-//  showRow = true;
-//}
-//if (checkbox5.checked && cells[15].textContent.trim() == cells[].textContent.trim()) {
-//  showRow = true;
-//} 
-
-/*if (selectedValue === 'Gesetz' && cells[14].textContent.trim() !== 'Gesetz') {
-  showRow = false;
-}
-if (selectedValue === 'Richtlinie' && cells[14].textContent.trim() !== 'Richtlinie') {
-  showRow = false;
-}
-if (selectedValue === 'Standard' && cells[14].textContent.trim() !== 'Standard') {
-  showRow = false;
-}
-*/
 
 if (selectedValueForm === 'Andere' && cells[19].textContent.trim() === 'Kapitalgeselschaft') {   
   showRow = false;
@@ -132,10 +107,6 @@ if (selectedValueEnergie === 'Nein' && cells[27].textContent.trim() === 'x') {
   showRow = false;
 }
 
-// hier fehlen noch die If schleifen für Pflicht und Kommend.
-// if (selectedValuePflicht === 'Verpflichtend' && cells[??].textContent.trim() !== 'Pflicht') {showRow = false;}
-// if (selectedValuePflicht === 'Freiwillig' && cells[??].textContent.trim() !== 'Freiwillig') {showRow = false;}
-
 const currentDate = new Date();
 const cellDate = new Date(cells[13].textContent.trim());
 if (selectedValueKommend === 'In Kraft' && cellDate >= currentDate) {
@@ -144,17 +115,6 @@ if (selectedValueKommend === 'In Kraft' && cellDate >= currentDate) {
 if (selectedValueKommend === 'Kommend' && cellDate < currentDate) {
   showRow = false;
 }
-
-
-/*
-for (let j = 1; j < rows.length; j++) {
-  const idColumn = rows[j].cells[0].textContent;
-
-  if (checkbox4.checked && cells[4].textContent.trim() === "Interpretierte Anforderung" && (cells[15].textContent.trim() != rows[j].cells[0].textContent)) {
-    showRow = false
-  }
-}
-*/
 
 row.style.display = showRow ? '' : 'none';
 
@@ -247,15 +207,8 @@ function filterTable() {
 }
 
 // Abhier Communityfilter zurücksetzen
-//const filterButton2 = document.getElementById('filterButton2');
-
-//filterButton2.addEventListener('click', () => {
- // removeComFilter();
-//});
-
 function removeComFilter() {
   location.reload();
-
 }
 
 
@@ -300,9 +253,6 @@ document.getElementById("exportButton").addEventListener("click", function () {
 
   // Erstellen Sie eine Kopie der Tabelle und behalten Sie nur die Tabellenköpfe und Zellen für die Spalten 1, 2 und 5.
   const clonedTable = table.cloneNode(true);
-
-    // Erzeuge ein neues Workbook
-    //var wb = XLSX.utils.table_to_book(clonedTable);
 
   const rows = clonedTable.getElementsByTagName("tr");
   for (let i = 0; i < rows.length; i++) {
