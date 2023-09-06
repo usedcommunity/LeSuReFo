@@ -294,6 +294,7 @@ function toggleColumn(index) {
   visibleColumns[index] = !visibleColumns[index];
 }
 
+// Excel Datei downloaden mit info sheet
 document.getElementById("exportButton").addEventListener("click", function () {
   const table = document.getElementById("excel-table");
 
@@ -346,7 +347,7 @@ document.getElementById("exportButton").addEventListener("click", function () {
   const a = document.createElement("a");
   a.style.display = "none";
   a.href = url;
-  a.download = "tabelle.xlsx";
+  a.download = "used-Community Gesetzestabelle.xlsx";
   document.body.appendChild(a);
   a.click();
 
