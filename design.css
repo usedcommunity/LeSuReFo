@@ -428,7 +428,46 @@
     th:nth-child(36) {
       display: none;
     }
-    
+    td:nth-child(37) {
+      display: none;
+    }
+    th:nth-child(37) {
+      display: none;
+    }
+
+    td:nth-child(38) {
+      display: none;
+    }
+    th:nth-child(38) {
+      display: none;
+    }
+
+    td:nth-child(39) {
+      display: none;
+    }
+    th:nth-child(39) {
+      display: none;
+    }
+    td:nth-child(40) {
+      display: none;
+    }
+    th:nth-child(40) {
+      display: none;
+    }
+
+    td:nth-child(41) {
+      display: none;
+    }
+    th:nth-child(41) {
+      display: none;
+    }
+
+    td:nth-child(42) {
+      display: none;
+    }
+    th:nth-child(42) {
+      display: none;
+    }
 
     .future {
       background-color: rgb(255, 214, 138);

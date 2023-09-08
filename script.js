@@ -389,7 +389,7 @@ function downloadPDF() {
   filterInfo += "Bereitstellung von Produkten: " + document.getElementById('dropdown-filter-produkt').value + "\n";
   filterInfo += "Elektrische Produkte: " + document.getElementById('dropdown-filter-elektro').value + "\n";
   filterInfo += "Energieverbrauchsrelevante Produkte: " + document.getElementById('dropdown-filter-energie').value + "\n";
-  filterInfo += "Verwendung von Batterien: " + document.getElementById('dropdown-filter-baterrien').value + "\n";
+  filterInfo += "Verwendung von Batterien: " + document.getElementById('dropdown-filter-batterien').value + "\n";
   filterInfo += "Verwendung von Chemikalien: " + document.getElementById('dropdown-filter-chemikalien').value + "\n";
   filterInfo += "Produkte aus Einwegkunststoff: " + document.getElementById('dropdown-filter-plastik').value + "\n";
   filterInfo += "Verwendung von Verpackung: " + document.getElementById('dropdown-filter-verpackung').value + "\n";
@@ -403,7 +403,7 @@ function downloadPDF() {
 
   // Anpassung der Position der Tabelle nach rechts und unten
   var tableX = 50; // X-Position
-  var tableY = 400; // Y-Position
+  var tableY = 520; // Y-Position
 
   // Verkleinere die Tabelle
   var table = document.getElementById('excel-table');
