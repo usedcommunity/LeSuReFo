@@ -80,7 +80,7 @@
           <input type="checkbox" id="checkbox-5" checked>
         </div>
 
-        <!-- Kommende Regularien (Kunktioniert noch nicht)-->
+        <!-- Kommende Regularien -->
         <div class="filter-input">
           <label for="dropdown-filter-kommend">Derzeitige oder kommende Regularien:</label>
           <div class="tooltip">
@@ -93,9 +93,9 @@
             <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
-      </div>
-
-      <div class="filter-container">
+      
+        <br><br>
+      
         <!-- Form -->
         <div class="filter-input">
           <label for="dropdown-filter-form">Geselschaftsform:</label>
@@ -180,30 +180,33 @@
             <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
+      </div>
 
-        <!-- Verpackung -->
+      <div class="filter-container">
+        <!-- Bereitstellung von Produkten  -->
         <div class="filter-input">
-          <label for="dropdown-filter-verpackung">Verwendung von Verpackung:</label>
+          <label for="dropdown-filter-produkt">Bereitstellung von Produkten:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gebe an ob das Unternehmen Verpackungen jeglicher Art verwendet die im Müll landen.</span>
-          </div>
-          <select class="filter5" id="dropdown-filter-verpackung">
+            <span class="tooltiptext">Bitte wähle aus, ob dein Unternehmen Produkte auf dem Markt bereitstellt.
+              </span>
+          </div>            
+          <select class="filter5" id="dropdown-filter-produkt">
             <option value="--">--</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
+              <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
 
-        <!-- Abfall -->
+        <!-- Elektrische Produkte -->
         <div class="filter-input">
-          <label for="dropdown-filter-abfall">Aufkommen von Abfällen:</label>
+          <label for="dropdown-filter-elektro">Elektrische Produkte:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gebe an ob dein Unternehmen für das Aufkommen von Abfällen verantortlich ist oder ob es mit Abfällen arbeitet.</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Elektrische Produkte vertreibt.</span>
           </div>
-          <select class="filter6" id="dropdown-filter-abfall">
+          <select class="filter6" id="dropdown-filter-elektro">
             <option value="--">--</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
@@ -216,7 +219,7 @@
           <label for="dropdown-filter-energie">Energieverbrauchsrelevante Produkte:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Energieverbrauchsrelevante Produkte sind Produkte, die einen direkten oder indirekten Einfluss auf den Energieverbrauch haben. Sie können entweder Energie erzeugen, übertragen, speichern oder verbrauchen. HIER findest du eine Liste auf welche Produkte dies zutrifft. Wähle aus ob die Produkte welche von deinem Unternehmen verwendet werden diesen entsprechen.</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Energieverbrauchsrelevante Produkte vertreibt. Energieverbrauchsrelevante Produkte sind Produkte, die einen direkten oder indirekten Einfluss auf den Energieverbrauch haben. Sie können entweder Energie erzeugen, übertragen, speichern oder verbrauchen. HIER findest du eine Liste auf welche Produkte dies zutrifft.</span>
           </div>
           <select class="filter7" id="dropdown-filter-energie">
             <option value="--">--</option>
@@ -226,20 +229,112 @@
           </select>
         </div>
 
-        <!-- Verpflichtend oder Freiwillig (Funktioniert noch nicht)
+        <!-- Batterien  -->
         <div class="filter-input">
-          <label for="dropdown-filter-pflicht">Verpflichtent oder Freiwillig:</label>
+          <label for="dropdown-filter-batterien">Verwendung von Batterien:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus ob du nach verpflichtenden oder freiwilligen Regularien suchen möchtest.</div>
-              <b>....................</b>
-              <select id="dropdown-filter-pflicht">
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Batterien herstellt, importiert, nutzt oder vertreibt.</span>
+          </div>
+          <select class="filter8" id="dropdown-filter-batterien">
             <option value="--">--</option>
-            <option value="Verpflichtend">Verpflichtend</option>
-            <option value="Freiwillig">Freiwillig</option>
-            
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
-        </div> -->
+        </div>
+
+        <!-- Chemikalien  -->
+        <div class="filter-input">
+          <label for="dropdown-filter-chemikalien">Verwendung von Chemikalien:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Cemikalien herstellt, verwendet, importiert, lagert oder vertreibt.</span>
+          </div>
+          <select class="filter9" id="dropdown-filter-chemikalien">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Einwegplatik  -->
+        <div class="filter-input">
+          <label for="dropdown-filter-plastik">Produkte aus Einwegkunststoff:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Produkte aus Einwegkunststoff herstellt, importiert oder vertreibt.</span>
+          </div>
+          <select class="filter10" id="dropdown-filter-plastik">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Verpackung -->
+        <div class="filter-input">
+          <label for="dropdown-filter-verpackung">Verwendung von Verpackung:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen Verpackungen jeglicher Art verwendet die im Müll landen.</span>
+          </div>
+          <select class="filter11" id="dropdown-filter-verpackung">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Abfall -->
+        <div class="filter-input">
+          <label for="dropdown-filter-abfall">Aufkommen von Abfällen:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen für das Aufkommen von Abfällen verantortlich ist oder ob es mit Abfällen arbeitet.</span>
+          </div>
+          <select class="filter12" id="dropdown-filter-abfall">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Digitale Dienste und Plattformen -->
+        <div class="filter-input">
+          <label for="dropdown-filter-digi">Verwaltung von Digitalen Diensten:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen Digitaledienste oder Plattformen verwaltet.</span>
+          </div>
+          <select class="filter13" id="dropdown-filter-digi">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+        <!-- Verarbeitung von Personen bezogennen Daten -->
+        <div class="filter-input">
+          <label for="dropdown-filter-data">Verarbeitung von Personendaten:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen Personen Bezogene Daten verarbeitet.</span>
+          </div>
+          <select class="filter14" id="dropdown-filter-data">
+            <option value="--">--</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
+        </div>
+
+
       </div>
     </div>
     <div>

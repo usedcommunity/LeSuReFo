@@ -29,6 +29,27 @@ var selectedValueEnergie = dropdownFilterEnergie.value;
 var dropdownFilterKommend = document.getElementById('dropdown-filter-kommend');
 var selectedValueKommend = dropdownFilterKommend.value;
 
+var dropdownFilterElektro = document.getElementById('dropdown-filter-elektro');
+var selectedValueElektro = dropdownFilterElektro.value;
+
+var dropdownFilterData = document.getElementById('dropdown-filter-data');
+var selectedValueData = dropdownFilterData.value;
+
+var dropdownFilterProdukt = document.getElementById('dropdown-filter-produkt');
+var selectedValueProdukt = dropdownFilterProdukt.value;
+
+var dropdownFilterBatterien = document.getElementById('dropdown-filter-batterien');
+var selectedValueBatterien = dropdownFilterBatterien.value;
+
+var dropdownFilterChemikalien = document.getElementById('dropdown-filter-chemikalien');
+var selectedValueChemikalien = dropdownFilterChemikalien.value;
+
+var dropdownFilterPlastik = document.getElementById('dropdown-filter-plastik');
+var selectedValuePlastik = dropdownFilterPlastik.value;
+
+var dropdownFilterDigi = document.getElementById('dropdown-filter-digi');
+var selectedValueDigi = dropdownFilterDigi.value;
+
 var checkbox3 = document.getElementById('checkbox-3');
 var checkbox4 = document.getElementById('checkbox-4');
 var checkbox5 = document.getElementById('checkbox-5');
@@ -106,7 +127,27 @@ if (selectedValueAbfall === 'Nein' && cells[26].textContent.trim() === 'x') {
 if (selectedValueEnergie === 'Nein' && cells[27].textContent.trim() === 'x') {   
   showRow = false;
 }
-
+if (selectedValueElektro === 'Nein' && cells[28].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValueProdukt === 'Nein' && cells[29].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValueData === 'Nein' && cells[30].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValueDigi === 'Nein' && cells[31].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValuePlastik === 'Nein' && cells[32].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValueBatterien === 'Nein' && cells[33].textContent.trim() === 'x') {   
+  showRow = false;
+}
+if (selectedValueChemikalien === 'Nein' && cells[34].textContent.trim() === 'x') {   
+  showRow = false;
+}
 const currentDate = new Date();
 const cellDate = new Date(cells[13].textContent.trim());
 if (selectedValueKommend === 'In Kraft' && cellDate >= currentDate) {
@@ -137,6 +178,13 @@ function resetFilters() {
   document.getElementById('dropdown-filter-umsatz').value = '--';
   document.getElementById('dropdown-filter-vermögen').value = '--';
   document.getElementById('dropdown-filter-abfall').value = '--';
+  document.getElementById('dropdown-filter-produkt').value = '--';
+  document.getElementById('dropdown-filter-plastik').value = '--';
+  document.getElementById('dropdown-filter-elektro').value = '--';
+  document.getElementById('dropdown-filter-batterien').value = '--';
+  document.getElementById('dropdown-filter-chemikalien').value = '--';
+  document.getElementById('dropdown-filter-digi').value = '--';
+  document.getElementById('dropdown-filter-data').value = '--';
   document.getElementById('dropdown-filter-verpackung').value = '--';
   document.getElementById('dropdown-filter-energie').value = '--';
   document.getElementById('checkbox-3').checked = true;
@@ -199,7 +247,7 @@ function filterTable() {
     for (var i = 1; i < rows.length; i++) { // Starte bei Index 1, um die Kopfzeile zu überspringen
       var row = rows[i];
       var cells = row.getElementsByTagName('td');
-    const tagsInRow = row.querySelector('td:nth-child(30)').textContent;
+    const tagsInRow = row.querySelector('td:nth-child(36)').textContent;
     const tagsArray = tagsInRow.split(', ');
     const shouldDisplay = selectedTags.some(tag => tagsArray.includes(tag.textContent));
     row.style.display = shouldDisplay ? 'table-row' : 'none';
@@ -280,9 +328,16 @@ document.getElementById("exportButton").addEventListener("click", function () {
     ["Anzahl der Mitarbeiter:", document.getElementById('dropdown-filter-ma').value],
     ["Umsatz in Mio.€:", document.getElementById('dropdown-filter-umsatz').value],
     ["Gesamtvermögen in Mio.€:", document.getElementById('dropdown-filter-vermögen').value],
+    ["Bereitstellung von Produkten:", document.getElementById('dropdown-filter-produkt').value],
+    ["Elektrische Produkte:", document.getElementById('dropdown-filter-elektro').value],
+    ["Energieverbrauchsrelevante Produkte:", document.getElementById('dropdown-filter-energie').value],
+    ["Verwendung von Batterien:", document.getElementById('dropdown-filter-batterien').value],
+    ["Verwendung von Chemikalien:", document.getElementById('dropdown-filter-chemikalien').value],
+    ["Produkte aus Einwegkunststoff:", document.getElementById('dropdown-filter-plastik').value],
     ["Verwendung von Verpackung:", document.getElementById('dropdown-filter-verpackung').value],
     ["Aufkommen von Abfällen:", document.getElementById('dropdown-filter-abfall').value],
-    ["Energieverbrauchsrelevante Produkte:", document.getElementById('dropdown-filter-energie').value]
+    ["Verwaltung von Digitalen Diensten:", document.getElementById('dropdown-filter-digi').value],
+    ["Verarbeitung von Personendaten:", document.getElementById('dropdown-filter-data').value]
   ]);
 
   // Füge das infoSheet zur Arbeitsmappe hinzu
@@ -331,9 +386,16 @@ function downloadPDF() {
   filterInfo += "Anzahl der Mitarbeiter: " + document.getElementById('dropdown-filter-ma').value + "\n";
   filterInfo += "Umsatz in Mio.€: " + document.getElementById('dropdown-filter-umsatz').value + "\n";
   filterInfo += "Gesamtvermögen in Mio.€: " + document.getElementById('dropdown-filter-vermögen').value + "\n";
+  filterInfo += "Bereitstellung von Produkten: " + document.getElementById('dropdown-filter-produkt').value + "\n";
+  filterInfo += "Elektrische Produkte: " + document.getElementById('dropdown-filter-elektro').value + "\n";
+  filterInfo += "Energieverbrauchsrelevante Produkte: " + document.getElementById('dropdown-filter-energie').value + "\n";
+  filterInfo += "Verwendung von Batterien: " + document.getElementById('dropdown-filter-baterrien').value + "\n";
+  filterInfo += "Verwendung von Chemikalien: " + document.getElementById('dropdown-filter-chemikalien').value + "\n";
+  filterInfo += "Produkte aus Einwegkunststoff: " + document.getElementById('dropdown-filter-plastik').value + "\n";
   filterInfo += "Verwendung von Verpackung: " + document.getElementById('dropdown-filter-verpackung').value + "\n";
   filterInfo += "Aufkommen von Abfällen: " + document.getElementById('dropdown-filter-abfall').value + "\n";
-  filterInfo += "Energieverbrauchsrelevante Produkte: " + document.getElementById('dropdown-filter-energie').value + "\n";
+  filterInfo += "Verwaltung von Digitalen Diensten: " + document.getElementById('dropdown-filter-digi').value + "\n";
+  filterInfo += "Verarbeitung von Personendaten: " + document.getElementById('dropdown-filter-data').value + "\n";
 
   pdf.setFontSize(18);
   // Füge Filterinformationen hinzu
