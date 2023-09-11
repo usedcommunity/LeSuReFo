@@ -3800,7 +3800,7 @@ function loadTable() {
   var tableHtml = '<thead><tr>';
   var headerRow = jsonData[0];
   for (var i = 0; i < headerRow.length; i++) {
-    tableHtml += '<th>' + headerRow[i] + '<input type="checkbox" checked onchange="toggleColumn(i)">' + '</th>';
+    tableHtml += '<th>' + headerRow[i] /*+ '<input type="checkbox" checked onchange="toggleColumn(i)">' */+ '</th>';
   }
   tableHtml += '</tr></thead>';
 
