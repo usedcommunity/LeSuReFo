@@ -20,12 +20,12 @@ function loadTable() {
         "Art",
         "Beschreibung",
         "Erfahrungen, Informationen, Diskusionen",
-        "link",
+        "Link",
         "UN",
         "EU",
         "DE",
         "NGO",
-        "einsatzdatum",
+        "Einsatzdatum",
         "kaskade",
         "letzte änderung",
         "entfalldatum",
@@ -3795,9 +3795,6 @@ function loadTable() {
         "",
         "x"
       ]
-    
-  
-    
   ];
 
   var tableHtml = '<thead><tr>';
