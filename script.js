@@ -171,22 +171,22 @@ applyFilter();
 // filter zurücksetz button 
 function resetFilters() {
 
-  document.getElementById('dropdown-filter-kommend').value = '--';
-  document.getElementById('dropdown-filter-form').value = '--';
-  document.getElementById('dropdown-filter-sitz').value = '--';
-  document.getElementById('dropdown-filter-ma').value = '--';
-  document.getElementById('dropdown-filter-umsatz').value = '--';
-  document.getElementById('dropdown-filter-vermögen').value = '--';
-  document.getElementById('dropdown-filter-abfall').value = '--';
-  document.getElementById('dropdown-filter-produkt').value = '--';
-  document.getElementById('dropdown-filter-plastik').value = '--';
-  document.getElementById('dropdown-filter-elektro').value = '--';
-  document.getElementById('dropdown-filter-batterien').value = '--';
-  document.getElementById('dropdown-filter-chemikalien').value = '--';
-  document.getElementById('dropdown-filter-digi').value = '--';
-  document.getElementById('dropdown-filter-data').value = '--';
-  document.getElementById('dropdown-filter-verpackung').value = '--';
-  document.getElementById('dropdown-filter-energie').value = '--';
+  document.getElementById('dropdown-filter-kommend').value = 'Alle';
+  document.getElementById('dropdown-filter-form').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-sitz').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-ma').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-umsatz').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-vermögen').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-abfall').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-produkt').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-plastik').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-elektro').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-batterien').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-chemikalien').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-digi').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-data').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-verpackung').value = 'keine Auswahl';
+  document.getElementById('dropdown-filter-energie').value = 'keine Auswahl';
   document.getElementById('checkbox-3').checked = true;
   document.getElementById('checkbox-4').checked = true;
   document.getElementById('checkbox-5').checked = true;

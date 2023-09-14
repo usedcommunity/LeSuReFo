@@ -30,8 +30,7 @@
 
   <div class="card1">
     <div class=text>
-    <p>Der <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Gesetzesfinder zeigt Dir ganz einfach und schnell welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden. Neben den Gesetzen können auch die aus ihnen resultierenden Anforderungen angezeit werden. Setze die Filter, so dass sie den Attributen deines Unternehmens entsprechen. Nutze den Communityfilter um nach Schlagworten zu suchen oder benutze die Direktsuche innerhalb der Tabelle um nach Textpassagen zu suchen.</p>
-    <p>Aktuelle Gesetze werden in der Tabelle weiß angezeigt, Interpretierte Anforderungen Grau und Lösungsorientierte Anforderungen dunkelgrau.</p>
+    <p>Der <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Gesetzesfinder zeigt Dir ganz einfach und schnell welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden. Neben den Gesetzen können auch die aus ihnen resultierenden Anforderungen angezeit werden. Nutze den Filter oder die Direktsuche innerhalb der Tabelle.</p>
     <p>Alle eingegebenen Daten werden Anonymisiert für die Forschung innerhalb der Community verwendet. Es kann nicht auf einzelne Personen oder Unternehmen rückgeschlossen werden.</p>
     <p>Der Gesetzesfindern wird durch die <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Community mit großer Sorgfalt erstellt und Aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden.</p>
     </div>
@@ -51,6 +50,7 @@
   <div class="card">
 
     <h2>Filter</h2>
+    <p>Setze die Filter, so dass sie den Attributen deines Unternehmens entsprechen. <br> Die Auswahlmöglichkeiten wurden in Abhänigkeit der Gesetze erarbeitet.</p>
     <div class="filter">
     
       <div>
@@ -87,7 +87,7 @@
             <span class="question-mark">&#63;</span>
             <span class="tooltiptext">Wähle aus ob du nach bereits in Kraft getretennen Regularien oder nach noch kommenden Regularien suchen möchtest. Wenn du diesen Filter frei lässt werden beide Arten angezeigt.</div>
               <select id="dropdown-filter-kommend">
-            <option value="--">--</option>
+            <option value="Alle">Alle</option>
             <option value="In Kraft">In Kraft</option>
             <option value="Kommend">Kommend</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -104,7 +104,7 @@
             <span class="tooltiptext">Gebe an welche Geselschaftsform dein Unternehmen besitzt. Bisher kann nur zwischen Kapitalgeselschaft und allen Anderen Geselschaftsformen gewählt werden.</span>
           </div>
           <select class="filter0" id="dropdown-filter-form">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Kapitalgeselschaft">Kapitalgeselschaft</option>
             <option value="Andere">Andere (keine KG)</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -120,8 +120,8 @@
             <span class="tooltiptext">Wähle aus in welchem Land sich der Sitz oder eine Niederlassung deines Unternehmens befindet.</span>
           </div>
           <select class="filter1" id="dropdown-filter-sitz">
-            <option value="--">--</option>
-            <option value="Ausland">Ausland</option>
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ausland">außerhalb Deutschlands</option>
             <option value="Deutschland">Deutschland</option>
             <!-- Weitere Optionen hinzufügen -->
           </select>
@@ -137,7 +137,7 @@
               </span>
           </div>
           <select class="filter2" id="dropdown-filter-ma">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="0-249">0-249</option>
             <option value="250-999">250-999</option>
             <option value="1000-2999">1000-2999</option>
@@ -154,7 +154,7 @@
             <span class="tooltiptext">Wähle aus wie viel Umsatz dein Unternehmen innerhalb eines Jahres macht. (in Mio. €)</span>
           </div>
           <select class="filter3" id="dropdown-filter-umsatz">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Unter 20">Unter 20</option>
             <option value="20-39">20-39</option>
             <option value="40-59">40-59</option>
@@ -173,7 +173,7 @@
               </span>
           </div>
           <select class="filter4" id="dropdown-filter-vermögen">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Unter 20">Unter 20</option>
             <option value="20-39">20-39</option>
             <option value="Ab 40">Ab 40</option>
@@ -192,7 +192,7 @@
               </span>
           </div>            
           <select class="filter5" id="dropdown-filter-produkt">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
               <!-- Weitere Optionen hinzufügen -->
@@ -207,7 +207,7 @@
             <span class="tooltiptext">Wähle aus, ob dein Unternehmen Elektrische Produkte vertreibt.</span>
           </div>
           <select class="filter6" id="dropdown-filter-elektro">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -222,7 +222,7 @@
             <span class="tooltiptext">Wähle aus, ob dein Unternehmen Energieverbrauchsrelevante Produkte vertreibt. Energieverbrauchsrelevante Produkte sind Produkte, die einen direkten oder indirekten Einfluss auf den Energieverbrauch haben. Sie können entweder Energie erzeugen, übertragen, speichern oder verbrauchen. HIER findest du eine Liste auf welche Produkte dies zutrifft.</span>
           </div>
           <select class="filter7" id="dropdown-filter-energie">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -237,7 +237,7 @@
             <span class="tooltiptext">Wähle aus, ob dein Unternehmen Batterien herstellt, importiert, nutzt oder vertreibt.</span>
           </div>
           <select class="filter8" id="dropdown-filter-batterien">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -252,7 +252,7 @@
             <span class="tooltiptext">Wähle aus, ob dein Unternehmen Cemikalien herstellt, verwendet, importiert, lagert oder vertreibt.</span>
           </div>
           <select class="filter9" id="dropdown-filter-chemikalien">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -267,7 +267,7 @@
             <span class="tooltiptext">Wähle aus, ob dein Unternehmen Produkte aus Einwegkunststoff herstellt, importiert oder vertreibt.</span>
           </div>
           <select class="filter10" id="dropdown-filter-plastik">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -282,7 +282,7 @@
             <span class="tooltiptext">Gebe an, ob dein Unternehmen Verpackungen jeglicher Art verwendet die im Müll landen.</span>
           </div>
           <select class="filter11" id="dropdown-filter-verpackung">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -297,7 +297,7 @@
             <span class="tooltiptext">Gebe an, ob dein Unternehmen für das Aufkommen von Abfällen verantortlich ist oder ob es mit Abfällen arbeitet.</span>
           </div>
           <select class="filter12" id="dropdown-filter-abfall">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -312,7 +312,7 @@
             <span class="tooltiptext">Gebe an, ob dein Unternehmen Digitaledienste oder Plattformen verwaltet.</span>
           </div>
           <select class="filter13" id="dropdown-filter-digi">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -327,7 +327,7 @@
             <span class="tooltiptext">Gebe an, ob dein Unternehmen Personen Bezogene Daten verarbeitet.</span>
           </div>
           <select class="filter14" id="dropdown-filter-data">
-            <option value="--">--</option>
+            <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
             <!-- Weitere Optionen hinzufügen -->
@@ -358,23 +358,23 @@
           </div>
         <input type="text" id="tagInput" placeholder="Schlagwort hinzufügen">
         <div class="tag-list" id="tagList">
-          <div class="tag-list-item">Bericht</div>
-          <div class="tag-list-item">Lieferkette</div>
           <div class="tag-list-item">Akkreditierung</div>
-          <div class="tag-list-item">Industriestandard</div>
-          <div class="tag-list-item">Freiwillig</div>
+          <div class="tag-list-item">Bericht</div>
           <div class="tag-list-item">Datenschutz</div>
-          <div class="tag-list-item">Meldewesen</div>
-          <div class="tag-list-item">Produktsicherheit</div>
+          <div class="tag-list-item">Freiwillig</div>
+          <div class="tag-list-item">Industriestandard</div>
           <div class="tag-list-item">Kennzeichnung</div>
-          <div class="tag-list-item">Ökodesign</div>
-          <div class="tag-list-item">Produktgestaltung</div>
-          <div class="tag-list-item">Produktentwicklung</div>
-          <div class="tag-list-item">Zielsystem</div>
-          <div class="tag-list-item">Strategie</div>
           <div class="tag-list-item">Kreislauffähigkeit</div>
+          <div class="tag-list-item">Lieferkette</div>
+          <div class="tag-list-item">Meldewesen</div>
+          <div class="tag-list-item">Ökodesign</div>
+          <div class="tag-list-item">Produktentwicklung</div>
+          <div class="tag-list-item">Produktgestaltung</div>
+          <div class="tag-list-item">Produktsicherheit</div>
+          <div class="tag-list-item">Strategie</div>
           <div class="tag-list-item">Verpackung</div>
           <div class="tag-list-item">Versand</div>
+          <div class="tag-list-item">Zielsystem</div>
           <!-- Weitere Schlagworte hier hinzufügen -->
         </div>
       </div>
@@ -398,6 +398,7 @@
 
   <div id="downloadtest" class="card">
     <h2>Tabelle</h2>
+    <p>Aktuelle Gesetze werden in der Tabelle weiß angezeigt, Interpretierte Anforderungen Grau und Lösungsorientierte Anforderungen dunkelgrau.</p>
     <input type="text" id="search-input" oninput="searchTable()" placeholder="Suche...">
     <table id="excel-table">
       <!-- Tabelle wird hier dynamisch generiert -->

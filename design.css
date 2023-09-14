@@ -49,8 +49,8 @@
     }
   
     .button-link {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -58,7 +58,7 @@
       border: 1px solid #434343;
       border-radius: 5px;
       text-align: center;
-      font-size: 11px;
+      font-size: 7px;
       font-weight: 900;
       color: #575b8e;
       cursor: pointer;
@@ -101,10 +101,12 @@
 
     .filter-container {
       margin-left: 60px;
+      margin-top: 0px;
     }
 
     .filter {
       display: flex;
+      margin-top: 20px;
       justify-content: flex-start;
     }
 
@@ -128,19 +130,19 @@
       margin-left: 115px;
     }
     .filter1 {
-      margin-left: 115px;
+      margin-left: 44px;
     }
     .filter2 {
-      margin-left: 129px;
+      margin-left: 107px;
     }
     .filter3 {
-      margin-left: 183px;
+      margin-left: 148px;
     }
     .filter4 {
-      margin-left: 110px;
+      margin-left: 75px;
     }
     .filter5 {
-      margin-left: 84px;
+      margin-left: 85px;
     }
     .filter6 {
       margin-left: 142px;
@@ -152,7 +154,7 @@
       margin-left: 101px;
     }
     .filter9 {
-      margin-left: 76px;
+      margin-left: 77px;
     }
     .filter10 {
       margin-left: 69px;
@@ -161,10 +163,10 @@
       margin-left: 80px;
     }
     .filter12 {
-      margin-left: 110px;
+      margin-left: 111px;
     }
     .filter13 {
-      margin-left: 43px;
+      margin-left: 44px;
     }
     .filter14 {
       margin-left: 53px;
