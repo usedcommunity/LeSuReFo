@@ -19,7 +19,7 @@ function loadTable() {
         "Gegenstand",
         "Art",
         "Beschreibung",
-        "Erfahrungen, Informationen, Diskusionen",
+        "Erfahrungen, Informationen, Diskussionen",
         "Link",
         "UN",
         "EU",
@@ -3809,7 +3809,12 @@ function loadTable() {
     var row = jsonData[j];
     tableHtml += '<tr>';
     for (var k = 0; k < row.length; k++) {
-      tableHtml += '<td>' + row[k] + '</td>';
+      // Überprüfen, ob es sich um den Link handelt
+      if (k === 8) {
+        tableHtml += '<td><a href="' + row[k] + '" target="_blank">' + row[k] + '</a></td>';
+      } else {
+        tableHtml += '<td>' + row[k] + '</td>';
+      }
     }
     tableHtml += '</tr>';
   }
