@@ -62,7 +62,7 @@ var row = rows[i];
 var cells = row.getElementsByTagName('td');
 
 var showRow = false;
-if (cells[4].textContent.trim() === "Gesetz" || cells[4].textContent.trim() === "Interpretierte Anforderung" || cells[4].textContent.trim() === "Lösungsorientierte Anforderung") {
+if (cells[1].textContent.trim() === "Gesetz" || cells[1].textContent.trim() === "Interpretierte Anforderung" || cells[1].textContent.trim() === "Lösungsorientierte Anforderung") {
   showRow = true;
 }
 
@@ -72,10 +72,10 @@ if (!checkbox3.checked) {
 }
 
 
-if (!checkbox4.checked && cells[4].textContent.trim() === 'Interpretierte Anforderung') {
+if (!checkbox4.checked && cells[1].textContent.trim() === 'Interpretierte Anforderung') {
   showRow = false;
 } 
-if (!checkbox5.checked && cells[4].textContent.trim() === 'Lösungsorientierte Anforderung') {
+if (!checkbox5.checked && cells[1].textContent.trim() === 'Lösungsorientierte Anforderung') {
   showRow = false;
 } 
 
