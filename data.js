@@ -3843,4 +3843,10 @@ function loadTable() {
       $(this).addClass('lreq');
     }
     });
+
+  $('tr').each(function() {
+    if ($(this).find('td:nth-child(5)').text() === 'Gesetz') {
+      $(this).addClass('law');
+    }
+    });
 }
