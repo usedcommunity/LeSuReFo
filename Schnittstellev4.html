@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Excel-Tabelle hochladen</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <h1>Excel-Tabelle hochladen</h1>
+
+  <input type="file" id="excelFile" accept=".xlsx, .xls" />
+  <br>
+  <br>
+  <button id="generateJSONBtn">JSON generieren</button>
+  <button id="downloadJSONBtn">JSON herunterladen</button>
+
+  <div id="tableContainer"></div>
+  <pre id="jsonContainer"></pre>
+
+  <script>
+    // Funktion zum Anzeigen der Excel-Tabelle
+    function showExcelTable(data) {
+      var table = document.createElement("table");
+      var tbody = document.createElement("tbody");
+
+      for (var i = 0; i < data.length; i++) {
+        var row = document.createElement("tr");
+
+        for (var j = 0; j < data[i].length; j++) {
+          var cell = document.createElement(i === 0 ? "th" : "td");
+          cell.textContent = data[i][j];
+          row.appendChild(cell);
+        }
+
+        tbody.appendChild(row);
+      }
+
+      table.appendChild(tbody);
+      document.getElementById("tableContainer").innerHTML = "";
+      document.getElementById("tableContainer").appendChild(table);
+    }
+
+    // Funktion zum Anzeigen der JSON-Daten
+    function showJSON(json) {
+      document.getElementById("jsonContainer").textContent = json;
+    }
+
+    // Ereignislistener für Datei-Upload
+    document.getElementById("excelFile").addEventListener("change", function(e) {
+      var files = e.target.files;
+      if (files.length > 0) {
+        var file = files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          var data = new Uint8Array(e.target.result);
+          var workbook = XLSX.read(data, {type: 'array'});
+          var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+          var jsonData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+
+          showExcelTable(jsonData);
+        };
+
+        reader.readAsArrayBuffer(file);
+      }
+    });
+
+    // Ereignislistener für JSON-Generierung
+    document.getElementById("generateJSONBtn").addEventListener("click", function() {
+      var table = document.querySelector("table");
+      var jsonData = [];
+
+      for (var i = 0; i < table.rows.length; i++) {
+        var row = table.rows[i];
+        var rowData = [];
+
+        for (var j = 0; j < row.cells.length; j++) {
+          rowData.push(row.cells[j].textContent);
+        }
+
+        jsonData.push(rowData);
+      }
+
+      var json = JSON.stringify(jsonData, null, 2);
+      showJSON(json);
+    });
+
+    // Ereignislistener für JSON-Download
+    document.getElementById("downloadJSONBtn").addEventListener("click", function() {
+      var json = document.getElementById("jsonContainer").textContent;
+      var blob = new Blob([json], { type: "text/plain;charset=utf-8" });
+      saveAs(blob, "data.json");
+    });
+  </script>
+</body>
+</html>
