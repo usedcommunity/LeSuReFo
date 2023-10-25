@@ -196,7 +196,7 @@ function resetFilters() {
 
 
 //Abhier Community Filter
-
+/*
 const tagInput = document.getElementById('tagInput');
 const tagList = document.getElementById('tagList');
 const tagListItems = tagList.querySelectorAll('.tag-list-item');
@@ -258,12 +258,12 @@ function filterTable() {
 function removeComFilter() {
   location.reload();
 }
-
+*/
 
 // Email für CONTACT Button
 function openEmail() {
   var emailAddress = 'contact@used.community';
-  var subject = 'Gesetzesfinder';
+  var subject = 'Gesetzes- und Zertifikatsfinder';
   var body = '';
 
   var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress) +
@@ -306,13 +306,13 @@ document.getElementById("exportButton").addEventListener("click", function () {
   for (let i = 0; i < rows.length; i++) {
       const cells = rows[i].getElementsByTagName("td");
       for (let j = cells.length - 1; j >= 0; j--) {
-          if (j !== 0 && j !== 1 && j !== 3 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
+          if (j !== 0 && j !== 1 && j !== 2 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
               rows[i].removeChild(cells[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
           }
       }
       const heads = rows[i].getElementsByTagName("th");
       for (let j = heads.length - 1; j >= 0; j--) {
-          if (j !== 0 && j !== 1 && j !== 3 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
+          if (j !== 0 && j !== 1 && j !== 2 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
               rows[i].removeChild(heads[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
           }
       }
