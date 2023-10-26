@@ -83,7 +83,7 @@ if (selectedValueForm === 'Andere' && cells[19].textContent.trim() === 'Kapitalg
   showRow = false;
 }
 
-if (selectedValueSitz === 'Ausland' && cells[20].textContent.trim() === 'Deutschland') {   
+if (selectedValueSitz === 'außerhalb Deutschlands' && cells[20].textContent.trim() === 'Deutschland') {   
   showRow = false;
 }
 
@@ -168,6 +168,71 @@ applyFilter();
 });
 
 
+
+function applyFilterZ() {
+
+  var dropdownFilterBranche = document.getElementById('dropdown-filter-branche');
+  var selectedValueBranche = dropdownFilterBranche.value;
+
+  var dropdownFilterRolle = document.getElementById('dropdown-filter-rolle');
+  var selectedValueRolle = dropdownFilterRolle.value;
+  
+  var table = document.getElementById('excel-table');
+  var rows = table.getElementsByTagName('tr');
+
+  for (var i = 1; i < rows.length; i++) { // Starte bei Index 1, um die Kopfzeile zu überspringen
+  var row = rows[i];
+  var cells = row.getElementsByTagName('td');
+
+  var showRow = true;
+
+
+  if (selectedValueBranche != "Automotive, Bahn, Luftfahrt" && cells[8].textContent.trim() === "Automotive, Bahn, Luftfahrt") {
+    showRow = false;
+  } 
+  if (selectedValueBranche != "Dienstleistungssektor" && cells[8].textContent.trim() === "Dienstleistungssektor") {
+    showRow = false;
+  } 
+  if (selectedValueBranche != "Gesundheitswesen" && cells[8].textContent.trim() === "Gesundheitswesen") {
+    showRow = false;
+  } 
+  if (selectedValueBranche != "Handel, Export und Logistik" && cells[8].textContent.trim() === "Handel, Export und Logistik") {
+    showRow = false;
+  } 
+  if (selectedValueBranche != "Kosmetik und Haushaltsprodukte" && cells[8].textContent.trim() === "Kosmetik und Haushaltsprodukte") {
+    showRow = false;
+  } 
+  if (selectedValueBranche != "Lebens- und Futermittel" && cells[8].textContent.trim() === "Lebens- und Futermittel") {
+    showRow = false;
+  } 
+  if (selectedValueBranche != "Medizinproduktehersteller" && cells[8].textContent.trim() === "Medizinproduktehersteller") {
+    showRow = false;
+  } 
+  if (selectedValueBranche != "Metall- und Elektroindustrie" && cells[8].textContent.trim() === "Metall- und Elektroindustrie") {
+    showRow = false;
+  } 
+  if (selectedValueBranche === "Alle Branchen") { 
+    showRow = true
+  }
+
+
+  if (selectedValueRolle === "Zulieferer" && cells[9].textContent.trim() != "Zulieferer" && cells[9].textContent.trim() != "" && cells[9].textContent.trim() != "alle") {
+    showRow = false;
+  }
+  if (selectedValueRolle === "Dienstleister" && cells[9].textContent.trim() != "Dienstleister" && cells[9].textContent.trim() != "" && cells[9].textContent.trim() != "alle") {
+    showRow = false;
+  }
+  if (selectedValueRolle === "OEM" && cells[9].textContent.trim() != "OEM" && cells[9].textContent.trim() != "" && cells[9].textContent.trim() != "alle") {
+    showRow = false;
+  }
+
+  row.style.display = showRow ? '' : 'none';
+  
+  }
+  }
+
+
+
 // filter zurücksetz button 
 function resetFilters() {
 
@@ -192,6 +257,15 @@ function resetFilters() {
   document.getElementById('checkbox-5').checked = true;
   
   applyFilter();
+}
+
+// filter zurücksetz button Zertifikate
+function resetFiltersZ() {
+
+  document.getElementById('dropdown-filter-branche').value = 'Alle Branchen';
+
+  
+  applyFilterZ();
 }
 
 

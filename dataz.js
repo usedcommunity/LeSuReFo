@@ -2748,9 +2748,11 @@ function loadTableZ() {
     tableHtml += '<tr>';
     for (var k = 0; k < row.length; k++) {
       // Überprüfen, ob es sich um den Link handelt
-
+      if (k === 25) {
+        tableHtml += '<td><a href="' + row[k] + '" target="_blank">' + row[k] + '</a></td>';
+      } else {
         tableHtml += '<td>' + row[k] + '</td>';
-      
+      }
     }
     tableHtml += '</tr>';
   }

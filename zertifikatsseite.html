@@ -86,19 +86,39 @@
         </div>
         -->
 
-        <!-- Kommende Regularien 
+        <!-- Branche -->
         <div class="filter-input">
-          <label for="dropdown-filter-kommend">Derzeitige oder kommende Regularien:</label>
+          <label for="dropdown-filter-branche">Branche:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus ob du nach bereits in Kraft getretennen Regularien oder nach noch kommenden Regularien suchen möchtest. Wenn du diesen Filter frei lässt werden beide Arten angezeigt.</div>
-              <select id="dropdown-filter-kommend">
-                <option value="Alle">Alle</option>
-                <option value="In Kraft">In Kraft</option>
-                <option value="Kommend">Kommend</option>
+            <span class="tooltiptext">Wähle aus, in welcher Branche dein Unternehmen aktiv ist. </div>
+              <select id="dropdown-filter-branche">
+                <option value="Alle Branchen">Alle Branchen</option>
+                <option value="Automotive, Bahn, Luftfahrt">Automotive, Bahn, Luftfahrt</option>
+                <option value="Dienstleistungssektor">Dienstleistungssektor</option>
+                <option value="Gesundheitswesen">Gesundheitswesen</option>
+                <option value="Handel, Export und Logistik">Handel, Export und Logistik</option>
+                <option value="Kosmetik und Haushaltsprodukte">Kosmetik und Haushaltsprodukte</option>
+                <option value="Lebens- und Futermittel">Lebens- und Futermittel</option>
+                <option value="Medizinproduktehersteller">Medizinproduktehersteller</option>
+                <option value="Metall- und Elektroindustrie">Metall- und Elektroindustrie</option>
               </select>
         </div>
--->
+
+        <!-- Branche -->
+        <div class="filter-input">
+          <label for="dropdown-filter-rolle">Branchenrolle:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, welche Rolle dein Unternehmen in seiner Branche einnimmt. </div>
+              <select id="dropdown-filter-rolle">
+                <option value="Alle Rollen">Alle Rollen</option>
+                <option value="Dienstleister">Dienstleister</option>
+                <option value="Zulieferer">Zulieferer</option>
+                <option value="OEM">OEM</option>
+              </select>
+        </div>
+
         <br><br>
       
         <!-- Form 
@@ -334,8 +354,8 @@
       </div>
     </div>
     <div>
-      <button >Filter anwenden</button>
-      <button onclick="resetFilters()">Filter zurücksetzen</button>
+      <button onclick="applyFilterZ()">Filter anwenden</button>
+      <button onclick="resetFiltersZ()">Filter zurücksetzen</button>
     </div>
   </div>
 

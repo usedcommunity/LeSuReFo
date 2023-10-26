@@ -216,12 +216,13 @@
       border-right: 1px solid #000000;
     }
 
-/*
-    td:nth-child(3) {
-      max-width: 120px;
-      word-wrap: break-word;
-    }
 
+    td:nth-child(26) {
+      word-wrap: break-word;
+      max-width: 80px;
+      font-size: 8px;
+    }
+/*
     td:nth-child(5) {
       word-wrap: break-word;
       max-width: 220px;
@@ -240,18 +241,39 @@
       max-width: 120px;
       font-size: 8px;
     }  
-
-    td:nth-child(4) {
+*/
+    td:nth-child(1) {
       display: none;
     }
-    th:nth-child(4) {
+    th:nth-child(1) {
       display: none;
     }    
     
-    td:nth-child(6) {
+    td:nth-child(5) {
       display: none;
     }
-    th:nth-child(6) {
+    th:nth-child(5) {
+      display: none;
+    }
+
+    td:nth-child(7) {
+      display: none;
+    }
+    th:nth-child(7) {
+      display: none;
+    }
+
+    td:nth-child(8) {
+      display: none;
+    }
+    th:nth-child(8) {
+      display: none;
+    }
+
+    td:nth-child(9) {
+      display: none;
+    }
+    th:nth-child(9) {
       display: none;
     }
 
@@ -280,6 +302,13 @@
       display: none;
     }
     th:nth-child(13) {
+      display: none;
+    }
+
+    td:nth-child(14) {
+      display: none;
+    }
+    th:nth-child(14) {
       display: none;
     }
 
@@ -325,66 +354,10 @@
       display: none;
     }
 
-    td:nth-child(21) {
-      display: none;
-    }
-    th:nth-child(21) {
-      display: none;
-    }
-
     td:nth-child(22) {
       display: none;
     }
     th:nth-child(22) {
-      display: none;
-    }
-
-    td:nth-child(23) {
-      display: none;
-    }
-    th:nth-child(23) {
-      display: none;
-    }
-
-    td:nth-child(24) {
-      display: none;
-    }
-    th:nth-child(24) {
-      display: none;
-    }
-
-    td:nth-child(25) {
-      display: none;
-    }
-    th:nth-child(25) {
-      display: none;
-    }
-
-    td:nth-child(26) {
-      display: none;
-    }
-    th:nth-child(26) {
-      display: none;
-    }
-
-    td:nth-child(27) {
-      display: none;
-    }
-    th:nth-child(27) {
-      display: none;
-    }
-
-    td:nth-child(28) {
-      display: none;
-    }
-    th:nth-child(28) {
-      display: none;
-    }
-
-    td:nth-child(29) {
-      display: none;
-    }
-    th:nth-child(29) {
       display: none;
     }
 
@@ -476,7 +449,7 @@
     th:nth-child(42) {
       display: none;
     }
-*/
+    
     .future {
       background-color: rgb(255, 214, 138);
     }
