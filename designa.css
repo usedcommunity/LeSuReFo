@@ -242,26 +242,6 @@
       font-size: 8px;
     }  
 */
-    td:nth-child(1) {
-      display: none;
-    }
-    th:nth-child(1) {
-      display: none;
-    }    
-    
-    td:nth-child(5) {
-      display: none;
-    }
-    th:nth-child(5) {
-      display: none;
-    }
-
-    td:nth-child(7) {
-      display: none;
-    }
-    th:nth-child(7) {
-      display: none;
-    }
 
     td:nth-child(8) {
       display: none;

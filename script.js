@@ -231,7 +231,52 @@ function applyFilterZ() {
   }
   }
 
+  function applyFilterA() {
 
+    var dropdownFilterArt = document.getElementById('dropdown-filter-art');
+    var selectedValueArt = dropdownFilterArt.value;
+  
+    var dropdownFilterDimension = document.getElementById('dropdown-filter-dimension');
+    var selectedValueDimension = dropdownFilterDimension.value;
+    
+    //var dropdownFilterThemen = document.getElementById('dropdown-filter-themen');
+   // var selectedValueThemen = dropdownFilterThemen.value;
+  
+   // var dropdownFilterPLZ = document.getElementById('dropdown-filter-plz');
+    //var selectedValuePLZ = dropdownFilterPLZ.value;
+
+    var table = document.getElementById('excel-table');
+    var rows = table.getElementsByTagName('tr');
+  
+    for (var i = 1; i < rows.length; i++) { // Starte bei Index 1, um die Kopfzeile zu überspringen
+    var row = rows[i];
+    var cells = row.getElementsByTagName('td');
+  
+    var showRow = false;
+
+    if (selectedValueArt === "Alle" ) {
+      showRow = true;
+    }
+    if (selectedValueArt === "Unternehmen" && cells[1].textContent.trim() === "Unternehmensanforderung") {
+      showRow = true;
+    }
+    if (selectedValueArt === "Produkt" && cells[1].textContent.trim() === "Produktsystem Anforderung") {
+      showRow = true;
+    }
+    if (selectedValueDimension === "Sozial" && cells[4].textContent.trim() != "Sozial") {
+      showRow = false;
+    }
+    if (selectedValueDimension === "Ökonomisch" && cells[4].textContent.trim() != "Ökonomisch") {
+      showRow = false;
+    }
+    if (selectedValueDimension === "Ökologisch" && cells[4].textContent.trim() != "Ökologisch") {
+      showRow = false;
+    }
+  
+    row.style.display = showRow ? '' : 'none';
+    
+    }
+    }
 
 // filter zurücksetz button 
 function resetFilters() {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>used-Gesetzesfinder</title>
+  <title>used-Allgemeine Nachhaltigkeitsanforderungsliste</title>
 
   <link href="designa.css" rel="stylesheet">
 
@@ -26,14 +26,14 @@
 <body>
   <h1>
     <a href=https://used.community target="_blank"><img class="logo-t-1" src="USED_logo__rgb_weiss_ot.png" alt="Logo"></a>
-    - Zertifikatsfinder (**under construction**)
+    - Allgemeine Nachhaltigkeitsanforderungsliste (**under construction**)
   </h1>
 
   <div class="card1">
     <div class=text>
-    <p>Der <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Zertifikatsfinder zeigt Dir ganz einfach und schnell welche Zertifikate zum Thema Nachhaltigkeit für dein Unternehmen relevant sind. Nutze den Filter oder die Direktsuche innerhalb der Tabelle.</p>
+    <p>Die <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Allgemeine Nachhaltigkeitsanforderungsliste zeigt Dir welche Anforderungen du an dein Unternehmen und deine Produkte stellen kannst, um sie nachhaltiger zu gestalten. Über 400 Anforderungen wurden aus verschiedenen Quellen erarbeitet und stehen für dich bereit. Nutze die Filter- oder Suchfunktion, um einen besseren Überblick zu erhalten.</p>
     <p>Alle eingegebenen Daten werden Anonymisiert für die Forschung innerhalb der Community verwendet. Es kann nicht auf einzelne Personen oder Unternehmen rückgeschlossen werden.</p>
-    <p>Der Zertifikatsfindern wird durch die <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Community mit großer Sorgfalt erstellt und Aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden.</p>
+    <p>Die Anforderungsliste wird durch die <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Community mit großer Sorgfalt erstellt und Aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden. PS: Das umsetzen einzelner Nachhaltigkeitsanforderungen muss nicht zwangsläufig zu Nachhaltigeren Lösungen führen. Wir arbeiten bereitz daran Anforderungen auch in Abhänigkeit zu betrachten </p>
     </div>
     <div class="button-container">
       <a class="button-link" href=https://used.community target="_blank">
@@ -51,9 +51,7 @@
   <div class="card">
 
     <h2>Filter</h2>
-    <p>Setze die Filter, so dass sie den Attributen deines Unternehmens entsprechen. <br> Die Auswahlmöglichkeiten wurden in Abhänigkeit der Zertifikate erarbeitet.</p>
-    
-    
+     
     <div class="filter">
     
       <div>
@@ -88,54 +86,68 @@
 
         <!-- Branche -->
         <div class="filter-input">
-          <label for="dropdown-filter-branche">Branche:</label>
+          <label for="dropdown-filter-art">Art der Anforderung:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, in welcher Branche dein Unternehmen aktiv ist. </div>
-              <select id="dropdown-filter-branche">
-                <option value="Alle Branchen">Alle Branchen</option>
-                <option value="Automotive, Bahn, Luftfahrt">Automotive, Bahn, Luftfahrt</option>
-                <option value="Dienstleistungssektor">Dienstleistungssektor</option>
-                <option value="Gesundheitswesen">Gesundheitswesen</option>
-                <option value="Handel, Export und Logistik">Handel, Export und Logistik</option>
-                <option value="Kosmetik und Haushaltsprodukte">Kosmetik und Haushaltsprodukte</option>
-                <option value="Lebens- und Futermittel">Lebens- und Futermittel</option>
-                <option value="Medizinproduktehersteller">Medizinproduktehersteller</option>
-                <option value="Metall- und Elektroindustrie">Metall- und Elektroindustrie</option>
+            <span class="tooltiptext">Wähle aus, ob Du Anforderungen an dein Unternehmen oder an deine Produkte suchen möchtest. </div>
+              <select id="dropdown-filter-art">
+                <option value="Alle">Alle</option>
+                <option value="Unternehmen">Unternehmen</option>
+                <option value="Produkt">Produkt</option>
               </select>
         </div>
 
         <!-- Branche -->
         <div class="filter-input">
-          <label for="dropdown-filter-rolle">Branchenrolle:</label>
+          <label for="dropdown-filter-dimension">Nachhaltigkeitsdimension:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, welche Rolle dein Unternehmen in seiner Branche einnimmt. </div>
-              <select id="dropdown-filter-rolle">
-                <option value="Alle Rollen">Alle Rollen</option>
-                <option value="Dienstleister">Dienstleister</option>
-                <option value="Zulieferer">Zulieferer</option>
-                <option value="OEM">OEM</option>
+            <span class="tooltiptext">Wähle aus, ob Du Ökologische, Soziale oder Ökonomische Anforderungen sehen willst. </div>
+              <select id="dropdown-filter-dimension">
+                <option value="Alle">Alle</option>
+                <option value="Ökologisch">Ökologisch</option>
+                <option value="Sozial">Sozial</option>
+                <option value="Ökonomisch">Ökonomisch</option>
               </select>
         </div>
 
-        <br><br>
-      
-        <!-- Form 
+        <!-- Form -->
         <div class="filter-input">
-          <label for="dropdown-filter-form">Geselschaftsform:</label>
+          <label for="dropdown-filter-themen">Themenbereich:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gebe an welche Geselschaftsform dein Unternehmen besitzt. Bisher kann nur zwischen Kapitalgeselschaft und allen Anderen Geselschaftsformen gewählt werden.</span>
+            <span class="tooltiptext">Wir haben die Anforderungen nach verschiedennen Themen bereichen geordnet. Gebe an ob Du nach einem bestimmten Themenbreich suchen möchtest.</span>
           </div>
-          <select class="filter0" id="dropdown-filter-form">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Kapitalgeselschaft">Kapitalgeselschaft</option>
-            <option value="Andere">Andere (keine KG)</option>
- 
+          <select class="filter0" id="dropdown-filter-themen">
+            <option value="Alle">Alle</option>
+            <option value="Bildung">Bildung</option>
+            <option value="Branchenspezifisch">Branchenspezifisch</option>
+            <option value="Design">Design</option>
+            <option value="Energie">Energie</option>
+            <option value="Entsorgung">Entsorgung</option>
+            <option value="Funktion">Funktion</option>
+            <option value="Gesundheit">Gesundheit</option>
+            <option value="Gleichstellung">Gleichstellung</option>
+            <option value="Kommunikation">Kommunikation</option>
+            <option value="Lebensdauer">Lebensdauer</option>
+            <option value="Material/Ressource">Material/Ressource</option>
+            <option value="Partnerschaften">Partnerschaften</option>
+            <option value="Recht">Recht</option>
+            <option value="Service">Service</option>
+            <option value="Sicherheit">Sicherheit</option>
+            <option value="Technologie">Technologie</option>
+            <option value="Übergeordnet">Übergeordnet</option>
+            <option value="Unsozial">Unsozial</option>
+            <option value="Verpackung">Verpackung</option>
+            <option value="Wettbewerb">Wettbewerb</option>
+            <option value="Ziele">Ziele</option>
+          
           </select>
         </div>
--->
+        <br><br>
+      
+        
+
 
         <!-- Sitz 
         <div class="filter-input">
