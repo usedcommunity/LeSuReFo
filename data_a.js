@@ -9,6 +9,8 @@ function loadTableZ() {
   var jsonData = [
     // JSON-Daten hier einfügen
    
+    
+    
       [
         "Kommentar",
         "ID",
@@ -2730,6 +2732,7 @@ function loadTableZ() {
         "",
         "x"
       ]
+    
   ];
 
   var tableHtml = '<thead><tr>';
@@ -2759,7 +2762,7 @@ function loadTableZ() {
   tableElement.innerHTML = tableHtml;
   tableData = jsonData; // Speichere die Tabellendaten
 
-  /*const currentDate = new Date();
+  const currentDate = new Date();
   $('tr').each(function() {
   const cellDate = new Date($(this).find('td:nth-child(11)').text());
   if (cellDate > currentDate) {
@@ -2784,5 +2787,4 @@ function loadTableZ() {
       $(this).addClass('law');
     }
     });
-    */
 }

@@ -268,6 +268,14 @@ function resetFiltersZ() {
   applyFilterZ();
 }
 
+// filter zurücksetz button Anforderungen
+function resetFiltersA() {
+
+  document.getElementById('dropdown-filter-branche').value = 'Alle Branchen';
+
+  
+  applyFilterZ();
+}
 
 //Abhier Community Filter
 /*
@@ -337,7 +345,7 @@ function removeComFilter() {
 // Email für CONTACT Button
 function openEmail() {
   var emailAddress = 'contact@used.community';
-  var subject = 'Gesetzes- und Zertifikatsfinder';
+  var subject = 'Nachhaltigkeitsanforderungen';
   var body = '';
 
   var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress) +
@@ -369,7 +377,7 @@ function toggleColumn(index) {
   visibleColumns[index] = !visibleColumns[index];
 }
 
-// Excel Datei downloaden mit info sheet
+// GESETZE Excel Datei downloaden mit info sheet
 document.getElementById("exportButton").addEventListener("click", function () {
   const table = document.getElementById("excel-table");
 
@@ -436,6 +444,112 @@ document.getElementById("exportButton").addEventListener("click", function () {
   }, 100);
 });
 
+// ZERTIFIKATE Excel Datei downloaden mit info sheet
+document.getElementById("exportButtonZ").addEventListener("click", function () {
+  const table = document.getElementById("excel-table");
+
+  // Erstellen Sie eine Kopie der Tabelle und behalten Sie nur die Tabellenköpfe und Zellen für die Spalten 1, 2 und 3.
+  const clonedTable = table.cloneNode(true);
+
+  const rows = clonedTable.getElementsByTagName("tr");
+  for (let i = 0; i < rows.length; i++) {
+      const cells = rows[i].getElementsByTagName("td");
+      for (let j = cells.length - 1; j >= 0; j--) {
+          if (j !== 0 && j !== 1 && j !== 2 ) {
+              rows[i].removeChild(cells[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
+          }
+      }
+      const heads = rows[i].getElementsByTagName("th");
+      for (let j = heads.length - 1; j >= 0; j--) {
+          if (j !== 0 && j !== 1 && j !== 2 ) {
+              rows[i].removeChild(heads[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
+          }
+      }
+  }
+
+  const wb = XLSX.utils.table_to_book(clonedTable, { sheet: "Tabelle" });
+
+  const infoSheet = XLSX.utils.aoa_to_sheet([
+    ["Filterinformationen:"],    
+    ["Branche:", document.getElementById('dropdown-filter-branche').value],
+    ["Rolle:", document.getElementById('dropdown-filter-rolle').value],
+  ]);
+
+  // Füge das infoSheet zur Arbeitsmappe hinzu
+  XLSX.utils.book_append_sheet(wb, infoSheet, "Filterinfo");
+
+  const wbout = XLSX.write(wb, { bookType: "xlsx", type: "binary" });
+  const blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+
+  const url = URL.createObjectURL(blob);
+
+  // Erstellen Sie einen unsichtbaren Link und klicken Sie auf ihn, um den Download auszulösen.
+  const a = document.createElement("a");
+  a.style.display = "none";
+  a.href = url;
+  a.download = "used-Community Zertifikatstabelle.xlsx";
+  document.body.appendChild(a);
+  a.click();
+
+  setTimeout(function () {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+  }, 100);
+});
+
+// ANFORDERUNGEN Excel Datei downloaden mit info sheet
+document.getElementById("exportButtonA").addEventListener("click", function () {
+  const table = document.getElementById("excel-table");
+
+  // Erstellen Sie eine Kopie der Tabelle und behalten Sie nur die Tabellenköpfe und Zellen für die Spalten 1, 2 und 3.
+  const clonedTable = table.cloneNode(true);
+
+  const rows = clonedTable.getElementsByTagName("tr");
+  for (let i = 0; i < rows.length; i++) {
+      const cells = rows[i].getElementsByTagName("td");
+      for (let j = cells.length - 1; j >= 0; j--) {
+          if (j !== 0 && j !== 1 && j !== 2) {
+              rows[i].removeChild(cells[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
+          }
+      }
+      const heads = rows[i].getElementsByTagName("th");
+      for (let j = heads.length - 1; j >= 0; j--) {
+          if (j !== 0 && j !== 1 && j !== 2) {
+              rows[i].removeChild(heads[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
+          }
+      }
+  }
+
+  const wb = XLSX.utils.table_to_book(clonedTable, { sheet: "Tabelle" });
+
+  const infoSheet = XLSX.utils.aoa_to_sheet([
+    ["Filterinformationen:"],    
+    ["Derzeitige oder kommende Regularien:", document.getElementById('dropdown-filter-kommend').value],
+
+  ]);
+
+  // Füge das infoSheet zur Arbeitsmappe hinzu
+  XLSX.utils.book_append_sheet(wb, infoSheet, "Filterinfo");
+
+  const wbout = XLSX.write(wb, { bookType: "xlsx", type: "binary" });
+  const blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+
+  const url = URL.createObjectURL(blob);
+
+  // Erstellen Sie einen unsichtbaren Link und klicken Sie auf ihn, um den Download auszulösen.
+  const a = document.createElement("a");
+  a.style.display = "none";
+  a.href = url;
+  a.download = "used-Community Anforderungstabelle.xlsx";
+  document.body.appendChild(a);
+  a.click();
+
+  setTimeout(function () {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+  }, 100);
+});
+
 // Funktion zum Konvertieren des binären Datenstroms in eine herunterladbare Datei
 function s2ab(s) {
   const buf = new ArrayBuffer(s.length);
@@ -493,8 +607,73 @@ function downloadPDF() {
 }
 
 
+function downloadPDFZ() {
+  // Erstelle ein jsPDF-Objekt mit DIN A4-Größe (595.28 x 841.89 Punkte)
+  var pdf = new jsPDF('1', 'pt', [1683.78, 1190.56]);
+
+  // Füge eine Überschrift hinzu
+  var titleText = "used-Community Zertifikatstabelle";
+  pdf.setFontSize(26);
+  pdf.text(titleText, 50, 80);
+
+  var filterInfo = "Filterinformationen:\n\n";
+  filterInfo += "Branche: " + document.getElementById('dropdown-filter-branche').value + "\n";
+  filterInfo += "Rolle: " + document.getElementById('dropdown-filter-rolle').value + "\n";
 
 
+  pdf.setFontSize(18);
+  // Füge Filterinformationen hinzu
+  pdf.text(filterInfo, 50, 140);
+
+  // Anpassung der Position der Tabelle nach rechts und unten
+  var tableX = 50; // X-Position
+  var tableY = 520; // Y-Position
+
+  // Verkleinere die Tabelle
+  var table = document.getElementById('excel-table');
+
+  // Fügen Sie die verkleinerte Tabelle zur PDF-Datei hinzu
+  pdf.html(table, {
+    callback: function (pdf) {
+      pdf.save('used-Community Zertifikatstabelle.pdf');
+    },
+    x: tableX,
+    y: tableY
+  });
+}
+
+function downloadPDFA() {
+  // Erstelle ein jsPDF-Objekt mit DIN A4-Größe (595.28 x 841.89 Punkte)
+  var pdf = new jsPDF('1', 'pt', [1683.78, 1190.56]);
+
+  // Füge eine Überschrift hinzu
+  var titleText = "used-Community Anforderungstabelle";
+  pdf.setFontSize(26);
+  pdf.text(titleText, 50, 80);
+
+  var filterInfo = "Filterinformationen:\n\n";
+  filterInfo += "Derzeitige oder kommende Regularien: " + document.getElementById('dropdown-filter-kommend').value + "\n";
+
+  pdf.setFontSize(18);
+  // Füge Filterinformationen hinzu
+  pdf.text(filterInfo, 50, 140);
+
+  // Anpassung der Position der Tabelle nach rechts und unten
+  var tableX = 50; // X-Position
+  var tableY = 520; // Y-Position
+
+  // Verkleinere die Tabelle
+  var table = document.getElementById('excel-table');
+
+  // Fügen Sie die verkleinerte Tabelle zur PDF-Datei hinzu
+  pdf.html(table, {
+    callback: function (pdf) {
+      pdf.save('used-Community Anforderungstabelle.pdf');
+    },
+    x: tableX,
+    y: tableY
+  });
+}
 
 
 
