@@ -613,6 +613,8 @@ function s2ab(s) {
   return buf;
 }
 
+
+// Gesetze PDF
 function downloadPDF() {
   // Erstelle ein jsPDF-Objekt mit DIN A4-Größe (595.28 x 841.89 Punkte)
   var pdf = new jsPDF('1', 'pt', [1683.78, 1190.56]);
@@ -661,7 +663,7 @@ function downloadPDF() {
   });
 }
 
-
+// Zertifikate PDF
 function downloadPDFZ() {
   // Erstelle ein jsPDF-Objekt mit DIN A4-Größe (595.28 x 841.89 Punkte)
   var pdf = new jsPDF('1', 'pt', [1683.78, 1190.56]);
@@ -697,6 +699,8 @@ function downloadPDFZ() {
   });
 }
 
+
+// Anforderung PDF
 function downloadPDFA() {
   // Erstelle ein jsPDF-Objekt mit DIN A4-Größe (595.28 x 841.89 Punkte)
   var pdf = new jsPDF('1', 'pt', [1683.78, 1190.56]);
@@ -707,7 +711,10 @@ function downloadPDFA() {
   pdf.text(titleText, 50, 80);
 
   var filterInfo = "Filterinformationen:\n\n";
-  filterInfo += "Derzeitige oder kommende Regularien: " + document.getElementById('dropdown-filter-kommend').value + "\n";
+  filterInfo += "Art der Anforderung: " + document.getElementById('dropdown-filter-art').value + "\n";
+  filterInfo += "Nachhaltigkeitsdimension: " + document.getElementById('dropdown-filter-dimension').value + "\n";
+  filterInfo += "Themenbereich: " + document.getElementById('dropdown-filter-themen').value + "\n";
+  filterInfo += "Unternehmensbereich und PLZ-Phasen: " + document.getElementById('dropdown-filter-plz').value + "\n";
 
   pdf.setFontSize(18);
   // Füge Filterinformationen hinzu
