@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>used-Gesetzesfinder</title>
+
+  <link href="designz.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.7.4/dist/jspdf.plugin.autotable.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script><!-- html2canvas 1.0.0-alpha.11 or higher version is needed --> 
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.6/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.153/pdf.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/tableexport@5.2.0/dist/js/tableexport.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+  
+</head>
+
+<body>
+  <h1>
+    <a href=https://used.community target="_blank"><img class="logo-t-1" src="USED_logo__rgb_weiss_ot.png" alt="Logo"></a>
+    - Zertifikatsfinder (**under construction**)
+  </h1>
+
+  <div class="card1">
+    <div class=text>
+    <p>Der <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Zertifikatsfinder zeigt Dir ganz einfach und schnell welche Zertifikate zum Thema Nachhaltigkeit für dein Unternehmen relevant sind. Nutze den Filter oder die Direktsuche innerhalb der Tabelle.</p>
+    <p>Alle eingegebenen Daten werden Anonymisiert für die Forschung innerhalb der Community verwendet. Es kann nicht auf einzelne Personen oder Unternehmen rückgeschlossen werden.</p>
+    <p>Der Zertifikatsfindern wird durch die <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Community mit großer Sorgfalt erstellt und Aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden.</p>
+    </div>
+    <div class="button-container">
+      <a class="button-link" href=https://used.community target="_blank">
+        <img src="USED_logo__rgb_ot.png" alt="Bild 1">
+      </a>
+      <a class="button-link" onclick="openEmail()">CONTACT
+        
+      </a>
+      <a class="button-link" href=https://github.com/usedcommunity target="_blank">
+        <img src="github-mark.png" alt="Bild 2">
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <h2>Filter</h2>
+    <p>Setze die Filter, so dass sie den Attributen deines Unternehmens entsprechen. <br> Die Auswahlmöglichkeiten wurden in Abhänigkeit der Zertifikate erarbeitet.</p>
+    
+    
+    <div class="filter">
+    
+      <div>
+
+        <!-- Branche -->
+        <div class="filter-input">
+          <label for="dropdown-filter-branche">Branche:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, in welcher Branche dein Unternehmen aktiv ist. </div>
+              <select class="filter0" id="dropdown-filter-branche">
+                <option value="Alle Branchen">Alle Branchen</option>
+                <option value="Automotive, Bahn, Luftfahrt">Automotive, Bahn, Luftfahrt</option>
+                <option value="Dienstleistungssektor">Dienstleistungssektor</option>
+                <option value="Gesundheitswesen">Gesundheitswesen</option>
+                <option value="Handel, Export und Logistik">Handel, Export und Logistik</option>
+                <option value="Kosmetik und Haushaltsprodukte">Kosmetik und Haushaltsprodukte</option>
+                <option value="Lebens- und Futermittel">Lebens- und Futermittel</option>
+                <option value="Medizinproduktehersteller">Medizinproduktehersteller</option>
+                <option value="Metall- und Elektroindustrie">Metall- und Elektroindustrie</option>
+              </select>
+        </div>
+
+        <!-- Branche -->
+        <div class="filter-input">
+          <label for="dropdown-filter-rolle">Branchenrolle:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, welche Rolle dein Unternehmen in seiner Branche einnimmt. </div>
+              <select class="filter1" id="dropdown-filter-rolle">
+                <option value="Alle Rollen">Alle Rollen</option>
+                <option value="Dienstleister">Dienstleister</option>
+                <option value="Zulieferer">Zulieferer</option>
+                <option value="OEM">OEM</option>
+              </select>
+        </div>
+
+        <br><br>
+      
+        <!-- Form 
+        <div class="filter-input">
+          <label for="dropdown-filter-form">Geselschaftsform:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an welche Geselschaftsform dein Unternehmen besitzt. Bisher kann nur zwischen Kapitalgeselschaft und allen Anderen Geselschaftsformen gewählt werden.</span>
+          </div>
+          <select class="filter0" id="dropdown-filter-form">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Kapitalgeselschaft">Kapitalgeselschaft</option>
+            <option value="Andere">Andere (keine KG)</option>
+ 
+          </select>
+        </div>
+-->
+
+        <!-- Sitz 
+        <div class="filter-input">
+          <label for="dropdown-filter-sitz">Sitz oder Niderlassung:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus in welchem Land sich der Sitz oder eine Niederlassung deines Unternehmens befindet.</span>
+          </div>
+          <select class="filter1" id="dropdown-filter-sitz">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ausland">außerhalb Deutschlands</option>
+            <option value="Deutschland">Deutschland</option>
+          </select>
+        </div>
+-->
+        <!-- MA 
+        <div class="filter-input">
+          <label for="dropdown-filter-ma">Anzahl der Mitarbeiter:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus wie viele Mitarbeiter in deinem Unternehmen arbeiten. <p></p>
+              Leiharbeiter werden meistens ab einer Beschäftigung von 6 Monaten berücksichtigt. Mitarbeiter von Konzernangehörigen Gesellschaften müssen ebenfalls berücksichtigt werden.
+              </span>
+          </div>
+          <select class="filter2" id="dropdown-filter-ma">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="0-249">0-249</option>
+            <option value="250-999">250-999</option>
+            <option value="1000-2999">1000-2999</option>
+            <option value=">2999">>2999</option>
+          </select>
+        </div>
+-->
+        <!-- Umsatz in Mio.€ 
+        <div class="filter-input">
+          <label for="dropdown-filter-umsatz">Umsatz in Mio.€:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus wie viel Umsatz dein Unternehmen innerhalb eines Jahres macht. (in Mio. €)</span>
+          </div>
+          <select class="filter3" id="dropdown-filter-umsatz">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Unter 20">Unter 20</option>
+            <option value="20-39">20-39</option>
+            <option value="40-59">40-59</option>
+            <option value="Ab 60">Ab 60</option>
+          </select>
+        </div>
+-->
+        <!-- Gesamtvermögen in Mio.€ 
+        <div class="filter-input">
+          <label for="dropdown-filter-vermögen">Gesamtvermögen in Mio.€:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Bitte wähle hier das Gesamtvermögen der Unternehmung aus. <p></p>
+              Du möchtest dein Gesamtvermögen nicht angeben? Kein Problem! Lass diesen Filter aus und dir werden Ergebnisse unabhängig vom Gesamtvermögen angezeigt. 
+              </span>
+          </div>
+          <select class="filter4" id="dropdown-filter-vermögen">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Unter 20">Unter 20</option>
+            <option value="20-39">20-39</option>
+            <option value="Ab 40">Ab 40</option>
+
+          </select>
+        </div>
+-->
+
+      
+      </div>
+
+      <div class="filter-container">
+<!--        
+            Bereitstellung von Produkten  
+        <div class="filter-input">
+          <label for="dropdown-filter-produkt">Bereitstellung von Produkten:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Bitte wähle aus, ob dein Unternehmen Produkte auf dem Markt bereitstellt.
+              </span>
+          </div>            
+          <select class="filter5" id="dropdown-filter-produkt">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Elektrische Produkte 
+        <div class="filter-input">
+          <label for="dropdown-filter-elektro">Elektrische Produkte:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Elektrische Produkte vertreibt.</span>
+          </div>
+          <select class="filter6" id="dropdown-filter-elektro">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Energieverbrauchsrelevante Produkte 
+        <div class="filter-input">
+          <label for="dropdown-filter-energie">Energieverbrauchsrelevante Produkte:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Energieverbrauchsrelevante Produkte vertreibt. Energieverbrauchsrelevante Produkte sind Produkte, die einen direkten oder indirekten Einfluss auf den Energieverbrauch haben. Sie können entweder Energie erzeugen, übertragen, speichern oder verbrauchen. HIER findest du eine Liste auf welche Produkte dies zutrifft.</span>
+          </div>
+          <select class="filter7" id="dropdown-filter-energie">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Batterien  
+        <div class="filter-input">
+          <label for="dropdown-filter-batterien">Verwendung von Batterien:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Batterien herstellt, importiert, nutzt oder vertreibt.</span>
+          </div>
+          <select class="filter8" id="dropdown-filter-batterien">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Chemikalien  
+        <div class="filter-input">
+          <label for="dropdown-filter-chemikalien">Verwendung von Chemikalien:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Cemikalien herstellt, verwendet, importiert, lagert oder vertreibt.</span>
+          </div>
+          <select class="filter9" id="dropdown-filter-chemikalien">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Einwegplatik  
+        <div class="filter-input">
+          <label for="dropdown-filter-plastik">Produkte aus Einwegkunststoff:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Produkte aus Einwegkunststoff herstellt, importiert oder vertreibt. Einwegkunststoffprodukt (aus Einwegkunststofffondsgesetz - EWKFondsG): ein ganz oder teilweise aus Kunststoff bestehendes Produkt, das nicht konzipiert, entwickelt und in Verkehr gebracht wird, um während seiner Lebensdauer mehrere Produktkreisläufe zu durchlaufen, indem es zur Wiederbefüllung an einen Hersteller oder Vertreiber zurückgegeben wird oder zu demselben Zweck wiederverwendet wird, zu dem es hergestellt worden ist;</span>
+          </div>
+          <select class="filter10" id="dropdown-filter-plastik">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Verpackung 
+        <div class="filter-input">
+          <label for="dropdown-filter-verpackung">Verwendung von Verpackung:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen Verpackungen jeglicher Art verwendet die im Müll landen.</span>
+          </div>
+          <select class="filter11" id="dropdown-filter-verpackung">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Abfall 
+        <div class="filter-input">
+          <label for="dropdown-filter-abfall">Aufkommen von Abfällen:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen für das Aufkommen von Abfällen verantortlich ist oder ob es mit Abfällen arbeitet.</span>
+          </div>
+          <select class="filter12" id="dropdown-filter-abfall">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Digitale Dienste und Plattformen 
+        <div class="filter-input">
+          <label for="dropdown-filter-digi">Verwaltung von Digitalen Diensten:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen Digitaledienste oder Plattformen verwaltet.</span>
+          </div>
+          <select class="filter13" id="dropdown-filter-digi">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+        <!-- Verarbeitung von Personen bezogennen Daten 
+        <div class="filter-input">
+          <label for="dropdown-filter-data">Verarbeitung von Personendaten:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Gebe an, ob dein Unternehmen Personen Bezogene Daten verarbeitet.</span>
+          </div>
+          <select class="filter14" id="dropdown-filter-data">
+            <option value="keine Auswahl">keine Auswahl</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+          </select>
+        </div>
+-->
+
+      </div>
+    </div>
+    <div>
+      <button onclick="applyFilterZ()">Filter anwenden</button>
+      <button onclick="resetFiltersZ()">Filter zurücksetzen</button>
+    </div>
+  </div>
+
+
+  <!--
+    <div class="card">
+
+    <h2>Community Filter</h2>
+    <div class="communityfilter">
+      <div id="tagInputContainer">
+        <div class="filter-input">
+          <label>Schlagwortsuche:</label>
+          <div class="tooltip">
+            <span class="question-mark">&#63;</span>
+            <span class="tooltiptext">Suche nach Schlagwörtern. Du kannst auch mehrere gleichzeitig auswählen. Klicke auf die ausgewählten Schlagworte um sie wieder abzuwählen.</span>
+          </div>
+          </div>
+        <input type="text" id="tagInput" placeholder="Schlagwort hinzufügen">
+        <div class="tag-list" id="tagList">
+          <div class="tag-list-item">Akkreditierung</div>
+          <div class="tag-list-item">Bericht</div>
+          <div class="tag-list-item">Datenschutz</div>
+          <div class="tag-list-item">Freiwillig</div>
+          <div class="tag-list-item">Industriestandard</div>
+          <div class="tag-list-item">Kennzeichnung</div>
+          <div class="tag-list-item">Kreislauffähigkeit</div>
+          <div class="tag-list-item">Lieferkette</div>
+          <div class="tag-list-item">Meldewesen</div>
+          <div class="tag-list-item">Ökodesign</div>
+          <div class="tag-list-item">Produktentwicklung</div>
+          <div class="tag-list-item">Produktgestaltung</div>
+          <div class="tag-list-item">Produktsicherheit</div>
+          <div class="tag-list-item">Strategie</div>
+          <div class="tag-list-item">Verpackung</div>
+          <div class="tag-list-item">Versand</div>
+          <div class="tag-list-item">Zielsystem</div>
+          
+        </div>
+      </div>
+    </div>
+      <div class="selected-tags" id="selectedTags"></div>
+    
+
+    <div>
+      <button class="button-abstand" id="filterButton">Communityfilter anwenden</button>
+      <button onclick="removeComFilter()">Communityfilter zurücksetzen</button>
+    </div>
+  </div>
+-->
+
+  <div class="card">
+    <h2>Download</h2>
+    <button id="exportButtonZ">Excel herunterladen</button>
+    <button onclick="downloadPDFZ()">PDF herunterladen</button>
+
+  </div>
+
+  <div id="downloadtest" class="card">
+    <h2>Tabelle</h2>
+    <p>In dieser Tabelle siehst Du die Zertifikate zum Thema Nachhaltigkeit.</p>
+    <input type="text" id="search-input" oninput="searchTable()" placeholder="Suche...">
+    <table id="excel-table">
+      <!-- Tabelle wird hier dynamisch generiert -->
+    </table>
+  </div>
+
+  <script src="dataz.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

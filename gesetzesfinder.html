@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>used-Gesetzesfinder</title>
 
-  <link href="designz.css" rel="stylesheet">
+  <link href="design.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -26,14 +26,14 @@
 <body>
   <h1>
     <a href=https://used.community target="_blank"><img class="logo-t-1" src="USED_logo__rgb_weiss_ot.png" alt="Logo"></a>
-    - Zertifikatsfinder (**under construction**)
+    - Gesetzesfinder (**under construction**)
   </h1>
 
   <div class="card1">
     <div class=text>
-    <p>Der <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Zertifikatsfinder zeigt Dir ganz einfach und schnell welche Zertifikate zum Thema Nachhaltigkeit für dein Unternehmen relevant sind. Nutze den Filter oder die Direktsuche innerhalb der Tabelle.</p>
+    <p>Der <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Gesetzesfinder zeigt Dir ganz einfach und schnell welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden. Neben den Gesetzen können auch die aus ihnen resultierenden Anforderungen angezeit werden. Nutze den Filter oder die Direktsuche innerhalb der Tabelle.</p>
     <p>Alle eingegebenen Daten werden Anonymisiert für die Forschung innerhalb der Community verwendet. Es kann nicht auf einzelne Personen oder Unternehmen rückgeschlossen werden.</p>
-    <p>Der Zertifikatsfindern wird durch die <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Community mit großer Sorgfalt erstellt und Aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden.</p>
+    <p>Der Gesetzesfindern wird durch die <a href=https://used.community target="_blank"><img class="logo-t-2" src="USED_logo__rgb_ot.png" alt="Logo"></a>-Community mit großer Sorgfalt erstellt und Aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden.</p>
     </div>
     <div class="button-container">
       <a class="button-link" href=https://used.community target="_blank">
@@ -51,14 +51,10 @@
   <div class="card">
 
     <h2>Filter</h2>
-    <p>Setze die Filter, so dass sie den Attributen deines Unternehmens entsprechen. <br> Die Auswahlmöglichkeiten wurden in Abhänigkeit der Zertifikate erarbeitet.</p>
-    
-    
+    <p>Setze die Filter, so dass sie den Attributen deines Unternehmens entsprechen. <br> Die Auswahlmöglichkeiten wurden in Abhänigkeit der Gesetze erarbeitet.</p>
     <div class="filter">
     
       <div>
-
-        <!--
         <div class="checkbox-container">
           <lable>Geltungsbereich der Gesetze:</lable>
           <div class="tooltip">
@@ -84,44 +80,24 @@
           <label for="checkbox-5">Lösungsorientierte <br>Anforderungen</label>
           <input type="checkbox" id="checkbox-5" checked>
         </div>
-        -->
 
-        <!-- Branche -->
+        <!-- Kommende Regularien -->
         <div class="filter-input">
-          <label for="dropdown-filter-branche">Branche:</label>
+          <label for="dropdown-filter-kommend">Derzeitige oder kommende Regularien:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, in welcher Branche dein Unternehmen aktiv ist. </div>
-              <select id="dropdown-filter-branche">
-                <option value="Alle Branchen">Alle Branchen</option>
-                <option value="Automotive, Bahn, Luftfahrt">Automotive, Bahn, Luftfahrt</option>
-                <option value="Dienstleistungssektor">Dienstleistungssektor</option>
-                <option value="Gesundheitswesen">Gesundheitswesen</option>
-                <option value="Handel, Export und Logistik">Handel, Export und Logistik</option>
-                <option value="Kosmetik und Haushaltsprodukte">Kosmetik und Haushaltsprodukte</option>
-                <option value="Lebens- und Futermittel">Lebens- und Futermittel</option>
-                <option value="Medizinproduktehersteller">Medizinproduktehersteller</option>
-                <option value="Metall- und Elektroindustrie">Metall- und Elektroindustrie</option>
-              </select>
+            <span class="tooltiptext">Wähle aus ob du nach bereits in Kraft getretennen Regularien oder nach noch kommenden Regularien suchen möchtest. Wenn du diesen Filter frei lässt werden beide Arten angezeigt.</div>
+              <select id="dropdown-filter-kommend">
+            <option value="Alle">Alle</option>
+            <option value="In Kraft">In Kraft</option>
+            <option value="Kommend">Kommend</option>
+            <!-- Weitere Optionen hinzufügen -->
+          </select>
         </div>
-
-        <!-- Branche -->
-        <div class="filter-input">
-          <label for="dropdown-filter-rolle">Branchenrolle:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, welche Rolle dein Unternehmen in seiner Branche einnimmt. </div>
-              <select id="dropdown-filter-rolle">
-                <option value="Alle Rollen">Alle Rollen</option>
-                <option value="Dienstleister">Dienstleister</option>
-                <option value="Zulieferer">Zulieferer</option>
-                <option value="OEM">OEM</option>
-              </select>
-        </div>
-
+      
         <br><br>
       
-        <!-- Form 
+        <!-- Form -->
         <div class="filter-input">
           <label for="dropdown-filter-form">Geselschaftsform:</label>
           <div class="tooltip">
@@ -132,12 +108,12 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Kapitalgeselschaft">Kapitalgeselschaft</option>
             <option value="Andere">Andere (keine KG)</option>
- 
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
 
-        <!-- Sitz 
+
+        <!-- Sitz -->
         <div class="filter-input">
           <label for="dropdown-filter-sitz">Sitz oder Niderlassung:</label>
           <div class="tooltip">
@@ -148,10 +124,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ausland">außerhalb Deutschlands</option>
             <option value="Deutschland">Deutschland</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- MA 
+
+        <!-- MA -->
         <div class="filter-input">
           <label for="dropdown-filter-ma">Anzahl der Mitarbeiter:</label>
           <div class="tooltip">
@@ -166,10 +143,11 @@
             <option value="250-999">250-999</option>
             <option value="1000-2999">1000-2999</option>
             <option value=">2999">>2999</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Umsatz in Mio.€ 
+
+        <!-- Umsatz in Mio.€ -->
         <div class="filter-input">
           <label for="dropdown-filter-umsatz">Umsatz in Mio.€:</label>
           <div class="tooltip">
@@ -182,10 +160,11 @@
             <option value="20-39">20-39</option>
             <option value="40-59">40-59</option>
             <option value="Ab 60">Ab 60</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Gesamtvermögen in Mio.€ 
+
+        <!-- Gesamtvermögen in Mio.€ -->
         <div class="filter-input">
           <label for="dropdown-filter-vermögen">Gesamtvermögen in Mio.€:</label>
           <div class="tooltip">
@@ -199,17 +178,13 @@
             <option value="Unter 20">Unter 20</option>
             <option value="20-39">20-39</option>
             <option value="Ab 40">Ab 40</option>
-
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-
-      
       </div>
 
       <div class="filter-container">
-<!--        
-            Bereitstellung von Produkten  
+        <!-- Bereitstellung von Produkten  -->
         <div class="filter-input">
           <label for="dropdown-filter-produkt">Bereitstellung von Produkten:</label>
           <div class="tooltip">
@@ -221,10 +196,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+              <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Elektrische Produkte 
+
+        <!-- Elektrische Produkte -->
         <div class="filter-input">
           <label for="dropdown-filter-elektro">Elektrische Produkte:</label>
           <div class="tooltip">
@@ -235,10 +211,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Energieverbrauchsrelevante Produkte 
+
+        <!-- Energieverbrauchsrelevante Produkte -->
         <div class="filter-input">
           <label for="dropdown-filter-energie">Energieverbrauchsrelevante Produkte:</label>
           <div class="tooltip">
@@ -249,10 +226,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Batterien  
+
+        <!-- Batterien  -->
         <div class="filter-input">
           <label for="dropdown-filter-batterien">Verwendung von Batterien:</label>
           <div class="tooltip">
@@ -263,10 +241,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Chemikalien  
+
+        <!-- Chemikalien  -->
         <div class="filter-input">
           <label for="dropdown-filter-chemikalien">Verwendung von Chemikalien:</label>
           <div class="tooltip">
@@ -277,10 +256,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Einwegplatik  
+
+        <!-- Einwegplatik  -->
         <div class="filter-input">
           <label for="dropdown-filter-plastik">Produkte aus Einwegkunststoff:</label>
           <div class="tooltip">
@@ -291,10 +271,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Verpackung 
+
+        <!-- Verpackung -->
         <div class="filter-input">
           <label for="dropdown-filter-verpackung">Verwendung von Verpackung:</label>
           <div class="tooltip">
@@ -305,10 +286,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Abfall 
+
+        <!-- Abfall -->
         <div class="filter-input">
           <label for="dropdown-filter-abfall">Aufkommen von Abfällen:</label>
           <div class="tooltip">
@@ -319,10 +301,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Digitale Dienste und Plattformen 
+
+        <!-- Digitale Dienste und Plattformen -->
         <div class="filter-input">
           <label for="dropdown-filter-digi">Verwaltung von Digitalen Diensten:</label>
           <div class="tooltip">
@@ -333,10 +316,11 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
-        <!-- Verarbeitung von Personen bezogennen Daten 
+
+        <!-- Verarbeitung von Personen bezogennen Daten -->
         <div class="filter-input">
           <label for="dropdown-filter-data">Verarbeitung von Personendaten:</label>
           <div class="tooltip">
@@ -347,15 +331,16 @@
             <option value="keine Auswahl">keine Auswahl</option>
             <option value="Ja">Ja</option>
             <option value="Nein">Nein</option>
+            <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
--->
+
 
       </div>
     </div>
     <div>
-      <button onclick="applyFilterZ()">Filter anwenden</button>
-      <button onclick="resetFiltersZ()">Filter zurücksetzen</button>
+      <button >Filter anwenden</button>
+      <button onclick="resetFilters()">Filter zurücksetzen</button>
     </div>
   </div>
 
@@ -408,21 +393,21 @@
 
   <div class="card">
     <h2>Download</h2>
-    <button id="exportButtonZ">Excel herunterladen</button>
-    <button onclick="downloadPDFZ()">PDF herunterladen</button>
+    <button id="exportButton">Excel herunterladen</button>
+    <button onclick="downloadPDF()">PDF herunterladen</button>
 
   </div>
 
   <div id="downloadtest" class="card">
     <h2>Tabelle</h2>
-    <p>In dieser Tabelle siehst Du die Zertifikate zum Thema Nachhaltigkeit.</p>
+    <p>In dieser Tabelle siehst Du die Gesetze zum Thema Nachhaltigkeit. Zu den Gesetzen haben wir für Dich Anforderungen und Lösungsorientierte Anforderungen interpretiert. Lösungsorientierte Anforderungen zeigen dabei wie Dinge umgesetzt werden können. Diese werden unterhalb der einzelnen Gesetze dargestellt. An Hand der Spalten „nid“ und „Gegenstand“ kannst Du die Zuordnung nachvollziehen.</p>
     <input type="text" id="search-input" oninput="searchTable()" placeholder="Suche...">
     <table id="excel-table">
       <!-- Tabelle wird hier dynamisch generiert -->
     </table>
   </div>
 
-  <script src="dataz.js"></script>
+  <script src="data.js"></script>
   <script src="script.js"></script>
 
 </body>

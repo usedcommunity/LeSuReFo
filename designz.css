@@ -126,52 +126,13 @@
     .filter-input {
       margin-bottom: 10px;
     }
-/*    .filter0 {
-      margin-left: 115px;
+    .filter0 {
+      margin-left: 35px;
     }
     .filter1 {
-      margin-left: 44px;
+      margin-left: 117px;
     }
-    .filter2 {
-      margin-left: 107px;
-    }
-    .filter3 {
-      margin-left: 148px;
-    }
-    .filter4 {
-      margin-left: 75px;
-    }
-    .filter5 {
-      margin-left: 85px;
-    }
-    .filter6 {
-      margin-left: 142px;
-    }
-    .filter7 {
-      margin-left: 20px;
-    }
-    .filter8 {
-      margin-left: 101px;
-    }
-    .filter9 {
-      margin-left: 77px;
-    }
-    .filter10 {
-      margin-left: 69px;
-    }
-    .filter11 {
-      margin-left: 80px;
-    }
-    .filter12 {
-      margin-left: 111px;
-    }
-    .filter13 {
-      margin-left: 44px;
-    }
-    .filter14 {
-      margin-left: 53px;
-    }
-*/
+
     input[type="text"] {
       padding: 6px 10px;
       border: 1px solid #ddd;

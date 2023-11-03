@@ -239,11 +239,11 @@ function applyFilterZ() {
     var dropdownFilterDimension = document.getElementById('dropdown-filter-dimension');
     var selectedValueDimension = dropdownFilterDimension.value;
     
-    //var dropdownFilterThemen = document.getElementById('dropdown-filter-themen');
-   // var selectedValueThemen = dropdownFilterThemen.value;
+    var dropdownFilterThemen = document.getElementById('dropdown-filter-themen');
+    var selectedValueThemen = dropdownFilterThemen.value;
   
-   // var dropdownFilterPLZ = document.getElementById('dropdown-filter-plz');
-    //var selectedValuePLZ = dropdownFilterPLZ.value;
+    var dropdownFilterPLZ = document.getElementById('dropdown-filter-plz');
+    var selectedValuePLZ = dropdownFilterPLZ.value;
 
     var table = document.getElementById('excel-table');
     var rows = table.getElementsByTagName('tr');
@@ -272,11 +272,19 @@ function applyFilterZ() {
     if (selectedValueDimension === "Ökologisch" && cells[4].textContent.trim() != "Ökologisch") {
       showRow = false;
     }
-  
+
+    if (selectedValueThemen != "Alle" && selectedValueThemen != cells[5].textContent.trim() ) {
+      showRow = false;
+    }
+
+    if (selectedValuePLZ != "Alle" && selectedValuePLZ != cells[6].textContent.trim() ) {
+      showRow = false;
+    }
+
     row.style.display = showRow ? '' : 'none';
     
     }
-    }
+  }
 
 // filter zurücksetz button 
 function resetFilters() {
@@ -308,7 +316,7 @@ function resetFilters() {
 function resetFiltersZ() {
 
   document.getElementById('dropdown-filter-branche').value = 'Alle Branchen';
-
+  document.getElementById('dropdown-filter-rolle').value = 'Alle Rollen';
   
   applyFilterZ();
 }
@@ -316,9 +324,11 @@ function resetFiltersZ() {
 // filter zurücksetz button Anforderungen
 function resetFiltersA() {
 
-  document.getElementById('dropdown-filter-branche').value = 'Alle Branchen';
+  document.getElementById('dropdown-filter-dimension').value = 'Alle';
+  document.getElementById('dropdown-filter-art').value = 'Alle';
+  document.getElementById('dropdown-filter-themen').value = 'Alle';
+  document.getElementById('dropdown-filter-plz').value = 'Alle';
 
-  
   applyFilterZ();
 }
 
