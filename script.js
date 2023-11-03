@@ -499,8 +499,13 @@ document.getElementById("exportButton").addEventListener("click", function () {
   }, 100);
 });
 
+
+function toggleColumn(index) {
+  visibleColumns[index] = !visibleColumns[index];
+}
+
 // ZERTIFIKATE Excel Datei downloaden mit info sheet
-document.getElementById("exportButtonZ").addEventListener("click", function () {
+function downloadEXCELZ() {
   const table = document.getElementById("excel-table");
 
   // Erstellen Sie eine Kopie der Tabelle und behalten Sie nur die Tabellenköpfe und Zellen für die Spalten 1, 2 und 3.
@@ -510,13 +515,13 @@ document.getElementById("exportButtonZ").addEventListener("click", function () {
   for (let i = 0; i < rows.length; i++) {
       const cells = rows[i].getElementsByTagName("td");
       for (let j = cells.length - 1; j >= 0; j--) {
-          if (j !== 0 && j !== 1 && j !== 2 ) {
+          if (j !== 1 && j !== 2 && j !== 3 && j !== 4) {
               rows[i].removeChild(cells[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
           }
       }
       const heads = rows[i].getElementsByTagName("th");
       for (let j = heads.length - 1; j >= 0; j--) {
-          if (j !== 0 && j !== 1 && j !== 2 ) {
+          if (j !== 1 && j !== 2 && j !== 3 && j !== 4) {
               rows[i].removeChild(heads[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
           }
       }
@@ -527,7 +532,7 @@ document.getElementById("exportButtonZ").addEventListener("click", function () {
   const infoSheet = XLSX.utils.aoa_to_sheet([
     ["Filterinformationen:"],    
     ["Branche:", document.getElementById('dropdown-filter-branche').value],
-    ["Rolle:", document.getElementById('dropdown-filter-rolle').value],
+    ["Rolle:", document.getElementById('dropdown-filter-rolle').value]
   ]);
 
   // Füge das infoSheet zur Arbeitsmappe hinzu
@@ -550,10 +555,11 @@ document.getElementById("exportButtonZ").addEventListener("click", function () {
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
   }, 100);
-});
+}
+
 
 // ANFORDERUNGEN Excel Datei downloaden mit info sheet
-document.getElementById("exportButtonA").addEventListener("click", function () {
+function downloadEXCELA() {
   const table = document.getElementById("excel-table");
 
   // Erstellen Sie eine Kopie der Tabelle und behalten Sie nur die Tabellenköpfe und Zellen für die Spalten 1, 2 und 3.
@@ -563,13 +569,13 @@ document.getElementById("exportButtonA").addEventListener("click", function () {
   for (let i = 0; i < rows.length; i++) {
       const cells = rows[i].getElementsByTagName("td");
       for (let j = cells.length - 1; j >= 0; j--) {
-          if (j !== 0 && j !== 1 && j !== 2) {
+          if (j !== 0 && j !== 1 && j !== 2 && j !== 3 && j !== 4 && j !== 5 && j !== 6) {
               rows[i].removeChild(cells[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
           }
       }
       const heads = rows[i].getElementsByTagName("th");
       for (let j = heads.length - 1; j >= 0; j--) {
-          if (j !== 0 && j !== 1 && j !== 2) {
+          if (j !== 0 && j !== 1 && j !== 2 && j !== 3 && j !== 4 && j !== 5 && j !== 6) {
               rows[i].removeChild(heads[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
           }
       }
@@ -579,7 +585,10 @@ document.getElementById("exportButtonA").addEventListener("click", function () {
 
   const infoSheet = XLSX.utils.aoa_to_sheet([
     ["Filterinformationen:"],    
-    ["Derzeitige oder kommende Regularien:", document.getElementById('dropdown-filter-kommend').value],
+    ["Art der Anforderung:", document.getElementById('dropdown-filter-art').value],
+    ["Nachhaltigkeitsdimension:", document.getElementById('dropdown-filter-dimension').value],
+    ["Themenbereich:", document.getElementById('dropdown-filter-themen').value],
+    ["Unternehmensbereich und PLZ-Phasen:", document.getElementById('dropdown-filter-plz').value]
 
   ]);
 
@@ -603,7 +612,7 @@ document.getElementById("exportButtonA").addEventListener("click", function () {
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
   }, 100);
-});
+}
 
 // Funktion zum Konvertieren des binären Datenstroms in eine herunterladbare Datei
 function s2ab(s) {
@@ -660,6 +669,7 @@ function downloadPDF() {
     },
     x: tableX,
     y: tableY
+    
   });
 }
 
@@ -684,7 +694,7 @@ function downloadPDFZ() {
 
   // Anpassung der Position der Tabelle nach rechts und unten
   var tableX = 50; // X-Position
-  var tableY = 520; // Y-Position
+  var tableY = 220; // Y-Position
 
   // Verkleinere die Tabelle
   var table = document.getElementById('excel-table');
@@ -722,7 +732,7 @@ function downloadPDFA() {
 
   // Anpassung der Position der Tabelle nach rechts und unten
   var tableX = 50; // X-Position
-  var tableY = 520; // Y-Position
+  var tableY = 320; // Y-Position
 
   // Verkleinere die Tabelle
   var table = document.getElementById('excel-table');

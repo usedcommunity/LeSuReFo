@@ -181,10 +181,12 @@
     select {
       margin-left: 15px
     }
+
     table {
-      width: 70%;
+      width: 80%;
       border-collapse: collapse;
       margin-top: 10px;
+
     }
 
     th, td {
