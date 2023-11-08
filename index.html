@@ -25,17 +25,29 @@
             background-color: hwb(0 93% 7%);
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 18px;
             text-align: center;
             animation: slideIn 1s ease;
             width: 80%;
-            max-width: 900px;
             margin-bottom: 20px;
         }
+
+        .cardT {
+            background-color: hwb(0 93% 7% / 0.203);
+            border-radius: 2px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 18px;
+            text-align: center;
+            animation: slideIn 1s ease;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        
         .card h1 {
             font-size: 24px;
             margin-bottom: 10px;
             color: rgb(0, 0, 0);
+            margin-top: 0px;
         }
         .card p {
             font-size: 16px;
@@ -56,7 +68,7 @@
         .button {
             display: inline-block;
             font-size: 13px;
-            padding: 10px 10px;
+            padding: 5px 5px;
             background-color: hsl(210, 5%, 92%);
             color: rgb(0, 0, 0);
             border-color: rgb(30, 71, 89);
@@ -69,15 +81,52 @@
             position: relative;
             transition: background-color 0.3s ease, color 0.3s ease;
             text-decoration: none;
+            font-weight: 600;
+            height: 17px;
+            width: 70px; 
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool {
+
+            font-size: 13px;
+            padding: 5px 7px;
+            background-color: hsl(209, 100%, 90%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: rgb(138, 140, 142);
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 3px;
+
+            margin-right: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
             font-weight: 000;
             min-height: 150px;
             min-width: 205px;
             text-align: justify;
+            align-items: center;
+            justify-content: center;
+            
         }
 
         h3 {
             text-align: center;
             font-size: 13px;
+        }
+
+        .impress {
+            color: rgb(255, 255, 255)
+
+        }
+
+        .margin {
+            margin-left: 20px;
+            margin-top: 10px;
         }
 
         .button:before {
@@ -138,23 +187,44 @@
 </head>
 <body>
     <div class="card-container">
+        <div class="cardT">
         <a href=https://used.community target="_blank"><img class="logo" src="USED_logo__rgb_weiss.png" alt="Logo"></a>
+        </div>
+
+        <div class="card">
+            <h1>Die Community</h1>
+            <p>Used ist eine gemeinnützige Open-Source-Community von intrinsisch motivierten Entwicklern, Designern, Ingenieuren, Forschern und Bürgern der Welt. Wir glauben, dass Nachhaltigkeit eines der zentralen Themen unserer Zeit ist. Unser Ziel ist es, die Lebensgrundlagen zukünftiger Generationen unter sozialen Bedingungen zu sichern. In einer globalen Konsumgesellschaft ist unsere Idee, dass Produktdesign ein vielversprechender Ausgangspunkt für eine nachhaltige Entwicklung ist.</p>
+            <p>Möchtest du Teil dieser nachhaltigen Gemeinschaft werden?</p>
+            <a class="button" href="">Sign In</a>
+            <a class="button" href="">Login</a>
+        </div>
+
         <div class="card">
             <h1>Unsere Tools</h1>
             <p>Du interessierst dich für Nachhaltigkeit und möchtest einen Überblick darüber gewinnen, welche Nachhaltigkeitsanforderungen an dein Unternehmen sowie deine Produkte gestellt werden können? Dann machen es dir die folgenden drei Tool der used.Community einfach:</p>
             <div class="button-container">
-                <a class="button" href="gesetzesfinder.html"><h3>Gesetzesfinder</h3>
-                    Schau dir an, welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden, und verschaffe dir einen Überblick über die resultierenden Anforderungen.</a>
-                <a class="button" href="anforderungsliste.html"><h3>Nachhaltigkeitsanforderungsliste</h3>
-                    Du möchtest mehr umsetzen, als es Gesetze vorschreiben, oder bist einfach auf der Suche nach Inspiration? Dann durchstöbere unsere Anforderungsliste, die mehr als 400 nachhaltige Möglichkeiten für dich bereithält.</a>
-                <a class="button" href="zertifikatsfinder.html"><h3>Zertifikatsfinder</h3>
-                    Zeige der Welt, wie nachhaltig du bist, und erhalte nebenbei die Chance, mit deiner Nachhaltigkeit zu werben. Mit unserem Zertifikatsfinder findest du die Zertifikate, die für dein Unternehmen infrage kommen.</a>
+                <div class="tool"><h3>Gesetzesfinder</h3>
+                    Schau dir an, welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden, und verschaffe dir einen Überblick über die resultierenden Anforderungen.
+                    <br>
+                    <a class="button margin" href="gesetzesfinder.html">Los Gehts!</a>
+                </div>
+                <div class="tool" ><h3>Nachhaltigkeitsanforderungsliste</h3>
+                    Du möchtest mehr umsetzen, als es Gesetze vorschreiben, oder bist einfach auf der Suche nach Inspiration? Dann durchstöbere unsere Anforderungsliste, die mehr als 400 nachhaltige Möglichkeiten für dich bereithält.
+                    <br>
+                    <a class="button margin" href="anforderungsliste.html">Los Gehts!</a>
+                </div>
+                <div class="tool" ><h3>Zertifikatsfinder</h3>
+                    Zeige der Welt, wie nachhaltig du bist, und erhalte nebenbei die Chance, mit deiner Nachhaltigkeit zu werben. Mit unserem Zertifikatsfinder findest du die Zertifikate, die für dein Unternehmen infrage kommen.
+                    <br>
+                    <a class="button margin" href="zertifikatsfinder.html">Los Gehts!</a>
+                </div>
             </div>
         </div>
         <div class="sb-Container">
             <a class="share-button" id="shareButton1" href=https://used.community target="_blank"><img src="USED_logo__rgb_ot.png" alt="Bild 1"></a>
             <a class="share-button" id="shareButton2" href=https://github.com/usedcommunity target="_blank"><img src="github-mark.png" alt="Bild 2"></a>
         </div>
+        <p class="impress">© used.community</p>
     </div>
     <script>
     </script>
