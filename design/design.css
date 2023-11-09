@@ -2,7 +2,6 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background-image: url(bg.jpg);
   background-size: cover;
@@ -13,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
 }
 .card {
   background-color: hwb(0 93% 7%);
@@ -21,8 +21,8 @@ body {
   padding: 18px;
   text-align: center;
   animation: slideIn 1s ease;
-  width: 80%;
   margin-bottom: 20px;
+  width: 97%;
 }
 
 .cardT {
@@ -32,7 +32,7 @@ body {
   padding: 0px;
   text-align: center;
   animation: slideIn 1s ease;
-  width: 82%;
+  width: 100%;
   margin-bottom: 0px;
 }
 
@@ -43,7 +43,7 @@ body {
   padding: 0px;
   text-align: center;
   animation: slideIn 1s ease;
-  width: 82%;
+  width: 100%;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -66,7 +66,11 @@ body {
 }
 
 .menu-box a:hover {
-  background-color: rgba(255, 255, 255, 0.7); /* Helleres Weiß beim Hovern über das Menü */
+  background-color: rgba(255, 255, 255, 0.538); /* Helleres Weiß beim Hovern über das Menü */
+}
+
+.aktuell {
+  background-color: rgba(255, 255, 255, 0.538);
 }
 
 .card h1 {
@@ -83,7 +87,8 @@ body {
 }
 .logo {
   max-width: 420px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 .button-container {
   display: flex;
