@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klickbare Links in Tabelle</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a3d62; /* Dunkelblauer Hintergrund */
+      color: #fff; /* Weiße Schriftfarbe */
+      display: flex;
+      flex-direction: column;
+      height: 100vh; /* Setze die Höhe auf 100% der Viewport-Höhe */
+    }
 
-        table, th, td {
-            border: 1px solid black;
-        }
+    .header {
+      background-color: rgba(255, 255, 255, 0.7); /* Transparentes Weiß für die Box */
+      padding: 20px;
+      text-align: center;
+      width: 70%; /* Die Box erstreckt sich über 70% der Breite */
+      margin: auto; /* Zentriere die Box horizontal und vertikal */
+      display: flex;
+      flex-direction: column; /* Ändere die Flexbox-Ausrichtung auf Spalten */
+    }
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+    .logo {
+      width: 100px; /* Passe die Breite deines Logos an */
+      height: auto;
+      margin: 0 auto; /* Zentriere das Logo horizontal */
+    }
 
-        a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
+    .menu {
+      display: flex;
+      justify-content: space-between; /* Ändere space-around zu space-between */
+      margin-top: 20px; /* Setze den oberen Abstand auf 20px */
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #333; /* Dunklere Schriftfarbe */
+      padding: 10px;
+      transition: background-color 0.3s ease;
+      flex-grow: 1; /* Fülle den verfügbaren Platz gleichmäßig auf */
+      text-align: center; /* Zentriere den Text im Button */
+    }
+
+    .menu a:hover {
+      background-color: rgba(255, 255, 255, 0.7); /* Helleres Weiß beim Hovern über das Menü */
+    }
+
+    .menu a:not(:last-child) {
+      border-right: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
 
-<script>
-    // Beispiel JSON-Daten
-    var jsonData = {
-        "links": [
-            {"url": "https://www.example.com", "description": "Beispielwebsite"},
-            {"url": "https://www.example2.com", "description": "Weitere Beispielwebsite"}
-        ]
-    };
+  <div class="header">
+    <div class="logo">
+      <!-- Hier dein Firmenlogo einfügen -->
+      <img src="dein-logo.png" alt="Firmenlogo">
+    </div>
 
-    // Escape-Funktion für URLs
-    function escapeUrl(url) {
-        return url.replace(/\//g, "%2F");
-    }
-
-    // HTML-Tabelle erstellen
-    var tableHtml = "<table><tr><th>Link</th><th>Beschreibung</th></tr>";
-
-    jsonData.links.forEach(function(link) {
-        tableHtml += "<tr><td><a href='" + escapeUrl(link.url) + "' target='_blank'>" + link.url + "</a></td><td>" + link.description + "</td></tr>";
-    });
-
-    tableHtml += "</table>";
-
-    // Tabelle in das HTML-Dokument einfügen
-    document.body.innerHTML = tableHtml;
-</script>
+    <div class="menu">
+      <a href="#">Menüpunkt 1</a>
+      <a href="#">Menüpunkt 2</a>
+      <a href="#">Menüpunkt 3</a>
+      <a href="#">Menüpunkt 4</a>
+      <a href="#">Menüpunkt 5</a>
+    </div>
+  </div>
 
 </body>
 </html>
+
