@@ -31,7 +31,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   padding: 0px;
   text-align: center;
-  animation: slideIn 1s ease;
+
   width: 100%;
   margin-bottom: 0px;
 }
@@ -42,7 +42,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   padding: 0px;
   text-align: center;
-  animation: slideIn 1s ease;
+
   width: 100%;
   margin-bottom: 20px;
   display: flex;
@@ -120,6 +120,10 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.bild3 {
+  max-width: 30%;
+}
+
 .tool {
 
   font-size: 13px;
@@ -140,6 +144,10 @@ body {
   align-items: center;
   justify-content: center;
   
+}
+
+h2 {
+  font-size: 18px;
 }
 
 h3 {
@@ -204,7 +212,7 @@ h3 {
 
 @keyframes slideIn {
   from {
-      transform: translateY(-100%);
+      transform: translateY(100%);
   }
   to {
       transform: translateY(0);
