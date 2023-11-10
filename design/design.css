@@ -22,18 +22,17 @@ body {
   text-align: center;
   animation: slideIn 1s ease;
   margin-bottom: 20px;
-  width: 97%;
+  width: 100%;
 }
 
 .cardT {
   background-color: hwb(0 93% 7% / 0.203);
   border-radius: 2px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  padding: 0px;
+  padding: 18px;
   text-align: center;
-
   width: 100%;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 .menu-box {
@@ -42,7 +41,6 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   padding: 0px;
   text-align: center;
-
   width: 100%;
   margin-bottom: 20px;
   display: flex;
@@ -87,8 +85,8 @@ body {
 }
 .logo {
   max-width: 420px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 .button-container {
   display: flex;
