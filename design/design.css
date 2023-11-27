@@ -26,9 +26,9 @@ body {
 }
 
 .cardT {
-  background-color: hwb(0 93% 7% / 0.203);
+  background-color: hwb(0 93% 7% / 0);
   border-radius: 2px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+ /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
   padding: 18px;
   text-align: center;
   width: 100%;
@@ -181,7 +181,7 @@ h3 {
   width: 50px;
   height: 50px;
   background-color: #c5cafe;
-  color: white;
+  color: #575b8e;
   border: none;
   display: flex;
   justify-content: center;
@@ -189,6 +189,8 @@ h3 {
   border: 1px solid #434343;
   border-radius: 5px;
   text-align: center;
+  font-size: 9px;
+  font-weight: 900;
   text-decoration: none;
   cursor: pointer;
 }
