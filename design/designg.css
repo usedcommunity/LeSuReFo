@@ -223,6 +223,11 @@
       max-width: 450px;
     }
 
+    td:nth-child(8) {
+      min-width: 70px;
+      max-width: 300px;
+    }
+
     td:nth-child(9) {
       word-wrap: break-word;
       max-width: 120px;

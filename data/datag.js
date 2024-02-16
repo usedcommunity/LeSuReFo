@@ -8,7 +8,7 @@ window.onload = function() {
 function loadTable() {
   var jsonData = [
     // JSON-Daten hier einfügen
-        [
+      [
         "nid",
         "Gegenstand",
         "Kürzel",
@@ -57,7 +57,7 @@ function loadTable() {
         "CSR-Richtlinie-Umsetzungsgesetz",
         "Gesetz",
         "Das CSR-Richtlinie-Umsetzungsgesetz (CSR-RUG) setzt in Deutschland die eurpäische Richtlinie zur nichtfinanziellen Berichterstattung NFRD (2014/95/EU) um. Es verpflichtet große kapitalmarktorientierte Unternehmen, Kriditinstitute und Versichtungen mit größe > Mitarbeiter und > 20 Mio. Umsatz, > 20 Mio Gesamtvermögen) über Umwelt-, Sozial- und Arbeitnehmerbelange sowie zur Achtung von Menschenrechten und zur Korruptionsbekämpfung zu berichten. Es fördert Transparenz und Verantwortlichkeit in der Wirtschaft und stärkt nachhaltiges Handeln durch die Integration nicht-finanzieller Aspekte in Geschäftsberichte. Das Gesetz soll das Bewusstsein für soziale und ökologische Belange in Unternehmen schärfen.",
-        "45338",
+        "2024-02-16",
         "http://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl117s0802.pdf",
         "",
         "",
@@ -98,7 +98,7 @@ function loadTable() {
         "Non-Financial Reporting Directive (NFRD)",
         "Richtlinie",
         "Die Non-Financial Reporting Directive (NFRD) ist eine EU-Richtlinie, die große Unternehmen zur Offenlegung nicht-finanzieller Informationen verpflichtet, einschließlich Umwelt-, Sozial- und Arbeitnehmerbelange sowie Aspekte der Achtung von Menschenrechten und der Korruptionsbekämpfung. Sie fördert Transparenz und verantwortungsvolles unternehmerisches Handeln, indem sie Unternehmen dazu verpflichtet, nicht-finanzielle Aspekte in ihre Geschäftsberichte aufzunehmen. Die NFRD soll dazu beitragen, das Vertrauen der Öffentlichkeit in Unternehmen zu stärken und nachhaltiges Wirtschaften zu fördern.",
-        "45338",
+        "2024-02-16",
         "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32014L0095",
         "",
         "x",
@@ -132,7 +132,7 @@ function loadTable() {
         "."
       ],
       [
-        "1.1",
+        "1.2",
         "Interpretierte Anforderung",
         "",
         "",
