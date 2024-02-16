@@ -8,8 +8,7 @@ window.onload = function() {
 function loadTable() {
   var jsonData = [
     // JSON-Daten hier einfügen
-   
-      [
+        [
         "nid",
         "Gegenstand",
         "Kürzel",
@@ -17,7 +16,7 @@ function loadTable() {
         "Titel",
         "Art",
         "Beschreibung",
-        "forum",
+        "Letzte Prüfung",
         "Link",
         "UN",
         "EU",
@@ -44,24 +43,21 @@ function loadTable() {
         "Digitale dienste und platformen",
         "Einwegkunststoff Produkte",
         "Batterien",
-        "Cemikalien",
+        "Chemikalien",
         "Schlagwortsuche",
         "Aktueller Stand abgelegt?",
         "Erstellt am",
-        "letzte prüfung durch Community am",
-        "kuebler",
-        "bezug",
-        "Test"
+        "."
       ],
       [
         "1",
         "Gesetz",
         "CSR-RUG",
-        "2014/95/EU",
+        "",
         "CSR-Richtlinie-Umsetzungsgesetz",
         "Gesetz",
-        "Corporate Social Responsibility (CSR) Umsetzungsrichtlinie für NFRD (2014/95/EU). Große kapitalmarktorientierte Unternehmen, Kriditinstitute und Versichtungen mit größe > Mitarbeiter und > 20 Mio. Umsatz, > 20 Mio Gesamtvermögen",
-        "",
+        "Das CSR-Richtlinie-Umsetzungsgesetz (CSR-RUG) setzt in Deutschland die eurpäische Richtlinie zur nichtfinanziellen Berichterstattung NFRD (2014/95/EU) um. Es verpflichtet große kapitalmarktorientierte Unternehmen, Kriditinstitute und Versichtungen mit größe > Mitarbeiter und > 20 Mio. Umsatz, > 20 Mio Gesamtvermögen) über Umwelt-, Sozial- und Arbeitnehmerbelange sowie zur Achtung von Menschenrechten und zur Korruptionsbekämpfung zu berichten. Es fördert Transparenz und Verantwortlichkeit in der Wirtschaft und stärkt nachhaltiges Handeln durch die Integration nicht-finanzieller Aspekte in Geschäftsberichte. Das Gesetz soll das Bewusstsein für soziale und ökologische Belange in Unternehmen schärfen.",
+        "45338",
         "http://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl117s0802.pdf",
         "",
         "",
@@ -92,10 +88,89 @@ function loadTable() {
         "Bericht",
         "ja",
         "45163",
+        "."
+      ],
+      [
+        "1.1",
+        "Interpretierte Anforderung",
+        "NFRD",
+        "2014/95/EU",
+        "Non-Financial Reporting Directive (NFRD)",
+        "Richtlinie",
+        "Die Non-Financial Reporting Directive (NFRD) ist eine EU-Richtlinie, die große Unternehmen zur Offenlegung nicht-finanzieller Informationen verpflichtet, einschließlich Umwelt-, Sozial- und Arbeitnehmerbelange sowie Aspekte der Achtung von Menschenrechten und der Korruptionsbekämpfung. Sie fördert Transparenz und verantwortungsvolles unternehmerisches Handeln, indem sie Unternehmen dazu verpflichtet, nicht-finanzielle Aspekte in ihre Geschäftsberichte aufzunehmen. Die NFRD soll dazu beitragen, das Vertrauen der Öffentlichkeit in Unternehmen zu stärken und nachhaltiges Wirtschaften zu fördern.",
+        "45338",
+        "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32014L0095",
         "",
         "x",
-        "Nachhaltigkeitsbericht",
-        "x"
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "gültig",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Bericht",
+        "ja",
+        "45338",
+        "."
+      ],
+      [
+        "1.1",
+        "Interpretierte Anforderung",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "."
       ],
       [
         "2",
@@ -136,10 +211,7 @@ function loadTable() {
         "Datenschutz, Meldewesen, Bericht",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "2.1",
@@ -180,10 +252,7 @@ function loadTable() {
         "Datenschutz, Meldewesen, Bericht",
         "ja",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "3",
@@ -224,10 +293,7 @@ function loadTable() {
         "Produktentwicklung, Elektrik, Elektronik",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "3.1",
@@ -268,10 +334,7 @@ function loadTable() {
         "Produktentwicklung, Elektrik, Elektronik",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "3.2",
@@ -312,10 +375,7 @@ function loadTable() {
         "Produktentwicklung, Elektrik, Elektronik",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "4",
@@ -356,10 +416,7 @@ function loadTable() {
         "Umwelt, Managementsystem, Audit",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "4.1",
@@ -400,10 +457,7 @@ function loadTable() {
         "Umwelt, Managementsystem, Audit",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "4.2",
@@ -444,10 +498,7 @@ function loadTable() {
         "Umwelt, Managementsystem, Audit",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "4.2.1",
@@ -488,10 +539,7 @@ function loadTable() {
         "Umwelt, Managementsystem, Audit",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5",
@@ -532,10 +580,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.1",
@@ -576,10 +621,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.2",
@@ -620,10 +662,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.3",
@@ -664,10 +703,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.4",
@@ -708,10 +744,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.4.1",
@@ -752,10 +785,7 @@ function loadTable() {
         "Lieferkette, Wesentlichkeitsanalyse",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.5",
@@ -796,10 +826,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.6",
@@ -840,10 +867,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.6.1",
@@ -884,10 +908,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.6.2",
@@ -928,10 +949,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.7",
@@ -972,10 +990,7 @@ function loadTable() {
         "Lieferkette",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "5.8",
@@ -1016,10 +1031,7 @@ function loadTable() {
         "Lieferkette, Bericht, Akkreditierung",
         "ja",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "6",
@@ -1060,10 +1072,7 @@ function loadTable() {
         "Produktsicherheit, Produktentwicklung, Nutzung",
         "ja",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "6.1",
@@ -1104,10 +1113,7 @@ function loadTable() {
         "Produktsicherheit, Produktentwicklung, Nutzung",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "6.2",
@@ -1148,10 +1154,7 @@ function loadTable() {
         "Produktsicherheit, Produktentwicklung, Nutzung",
         "ja",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "6.3",
@@ -1192,10 +1195,7 @@ function loadTable() {
         "Produktsicherheit, Produktentwicklung, Nutzung, Nierspannung",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "6.4",
@@ -1236,10 +1236,7 @@ function loadTable() {
         "Produktsicherheit, Produktentwicklung, Nutzung, Spielzeug",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "7",
@@ -1280,10 +1277,7 @@ function loadTable() {
         "Kennzeichnung",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "7.1",
@@ -1324,10 +1318,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "8",
@@ -1368,10 +1359,7 @@ function loadTable() {
         "Kennzeichnung",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "8.1",
@@ -1412,10 +1400,7 @@ function loadTable() {
         "Kennzeichnung",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "8.2",
@@ -1456,10 +1441,7 @@ function loadTable() {
         "Kennzeichnung",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "8.3",
@@ -1500,10 +1482,7 @@ function loadTable() {
         "Produktentwcklung",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "9",
@@ -1544,10 +1523,7 @@ function loadTable() {
         "Ökodesign",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "9.1",
@@ -1588,10 +1564,7 @@ function loadTable() {
         "Ökodesign, Produktgestaltung, Produktentwicklung",
         "ja",
         "45163",
-        "",
-        "x",
-        "Produktgestaltung",
-        "x"
+        "."
       ],
       [
         "10",
@@ -1632,10 +1605,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "x",
-        "Kundendaten",
-        "x"
+        "."
       ],
       [
         "10.1",
@@ -1676,10 +1646,7 @@ function loadTable() {
         "Datenschutz",
         "nein",
         "45163",
-        "",
-        "x",
-        "Kundendaten",
-        "x"
+        "."
       ],
       [
         "11",
@@ -1720,10 +1687,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "11.1",
@@ -1764,10 +1728,7 @@ function loadTable() {
         "Datenschutz",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "11.2",
@@ -1808,10 +1769,7 @@ function loadTable() {
         "Datenschutz",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "12",
@@ -1852,10 +1810,7 @@ function loadTable() {
         "Zielsystem, Ökodesign",
         "nein",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "12.1",
@@ -1896,10 +1851,7 @@ function loadTable() {
         "Zielsystem, Strategie, Strategische Aus",
         "nein",
         "45163",
-        "",
-        "x",
-        "Strategische Ausrichtung",
-        "x"
+        "."
       ],
       [
         "13",
@@ -1940,10 +1892,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "13.1",
@@ -1984,10 +1933,7 @@ function loadTable() {
         "Ökodesign, Kreislauffähigkeit, Verpackung, Kennzeichnung",
         "ja",
         "45163",
-        "",
-        "x",
-        "Wegwerfartikel",
-        "x"
+        "."
       ],
       [
         "14",
@@ -2028,10 +1974,7 @@ function loadTable() {
         "Ökodesign, Kreislauffähigkeit, Verpackung, Kennzeichnung, Versand",
         "ja",
         "45163",
-        "",
-        "x",
-        "Versand",
-        "x"
+        "."
       ],
       [
         "14.1",
@@ -2072,10 +2015,7 @@ function loadTable() {
         "Ökodesign, Kreislauffähigkeit, Verpackung, Kennzeichnung, Versand",
         "",
         "45163",
-        "",
-        "x",
-        "Verpackungen",
-        "x"
+        "."
       ],
       [
         "14.2",
@@ -2116,10 +2056,7 @@ function loadTable() {
         "Ökodesign, Kreislauffähigkeit, Verpackung",
         "ja",
         "45163",
-        "",
-        "x",
-        "Verpackungen",
-        "x"
+        "."
       ],
       [
         "14.3",
@@ -2160,10 +2097,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "14.4",
@@ -2204,10 +2138,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "15",
@@ -2248,10 +2179,7 @@ function loadTable() {
         "Ökodesign, Beschaffung, Nutzung, Reyxcling, Abfall, Kreislauffähigkeit, Verpackung",
         "",
         "45163",
-        "",
-        "x",
-        "Kreislauffähigkeit und Nutzung im Fokus",
-        "x"
+        "."
       ],
       [
         "15.1",
@@ -2292,10 +2220,7 @@ function loadTable() {
         "Ökodesign, Beschaffung, Nutzung, Reyxcling, Abfall, Kreislauffähigkeit, Verpackung",
         "",
         "45163",
-        "",
-        "x",
-        "Beschaffunganforderungn",
-        "x"
+        "."
       ],
       [
         "15.2",
@@ -2336,10 +2261,7 @@ function loadTable() {
         "Ökodesign, Beschaffung, Nutzung, Reyxcling, Abfall, Kreislauffähigkeit, Verpackung",
         "",
         "45163",
-        "",
-        "x",
-        "Großes Thema bei Geschenken",
-        "x"
+        "."
       ],
       [
         "15.3",
@@ -2380,10 +2302,7 @@ function loadTable() {
         "Ökodesign, Beschaffung, Nutzung, Reyxcling, Abfall, Kreislauffähigkeit, Verpackung",
         "ja",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "16",
@@ -2424,10 +2343,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "16.1",
@@ -2468,10 +2384,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "17",
@@ -2512,10 +2425,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "17.1",
@@ -2556,10 +2466,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "18",
@@ -2600,10 +2507,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "18.1",
@@ -2644,10 +2548,7 @@ function loadTable() {
         "",
         "",
         "45163",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "18.2",
@@ -2688,10 +2589,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "18.3",
@@ -2732,10 +2630,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "18.4",
@@ -2776,10 +2671,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "18.5",
@@ -2820,10 +2712,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "18.6",
@@ -2864,10 +2753,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "19",
@@ -2908,10 +2794,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "19.1",
@@ -2952,10 +2835,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "19.2",
@@ -2996,10 +2876,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "19.3",
@@ -3040,10 +2917,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "19.4",
@@ -3084,10 +2958,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "20",
@@ -3128,10 +2999,7 @@ function loadTable() {
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "x"
+        "."
       ],
       [
         "21",
@@ -3145,7 +3013,34 @@ function loadTable() {
         "https://www.gesetze-im-internet.de/battg/BJNR158210009.html",
         "",
         "",
-        "x"
+        "x",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "."
       ]
     ];
     
