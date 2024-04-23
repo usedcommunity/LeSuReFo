@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>used-Gesetzesfinder</title>
 
-  <link href="design/designg.css" rel="stylesheet">
+  <link href="design/design.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -27,10 +27,16 @@
 
   <div class="card1">
     <div class=text>
-    <p>Der used-Gesetzesfinder gibt mit dem Schwerpunkt auf die Produktentstehung einen Überblick über bestehende und kommende Gesetze zum Thema Nachhaltigkeit.</p> 
-    <p>Aufbauend auf den Originaltexten werden restriktive und lösungsorientierte Anforderungen über die Community mit praktischem Wissen angereichert.
-    Nutze den Filter oder die Direktsuche innerhalb der Tabelle.</p>
-    <p>Der Gesetzesfinder wird von der used-Community mit großer Sorgfalt aktuell gehalten. Das Auftreten von Fehlern kann nicht ausgeschlossen werden.</p>
+      <p>Der used-Gesetzesfinder gibt Dir einen Überblick über bestehende und zukünftige Gesetze zum Thema Nachhaltigkeit mit dem Schwerpunkt auf die Produktentstehung.
+        Aufbauend auf den originalen Gesetzestexten werden restriktive und lösungsorientierte Anforderungen über die Community mit Wissen und Erfahrungen angereichert. 
+        Über einen Filter oder die Direktsuche, kannst Du die für dich relevanten Informationen einfach anzeigen lassen.
+        Die Spalten „nid“ und „Gegenstand“ grenzen Gesetze und Anforderung ab.
+        Weiterführende Informationen werden im Beschreibungstext und der heruntergeladenen Datei angezeigt. 
+        Darüberhinaus sind alle externen Quellen als Link eingefügt, welche in den Arbeitsgruppen individuell diskutiert werden können.        
+        Der Gesetzesfinder wird mit großer Sorgfalt aktuell gehalten. 
+        Das Auftreten von Fehlern kann nicht ausgeschlossen werden. Fällt Dir trotzdem etwas auf oder Du hast Ideen und Anregungen, 
+        dann melde dich gerne über den Button "Contact" oder arbeite gleich im Änderungsmanagement auf unserer GitHub-Seite mit.
+        Weiterführende Hintergründe, Bezüge zu Forschungsprojekten und Publikationen können im GitHub-Wiki nachgelesen werden.</p>
     </div>
     <div class="button-container">
       <a class="button-link" href=https://used.community target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1">
@@ -44,54 +50,23 @@
   </div>
 
   <div class="card">
-
-    <h2>Filter</h2>
-    <p>Setze die Filter so, dass sie den Attributen deines Unternehmens entsprechen. <br> Die Auswahlmöglichkeiten wurden in Abhängigkeit der Gesetze erarbeitet.</p>
     <div class="filter">
     
       <div>
-        <div class="checkbox-container">
-          <lable>Geltungsbereich der Gesetze:</lable>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Lass die Checkboxen der Länder eingeschaltet, für deren Gesetze du dich interessierst. Bisher wurden lediglich deutsche Gesetze betrachtet.
-              <br> DE = Deutschland
-            </span>
-          </div>
-          <label for="checkbox-3">DE</label>
-          <input type="checkbox" id="checkbox-3" checked>
-        </div>
-
-        <div class="checkbox-container">
-          <lable>Anzeige:</lable>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wir haben für dich bereits interpretierte und lösungsorientierte Anforderungen aus den Gesetzen erarbeitet.
-              <br>Wähle die Checkboxen ab, wenn sie dir nicht angezeigt werden sollen.
-            </span>
-          </div>
-          <label for="checkbox-4">Interpretierte <br>Anforderungen</label>
-          <input type="checkbox" id="checkbox-4" checked>
-          <label for="checkbox-5">Lösungsorientierte <br>Anforderungen</label>
-          <input type="checkbox" id="checkbox-5" checked>
-        </div>
-
         <!-- Kommende Regularien -->
         <div class="filter-input">
-          <label for="dropdown-filter-kommend">Derzeitige oder kommende Regularien:</label>
+          <label for="dropdown-filter-kommend">Gültigkeit von Regularien:</label>
           <div class="tooltip">
             <span class="question-mark">&#63;</span>
             <span class="tooltiptext">Wähle aus, ob du nach bereits in Kraft getretenen Regularien oder nach noch kommenden Regularien suchen möchtest. Wenn du diesen Filter freilässt, werden beide Arten angezeigt.</div>
-              <select id="dropdown-filter-kommend">
+          <select class="filter0" id="dropdown-filter-kommend">
             <option value="Alle">Alle</option>
-            <option value="In Kraft">In Kraft</option>
-            <option value="Kommend">Kommend</option>
+            <option value="In Kraft">Gültig</option>
+            <option value="Kommend">Geplant</option>
             <!-- Weitere Optionen hinzufügen -->
           </select>
         </div>
-      
-        <br><br>
-      
+           
         <!-- Form -->
         <div class="filter-input">
           <label for="dropdown-filter-form">Gesellschaftsform:</label>
@@ -334,71 +309,17 @@
       </div>
     </div>
     <div>
+    <p>
+    </p>
       <button >Filter anwenden</button>
       <button onclick="resetFilters()">Filter zurücksetzen</button>
+      <button id="exportButton">Gefilterte xlsx</button>
+      <a href="editors/datag.xlsx" download="editors/datag.xlsx"><button>Gesamtdatensatz xlsx</button>
+      </a>
     </div>
-  </div>
-
-
-  <!--
-    <div class="card">
-
-    <h2>Community Filter</h2>
-    <div class="communityfilter">
-      <div id="tagInputContainer">
-        <div class="filter-input">
-          <label>Schlagwortsuche:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Suche nach Schlagwörtern. Du kannst auch mehrere gleichzeitig auswählen. Klicke auf die ausgewählten Schlagworte um sie wieder abzuwählen.</span>
-          </div>
-          </div>
-        <input type="text" id="tagInput" placeholder="Schlagwort hinzufügen">
-        <div class="tag-list" id="tagList">
-          <div class="tag-list-item">Akkreditierung</div>
-          <div class="tag-list-item">Bericht</div>
-          <div class="tag-list-item">Datenschutz</div>
-          <div class="tag-list-item">Freiwillig</div>
-          <div class="tag-list-item">Industriestandard</div>
-          <div class="tag-list-item">Kennzeichnung</div>
-          <div class="tag-list-item">Kreislauffähigkeit</div>
-          <div class="tag-list-item">Lieferkette</div>
-          <div class="tag-list-item">Meldewesen</div>
-          <div class="tag-list-item">Ökodesign</div>
-          <div class="tag-list-item">Produktentwicklung</div>
-          <div class="tag-list-item">Produktgestaltung</div>
-          <div class="tag-list-item">Produktsicherheit</div>
-          <div class="tag-list-item">Strategie</div>
-          <div class="tag-list-item">Verpackung</div>
-          <div class="tag-list-item">Versand</div>
-          <div class="tag-list-item">Zielsystem</div>
-          
-        </div>
-      </div>
-    </div>
-      <div class="selected-tags" id="selectedTags"></div>
-    
-
-    <div>
-      <button class="button-abstand" id="filterButton">Communityfilter anwenden</button>
-      <button onclick="removeComFilter()">Communityfilter zurücksetzen</button>
-    </div>
-  </div>
--->
-
-  <div class="card">
-    <h2>Download</h2>
-    <button id="exportButton">Gefilterte Excel herunterladen</button>
-    <button onclick="downloadPDF()">Gefilterte PDF herunterladen</button>
-    <a href="editors/datag.xlsx" download="editors/datag.xlsx">
-      <button>Ursprüngliche Excel herunterladen</button>
-    </a>
-
   </div>
 
   <div id="downloadtest" class="card">
-    <h2>Tabelle</h2>
-    <p>In dieser Tabelle siehst du die Gesetze zum Thema Nachhaltigkeit. Zu den Gesetzen haben wir für dich Anforderungen und lösungsorientierte Anforderungen interpretiert. Lösungsorientierte Anforderungen zeigen dabei, wie Dinge umgesetzt werden können. Diese werden unterhalb der einzelnen Gesetze dargestellt. Anhand der Spalten „nid“ und „Gegenstand“ kannst du die Zuordnung nachvollziehen.</p>
     <input type="text" id="search-input" oninput="searchTable()" placeholder="Suche...">
     <table id="excel-table">
       <!-- Tabelle wird hier dynamisch generiert -->
