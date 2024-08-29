@@ -1,333 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>used-Gesetzesfinder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesetzesfinder</title>
 
-  <link href="design/design.css" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link href="design/design.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tableexport@5.2.0/dist/js/tableexport.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
-  
+    <!-- JavaScript Bibliotheken -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
 </head>
 
 <body>
-  <h1>
-    <a href=https://used.community target="_blank"><img class="logo-t-1" src="pictures/used-logo-white-sub.png" alt="Logo"></a> Gesetzesfinder
-  </h1>
 
-  <div class="card1">
-    <div class=text>
-      <p>Der used-Gesetzesfinder gibt Dir einen Überblick über bestehende und zukünftige Gesetze zum Thema Nachhaltigkeit mit dem Schwerpunkt auf die Produktentstehung.
-        Aufbauend auf den originalen Gesetzestexten werden restriktive und lösungsorientierte Anforderungen über die Community mit Wissen und Erfahrungen angereichert. 
-        Über einen Filter oder die Direktsuche, kannst Du die für dich relevanten Informationen einfach anzeigen lassen.
-        Die Spalten „nid“ und „Gegenstand“ grenzen Gesetze und Anforderung ab.
-        Weiterführende Informationen werden im Beschreibungstext und der heruntergeladenen Datei angezeigt. 
-        Darüberhinaus sind alle externen Quellen als Link eingefügt, welche in den Arbeitsgruppen individuell diskutiert werden können.        
-        Der Gesetzesfinder wird mit großer Sorgfalt aktuell gehalten. 
-        Das Auftreten von Fehlern kann nicht ausgeschlossen werden. Fällt Dir trotzdem etwas auf oder Du hast Ideen und Anregungen, 
-        dann melde dich gerne über den Button "Contact" oder arbeite gleich im Änderungsmanagement auf unserer GitHub-Seite mit.
-        Weiterführende Hintergründe, Bezüge zu Forschungsprojekten und Publikationen können im GitHub-Wiki nachgelesen werden.</p>
-    </div>
-    <div class="button-container">
-      <a class="button-link" href=https://used.community target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1">
-      </a>
-      <a class="button-link" onclick="openEmail()">CONTACT
-        
-      </a>
-      <a class="button-link" href=https://github.com/usedcommunity target="_blank"><img src="pictures/github-mark.png" alt="Bild 2">
-      </a>
-    </div>
-  </div>
+    <!-- Navigationsleiste -->
+    <div class="navbar">
+        <a href="https://www.used.community" target="_blank">
+            <img src="pictures/used-logo-white-sub.png" alt="logo">
+        </a>
 
-  <div class="card">
-    <div class="filter">
+        <h1 style="font-weight: bold; text-align: center; padding-left: 5%; flex-grow: 2;">Gesetzesfinder</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="https://github.com/usedcommunity/used/wiki/projects-&-Tools#lesurefo-mit-dem-gesetzesfinder">wiki</a></li>
+                <li><a href="#" onclick="openEmail(); return false;">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hauptinhalt -->
+    <div class="card">
+        <div class="container">
+
+            <!-- Linke Sektion: Filter und Suchfunktion -->
+            <div class="left-section">
+                <div class="tooltip">
+                    <span class="question-mark">&#63;</span>
+                    <span class="tooltiptext">
+                        <h2>Kurzinfo Gesetzesfinder</h2>
+                        <p>Die Dateneingabe ermöglicht einen schnellen Überblick über relevante Gesetze.
+                            Die Eingabe ist jedoch nicht verpflichtend, sodass die Tabelle unten 
+                            oder der vollständige Datensatz heruntergeladen und genutzt werden kann.
+                         </p>
+                         <p>
+                            Weitere Informationen zu Filtern, Buttons und Inhalten sind im Wiki (siehe Menü) zu finden.
+                         </p>
+                    </span>
+                </div>
+                
+                <div class="left-section-top">
+                    <button class="btn" id="filterButton">filter</button>
+                    <button class="btn" onclick="resetFilters()">löschen</button>
+                </div>
+         
+                <div class="left-section-mid">
+                    <input type="text" id="search-input" oninput="searchTable()" placeholder="Suche...">
+                </div>
+
+                <div class="left-section-down">
+                    <button class="btn" id="exportButton">download</button>
+                    
+                    <a href="data/datag.xlsx" download="data/datag.xlsx">
+                        <button class="btn">datensatz</button>
+                    </a>
     
-      <div>
-        <!-- Kommende Regularien -->
-        <div class="filter-input">
-          <label for="dropdown-filter-kommend">Gültigkeit von Regularien:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, ob du nach bereits in Kraft getretenen Regularien oder nach noch kommenden Regularien suchen möchtest. Wenn du diesen Filter freilässt, werden beide Arten angezeigt.</div>
-          <select class="filter0" id="dropdown-filter-kommend">
-            <option value="Alle">Alle</option>
-            <option value="In Kraft">Gültig</option>
-            <option value="Kommend">Geplant</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
+                </div>
+            </div>
+
+            <!-- Mittlere Sektion: Filteroptionen -->
+            <div class="middle-section">
+
+                <!-- Filter für Gültigkeit von Regularien -->
+                <div class="filter-container">
+                    <span>Gültigkeit von Regularien:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-kommend">
+                            <option value="Alle" selected>Alle</option> <!-- Standardmäßig "Alle" ausgewählt -->
+                            <option value="In Kraft">Gültig</option>
+                            <option value="Kommend">Geplant</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Filter für Gegenstand -->
+                <div class="filter-container">
+                    <span>Gegenstand:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-gegenstand">
+                            <option value="Alle" selected>Alle</option> <!-- Standardmäßig "Alle" ausgewählt -->
+                            <option value="Vorgabe">Vorgabe</option>
+                            <option value="Interpretierte Anforderung">Interpretierte Anforderung</option>
+                            <option value="Lösungsorientierte Anforderung">Lösungsorientierte Anforderung</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Gesellschaftsform Filter -->
+                <div class="filter-container">
+                    <span>Gesellschaftsform:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-form">
+                            <option value="Alle">Alle</option>
+                            <option value="Kapitalgesellschaft">Kapitalgesellschaft</option>
+                            <option value="Andere">Andere (keine KG)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Sitz oder Niederlassung Filter -->
+                <div class="filter-container">
+                    <span>Sitz oder Niederlassung:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-sitz">
+                            <option value="Alle">Alle</option>
+                            <option value="Deutschland">Deutschland</option>
+                            <option value="außerhalb Deutschlands">außerhalb Deutschlands</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Umsatz Filter -->
+                <div class="filter-container">
+                    <span>Umsatz in Mio.€:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-umsatz">
+                            <option value="Alle">Alle</option>
+                            <option value="Unter 20">Unter 20</option>
+                            <option value="20-39">20-39</option>
+                            <option value="40-59">40-59</option>
+                            <option value="Ab 60">Ab 60</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Gesamtvermögen Filter -->
+                <div class="filter-container">
+                    <span>Gesamtvermögen in Mio.€:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-vermögen">
+                            <option value="Alle">Alle</option>
+                            <option value="Unter 20">Unter 20</option>
+                            <option value="20-39">20-39</option>
+                            <option value="Ab 40">Ab 40</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Mitarbeiterzahl Filter -->
+                <div class="filter-container">
+                    <span>Anzahl der Mitarbeiter:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-ma">
+                            <option value="Alle">Alle</option>
+                            <option value="0-249">0-249</option>
+                            <option value="250-999">250-999</option>
+                            <option value="1000-2999">1000-2999</option>
+                            <option value=">2999">>2999</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Verarbeitung von Personendaten Filter -->
+                <div class="filter-container">
+                    <span>Verarbeitung von Personendaten:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-data">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Rechte Sektion: Weitere Filteroptionen -->
+            <div class="end-section">
+
+                <!-- Bereitstellung von Produkten Filter -->
+                <div class="filter-container">
+                    <span>Bereitstellung von Produkten:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-produkt">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Elektrische Produkte Filter -->
+                <div class="filter-container">
+                    <span>Elektrische Produkte:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-elektro">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Energierelevante Produkte Filter -->
+                <div class="filter-container">
+                    <span>Energierelevante Produkte:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-energie">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Produkte aus Einwegkunststoff Filter -->
+                <div class="filter-container">
+                    <span>Produkte aus Einwegkunststoff:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-plastik">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Verwaltung digitaler Dienste Filter -->
+                <div class="filter-container">
+                    <span>Verwaltung digitaler Dienste:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-digi">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Verwendung von Batterien Filter -->
+                <div class="filter-container">
+                    <span>Verwendung von Batterien:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-batterien">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Verwendung von Chemikalien Filter -->
+                <div class="filter-container">
+                    <span>Verwendung von Chemikalien:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-chemikalien">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Nutzung von Verpackungen Filter -->
+                <div class="filter-container">
+                    <span>Nutzung von Verpackungen:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-verpackung">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Aufkommen von Abfällen Filter -->
+                <div class="filter-container">
+                    <span>Aufkommen von Abfällen:</span>
+                    <div class="filter-input">
+                        <select id="dropdown-filter-abfall">
+                            <option value="Alle">Alle</option>
+                            <option value="Ja">Ja</option>
+                            <option value="Nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
         </div>
-           
-        <!-- Form -->
-        <div class="filter-input">
-          <label for="dropdown-filter-form">Gesellschaftsform:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gib an, welche Gesellschaftsform dein Unternehmen besitzt. Bisher kann nur zwischen Kapitalgesellschaft und allen anderen Gesellschaftsformen gewählt werden.</span>
-          </div>
-          <select class="filter0" id="dropdown-filter-form">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Kapitalgeselschaft">Kapitalgeselschaft</option>
-            <option value="Andere">Andere (keine KG)</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-
-        <!-- Sitz -->
-        <div class="filter-input">
-          <label for="dropdown-filter-sitz">Sitz oder Niederlassung:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, in welchem Land sich der Sitz oder eine Niederlassung deines Unternehmens befindet.</span>
-          </div>
-          <select class="filter1" id="dropdown-filter-sitz">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ausland">außerhalb Deutschlands</option>
-            <option value="Deutschland">Deutschland</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- MA -->
-        <div class="filter-input">
-          <label for="dropdown-filter-ma">Anzahl der Mitarbeiter:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, wie viele Mitarbeiter in deinem Unternehmen arbeiten. <p></p>
-              Leiharbeiter werden in der Regel ab einer Beschäftigungsdauer von 6 Monaten berücksichtigt. Mitarbeiter von konzernangehörigen Gesellschaften müssen ebenfalls berücksichtigt werden.
-              </span>
-          </div>
-          <select class="filter2" id="dropdown-filter-ma">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="0-249">0-249</option>
-            <option value="250-999">250-999</option>
-            <option value="1000-2999">1000-2999</option>
-            <option value=">2999">>2999</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Umsatz in Mio.€ -->
-        <div class="filter-input">
-          <label for="dropdown-filter-umsatz">Umsatz in Mio.€:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, wie viel Umsatz dein Unternehmen innerhalb eines Jahres macht (in Mio. €).</span>
-          </div>
-          <select class="filter3" id="dropdown-filter-umsatz">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Unter 20">Unter 20</option>
-            <option value="20-39">20-39</option>
-            <option value="40-59">40-59</option>
-            <option value="Ab 60">Ab 60</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Gesamtvermögen in Mio.€ -->
-        <div class="filter-input">
-          <label for="dropdown-filter-vermögen">Gesamtvermögen in Mio.€:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Bitte wähle hier das Gesamtvermögen der Unternehmung aus. <p></p>
-              Du möchtest dein Gesamtvermögen nicht angeben? Kein Problem! Lass diesen Filter aus, und es werden dir Ergebnisse unabhängig vom Gesamtvermögen angezeigt.
-              </span>
-          </div>
-          <select class="filter4" id="dropdown-filter-vermögen">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Unter 20">Unter 20</option>
-            <option value="20-39">20-39</option>
-            <option value="Ab 40">Ab 40</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-      </div>
-
-      <div class="filter-container">
-        <!-- Bereitstellung von Produkten  -->
-        <div class="filter-input">
-          <label for="dropdown-filter-produkt">Bereitstellung von Produkten:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Bitte wähle aus, ob dein Unternehmen Produkte auf dem Markt bereitstellt.
-              </span>
-          </div>            
-          <select class="filter5" id="dropdown-filter-produkt">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-              <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Elektrische Produkte -->
-        <div class="filter-input">
-          <label for="dropdown-filter-elektro">Elektrische Produkte:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, ob dein Unternehmen elektrische Produkte vertreibt.</span>
-          </div>
-          <select class="filter6" id="dropdown-filter-elektro">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Energieverbrauchsrelevante Produkte -->
-        <div class="filter-input">
-          <label for="dropdown-filter-energie">Energieverbrauchsrelevante Produkte:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, ob dein Unternehmen energieverbrauchsrelevante Produkte vertreibt. Energieverbrauchsrelevante Produkte sind Produkte, die einen direkten oder indirekten Einfluss auf den Energieverbrauch haben. Sie können entweder Energie erzeugen, übertragen, speichern oder verbrauchen. HIER findest du eine Liste, auf welche Produkte dies zutrifft.</span>
-          </div>
-          <select class="filter7" id="dropdown-filter-energie">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Batterien  -->
-        <div class="filter-input">
-          <label for="dropdown-filter-batterien">Verwendung von Batterien:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Batterien herstellt, importiert, nutzt oder vertreibt.</span>
-          </div>
-          <select class="filter8" id="dropdown-filter-batterien">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Chemikalien  -->
-        <div class="filter-input">
-          <label for="dropdown-filter-chemikalien">Verwendung von Chemikalien:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Chemikalien herstellt, verwendet, importiert, lagert oder vertreibt.</span>
-          </div>
-          <select class="filter9" id="dropdown-filter-chemikalien">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Einwegplatik  -->
-        <div class="filter-input">
-          <label for="dropdown-filter-plastik">Produkte aus Einwegkunststoff:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Wähle aus, ob dein Unternehmen Produkte aus Einwegkunststoff herstellt, importiert oder vertreibt. Einwegkunststoffprodukt (gemäß Einwegkunststofffondsgesetz - EWKFondsG) bezeichnet ein ganz oder teilweise aus Kunststoff bestehendes Produkt, das nicht dazu konzipiert, entwickelt und in Verkehr gebracht wird, um während seiner Lebensdauer mehrere Produktkreisläufe zu durchlaufen. Stattdessen wird es zur Wiederbefüllung an einen Hersteller oder Vertreiber zurückgegeben oder zu demselben Zweck wiederverwendet, zu dem es hergestellt wurde.</span>
-          </div>
-          <select class="filter10" id="dropdown-filter-plastik">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Verpackung -->
-        <div class="filter-input">
-          <label for="dropdown-filter-verpackung">Verwendung von Verpackungen:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gebe an, ob dein Unternehmen Verpackungen jeglicher Art verwendet die im Müll landen.</span>
-          </div>
-          <select class="filter11" id="dropdown-filter-verpackung">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Abfall -->
-        <div class="filter-input">
-          <label for="dropdown-filter-abfall">Aufkommen von Abfällen:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gib an, ob dein Unternehmen für das Aufkommen von Abfällen verantwortlich ist oder ob es mit Abfällen arbeitet.</span>
-          </div>
-          <select class="filter12" id="dropdown-filter-abfall">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Digitale Dienste und Plattformen -->
-        <div class="filter-input">
-          <label for="dropdown-filter-digi">Verwaltung von Digitalen Diensten:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gib an, ob dein Unternehmen digitale Dienste oder Plattformen verwaltet.</span>
-          </div>
-          <select class="filter13" id="dropdown-filter-digi">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-        <!-- Verarbeitung von Personen bezogennen Daten -->
-        <div class="filter-input">
-          <label for="dropdown-filter-data">Verarbeitung von Personendaten:</label>
-          <div class="tooltip">
-            <span class="question-mark">&#63;</span>
-            <span class="tooltiptext">Gib an, ob dein Unternehmen personenbezogene Daten verarbeitet.</span>
-          </div>
-          <select class="filter14" id="dropdown-filter-data">
-            <option value="keine Auswahl">keine Auswahl</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-            <!-- Weitere Optionen hinzufügen -->
-          </select>
-        </div>
-
-
-      </div>
     </div>
-    <div>
-    <p>
-    </p>
-      <button >Filter anwenden</button>
-      <button onclick="resetFilters()">Filter zurücksetzen</button>
-      <button id="exportButton">Gefilterte xlsx</button>
-      <a href="editors/datag.xlsx" download="editors/datag.xlsx"><button>Gesamtdatensatz xlsx</button>
-      </a>
+
+    <!-- Tabelle für Excel-Export -->
+    <div id="downloadtest" class="card">
+        <table id="excel-table">
+            <!-- Tabelle wird hier dynamisch generiert -->
+        </table>
     </div>
-  </div>
 
-  <div id="downloadtest" class="card">
-    <input type="text" id="search-input" oninput="searchTable()" placeholder="Suche...">
-    <table id="excel-table">
-      <!-- Tabelle wird hier dynamisch generiert -->
-    </table>
-  </div>
-
-  <script src="data/datag.js"></script>
-  <script src="script/script.js"></script>
+    <!-- JavaScript-Dateien -->
+    <script src="data/datag.js"></script>
+    <script src="script/script.js"></script>
 
 </body>
+
 </html>

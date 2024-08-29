@@ -1,290 +1,173 @@
-var visibleColumns = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
-
-function applyFilter() {
-
-  var dropdownFilterForm = document.getElementById('dropdown-filter-form');
-  var selectedValueForm = dropdownFilterForm.value;
-
-  var dropdownFilterSitz = document.getElementById('dropdown-filter-sitz');
-  var selectedValueSitz = dropdownFilterSitz.value;
-
-  var dropdownFilterMA = document.getElementById('dropdown-filter-ma');
-  var selectedValueMA = dropdownFilterMA.value;
-
-  var dropdownFilterUmsatz = document.getElementById('dropdown-filter-umsatz');
-  var selectedValueUmsatz = dropdownFilterUmsatz.value;
-
-  var dropdownFilterVermögen = document.getElementById('dropdown-filter-vermögen');
-  var selectedValueVermögen = dropdownFilterVermögen.value;
-
-  var dropdownFilterVerpackung = document.getElementById('dropdown-filter-verpackung');
-  var selectedValueVerpackung = dropdownFilterVerpackung.value;
-
-  var dropdownFilterAbfall = document.getElementById('dropdown-filter-abfall');
-  var selectedValueAbfall = dropdownFilterAbfall.value;
-
-  var dropdownFilterEnergie = document.getElementById('dropdown-filter-energie');
-  var selectedValueEnergie = dropdownFilterEnergie.value;
-
-  var dropdownFilterKommend = document.getElementById('dropdown-filter-kommend');
-  var selectedValueKommend = dropdownFilterKommend.value;
-
-  var dropdownFilterElektro = document.getElementById('dropdown-filter-elektro');
-  var selectedValueElektro = dropdownFilterElektro.value;
-
-  var dropdownFilterData = document.getElementById('dropdown-filter-data');
-  var selectedValueData = dropdownFilterData.value;
-
-  var dropdownFilterProdukt = document.getElementById('dropdown-filter-produkt');
-  var selectedValueProdukt = dropdownFilterProdukt.value;
-
-  var dropdownFilterBatterien = document.getElementById('dropdown-filter-batterien');
-  var selectedValueBatterien = dropdownFilterBatterien.value;
-
-  var dropdownFilterChemikalien = document.getElementById('dropdown-filter-chemikalien');
-  var selectedValueChemikalien = dropdownFilterChemikalien.value;
-
-  var dropdownFilterPlastik = document.getElementById('dropdown-filter-plastik');
-  var selectedValuePlastik = dropdownFilterPlastik.value;
-
-  var dropdownFilterDigi = document.getElementById('dropdown-filter-digi');
-  var selectedValueDigi = dropdownFilterDigi.value;
-
-  var table = document.getElementById('excel-table');
-  var rows = table.getElementsByTagName('tr');
-
-  for (var i = 1; i < rows.length; i++) { // Starte bei Index 1, um die Kopfzeile zu überspringen
-  var row = rows[i];
-  var cells = row.getElementsByTagName('td');
-
-  var showRow = false;
-  if (cells[1].textContent.trim() === "Gesetz" || cells[1].textContent.trim() === "Interpretierte Anforderung" || cells[1].textContent.trim() === "Lösungsorientierte Anforderung") {
-    showRow = true;
-  }
-
-  if (selectedValueForm === 'Andere' && cells[19].textContent.trim() === 'Kapitalgeselschaft') {   
-    showRow = false;
-  }
-
-  if (selectedValueSitz === 'außerhalb Deutschlands' && cells[20].textContent.trim() === 'Deutschland') {   
-    showRow = false;
-  }
-
-  if (selectedValueSitz === 'Deutschland' && cells[20].textContent.trim() === 'England') {   //Ergenzen falls Gesetze mit spezifischem sitz im ausland hinzu kommen
-    showRow = false;
-  }
-
-  if (selectedValueMA === '0-249' && parseInt(cells[22].textContent.trim()) > 249) {   
-    showRow = false;
-  }
-
-  if (selectedValueMA === '250-999' && parseInt(cells[22].textContent.trim()) > 999) {   
-    showRow = false;
-  }
-
-  if (selectedValueMA === '1000-2999' && parseInt(cells[22].textContent.trim()) > 2999) {   
-    showRow = false;
-  }
-
-  if (selectedValueUmsatz === 'Unter 20' && parseInt(cells[23].textContent.trim()) > 19) {   
-    showRow = false;
-  }
-
-  if (selectedValueUmsatz === '20-39' && parseInt(cells[23].textContent.trim()) > 39) {   
-    showRow = false;
-  }
-
-  if (selectedValueUmsatz === '40-59' && parseInt(cells[23].textContent.trim()) > 59) {   
-    showRow = false;
-  }
-
-  if (selectedValueVermögen === 'Unter 20' && parseInt(cells[24].textContent.trim()) > 19) {   
-    showRow = false;
-  }
-
-  if (selectedValueVermögen === '20-39' && parseInt(cells[24].textContent.trim()) > 39) {   
-    showRow = false;
-  }
-
-  if (selectedValueVerpackung === 'Nein' && cells[25].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueAbfall === 'Nein' && cells[26].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueEnergie === 'Nein' && cells[27].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueElektro === 'Nein' && cells[28].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueProdukt === 'Nein' && cells[29].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueData === 'Nein' && cells[30].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueDigi === 'Nein' && cells[31].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValuePlastik === 'Nein' && cells[32].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueBatterien === 'Nein' && cells[33].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  if (selectedValueChemikalien === 'Nein' && cells[34].textContent.trim() === 'x') {   
-    showRow = false;
-  }
-  const currentDate = new Date();
-  const cellDate = new Date(cells[13].textContent.trim());
-  if (selectedValueKommend === 'In Kraft' && cellDate >= currentDate) {
-    showRow = false;
-  }
-  if (selectedValueKommend === 'Kommend' && cellDate < currentDate) {
-    showRow = false;
-  }
-
-  row.style.display = showRow ? '' : 'none';
-    }
-}
-
-// Aktiviere den Filter beim Klick auf den Button
-document.querySelector('button').addEventListener('click', function() {
-  applyFilter();
-});
-
-// filter zurücksetz button 
-function resetFilters() {
-
-  document.getElementById('dropdown-filter-kommend').value = 'Alle';
-  document.getElementById('dropdown-filter-form').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-sitz').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-ma').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-umsatz').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-vermögen').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-abfall').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-produkt').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-plastik').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-elektro').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-batterien').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-chemikalien').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-digi').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-data').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-verpackung').value = 'keine Auswahl';
-  document.getElementById('dropdown-filter-energie').value = 'keine Auswahl';
-  applyFilter();
-}
-
-// Email für CONTACT Button
+// Funktion für CONTACT Button E-Mail-Öffnung
 function openEmail() {
-  var emailAddress = 'contact@used.community';
-  var subject = 'Nachhaltigkeitsanforderungen';
-  var body = '';
+  const emailAddress = 'contact@used.community';
+  const subject = 'Nachhaltigkeitsanforderungen';
+  const body = '';
 
-  var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress) +
-                   '?subject=' + encodeURIComponent(subject) +
-                   '&body=' + encodeURIComponent(body);
+  const mailtoLink = `mailto:${encodeURIComponent(emailAddress)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailtoLink;
 }
 
+// Event Listener für den Filterbutton
+document.querySelector('#filterButton').addEventListener('click', applyFilter);
+
+// Filter anwenden
+function applyFilter() {
+  const currentDate = new Date();
+
+  // Sammeln der Dropdown-Filterwerte
+  const filters = {
+      kommend: document.getElementById('dropdown-filter-kommend').value,
+      gegenstand: document.getElementById('dropdown-filter-gegenstand').value,
+      form: document.getElementById('dropdown-filter-form').value,
+      sitz: document.getElementById('dropdown-filter-sitz').value,
+      umsatz: document.getElementById('dropdown-filter-umsatz').value,
+      vermögen: document.getElementById('dropdown-filter-vermögen').value,
+      ma: document.getElementById('dropdown-filter-ma').value,
+      data: document.getElementById('dropdown-filter-data').value,
+      energie: document.getElementById('dropdown-filter-energie').value,
+      elektro: document.getElementById('dropdown-filter-elektro').value,
+      produkt: document.getElementById('dropdown-filter-produkt').value,
+      digi: document.getElementById('dropdown-filter-digi').value,
+      verpackung: document.getElementById('dropdown-filter-verpackung').value,
+      abfall: document.getElementById('dropdown-filter-abfall').value,
+      batterien: document.getElementById('dropdown-filter-batterien').value,
+      chemikalien: document.getElementById('dropdown-filter-chemikalien').value,
+      plastik: document.getElementById('dropdown-filter-plastik').value,
+  };
+
+  const table = document.getElementById('excel-table');
+  const rows = table.getElementsByTagName('tr');
+
+  // Durchlaufe jede Zeile der Tabelle
+  for (let i = 1; i < rows.length; i++) { // Start bei 1, um die Kopfzeile zu überspringen
+      const row = rows[i];
+      const cells = row.getElementsByTagName('td');
+      let showRow = true;
+
+      const cellDate = new Date(cells[13].textContent.trim()); // Datum in der 14. Spalte
+      const gegenstandText = cells[1].textContent.trim(); // Gegenstand in der 2. Spalte
+      const formText = cells[19].textContent.trim(); // Form in der 20. Spalte
+      const sitzText = cells[20].textContent.trim(); // Sitz in der 21. Spalte
+      const maCount = parseInt(cells[22].textContent.trim()); // Mitarbeiterzahl in der 23. Spalte
+      const umsatz = parseInt(cells[23].textContent.trim()); // Umsatz in der 24. Spalte
+      const vermögen = parseInt(cells[24].textContent.trim()); // Vermögen in der 25. Spalte
+
+      // Filterlogik anwenden
+      if (filters.kommend === 'In Kraft' && cellDate >= currentDate) showRow = false;
+      if (filters.kommend === 'Kommend' && cellDate < currentDate) showRow = false;
+      if (filters.gegenstand !== 'Alle' && gegenstandText !== filters.gegenstand) showRow = false;
+      if (filters.form === 'Andere' && formText === 'Kapitalgesellschaft') showRow = false;
+      if (filters.sitz === 'außerhalb Deutschlands' && sitzText === 'Deutschland') showRow = false;
+      if (filters.sitz === 'Deutschland' && sitzText === 'England') showRow = false;
+      if (filters.ma === '0-249' && maCount > 249) showRow = false;
+      if (filters.ma === '250-999' && maCount > 999) showRow = false;
+      if (filters.ma === '1000-2999' && maCount > 2999) showRow = false;
+      if (filters.umsatz === 'Unter 20' && umsatz > 19) showRow = false;
+      if (filters.umsatz === '20-39' && umsatz > 39) showRow = false;
+      if (filters.umsatz === '40-59' && umsatz > 59) showRow = false;
+      if (filters.vermögen === 'Unter 20' && vermögen > 19) showRow = false;
+      if (filters.vermögen === '20-39' && vermögen > 39) showRow = false;
+
+      // Weitere Bedingungen für spezifische Kriterien
+      const checkCriteria = (index, filterValue) => {
+          if (filterValue === 'Nein' && cells[index].textContent.trim() === 'x') showRow = false;
+      };
+
+      checkCriteria(25, filters.verpackung);
+      checkCriteria(26, filters.abfall);
+      checkCriteria(27, filters.energie);
+      checkCriteria(28, filters.elektro);
+      checkCriteria(29, filters.produkt);
+      checkCriteria(30, filters.data);
+      checkCriteria(31, filters.digi);
+      checkCriteria(32, filters.plastik);
+      checkCriteria(33, filters.batterien);
+      checkCriteria(34, filters.chemikalien);
+
+      row.style.display = showRow ? '' : 'none';
+  }
+}
+function resetFilters() {
+  // Setze alle Dropdowns auf "Alle" zurück
+  document.getElementById('dropdown-filter-kommend').value = "Alle";
+  document.getElementById('dropdown-filter-gegenstand').value = "Alle";
+  document.getElementById('dropdown-filter-form').value = "Alle";
+  document.getElementById('dropdown-filter-sitz').value = "Alle";
+  document.getElementById('dropdown-filter-umsatz').value = "Alle";
+  document.getElementById('dropdown-filter-vermögen').value = "Alle";
+  document.getElementById('dropdown-filter-ma').value = "Alle";
+  document.getElementById('dropdown-filter-data').value = "Alle";
+  document.getElementById('dropdown-filter-produkt').value = "Alle";
+  document.getElementById('dropdown-filter-elektro').value = "Alle";
+  document.getElementById('dropdown-filter-energie').value = "Alle";
+  document.getElementById('dropdown-filter-plastik').value = "Alle";
+  document.getElementById('dropdown-filter-digi').value = "Alle";
+  document.getElementById('dropdown-filter-batterien').value = "Alle";
+  document.getElementById('dropdown-filter-chemikalien').value = "Alle";
+  document.getElementById('dropdown-filter-verpackung').value = "Alle";
+  document.getElementById('dropdown-filter-abfall').value = "Alle";
+  
+  // Setze das Suchfeld zurück
+  document.getElementById('search-input').value = "";
+
+  // Funktion aufrufen, um die Tabelle erneut zu laden oder zu filtern
+  searchTable();
+}
+
+// Funktion zur Suche in der Tabelle
 function searchTable() {
-  var searchInput = document.getElementById('search-input');
-  var searchText = searchInput.value.toLowerCase();
-  var table = document.getElementById('excel-table');
-  var rows = table.getElementsByTagName('tr');
+  const searchInput = document.getElementById('search-input');
+  const searchText = searchInput.value.toLowerCase();
+  const table = document.getElementById('excel-table');
+  const rows = table.getElementsByTagName('tr');
 
-  for (var i = 1; i < rows.length; i++) { // Starte bei Index 1, um die Kopfzeile zu überspringen
-    var row = rows[i];
-    var rowText = row.textContent.toLowerCase();
+  for (let i = 1; i < rows.length; i++) { // Start bei 1, um die Kopfzeile zu überspringen
+      const row = rows[i];
+      const rowText = row.textContent.toLowerCase();
 
-    if (rowText.includes(searchText)) {
-      row.style.display = '';
-    } else {
-      row.style.display = 'none';
-    }
+      row.style.display = rowText.includes(searchText) ? '' : 'none';
   }
 }
 
+// Funktion zum Umschalten der Sichtbarkeit von Spalten
 function toggleColumn(index) {
   visibleColumns[index] = !visibleColumns[index];
+  // Weitere Logik zur Aktualisierung der Tabellensichtbarkeit je nach Spaltenindex...
 }
 
-// GESETZE Excel Datei downloaden mit info sheet
+// Funktion zum Excel-Export mit Info-Sheet
 document.getElementById("exportButton").addEventListener("click", function () {
   const table = document.getElementById("excel-table");
-
-  // Erstellen Sie eine Kopie der Tabelle und behalten Sie nur die Tabellenköpfe und Zellen für die Spalten 1, 2 und 5.
   const clonedTable = table.cloneNode(true);
 
   const rows = clonedTable.getElementsByTagName("tr");
   for (let i = 0; i < rows.length; i++) {
-    const cells = rows[i].getElementsByTagName("td");
+      const cells = rows[i].getElementsByTagName("td");
       for (let j = cells.length - 1; j >= 0; j--) {
-          if (j !== 0 && j !== 1 && j !== 2 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
-              rows[i].removeChild(cells[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
+          if (![0, 1, 2, 4, 6, 7, 8, 13].includes(j)) {
+              rows[i].removeChild(cells[j]); // Entfernen nicht benötigter Zellen
           }
       }
-    const heads = rows[i].getElementsByTagName("th");
+      const heads = rows[i].getElementsByTagName("th");
       for (let j = heads.length - 1; j >= 0; j--) {
-        if (j !== 0 && j !== 1 && j !== 2 && j !== 4 && j !== 6 && j !== 7 && j !== 8 && j !== 13) {
-          rows[i].removeChild(heads[j]); // Entfernen Sie die Zellen in den nicht benötigten Spalten
-        }
+          if (![0, 1, 2, 4, 6, 7, 8, 13].includes(j)) {
+              rows[i].removeChild(heads[j]); // Entfernen nicht benötigter Kopfzellen
+          }
       }
-    }
+  }
 
   const wb = XLSX.utils.table_to_book(clonedTable, { sheet: "Tabelle" });
-
   const infoSheet = XLSX.utils.aoa_to_sheet([
-    ["Filterinformationen:"],    
-    ["Derzeitige oder kommende Regularien:", document.getElementById('dropdown-filter-kommend').value],
-    ["Geselschaftsform:", document.getElementById('dropdown-filter-form').value],
-    ["Sitz oder Niederlassung:", document.getElementById('dropdown-filter-sitz').value],
-    ["Anzahl der Mitarbeiter:", document.getElementById('dropdown-filter-ma').value],
-    ["Umsatz in Mio.€:", document.getElementById('dropdown-filter-umsatz').value],
-    ["Gesamtvermögen in Mio.€:", document.getElementById('dropdown-filter-vermögen').value],
-    ["Bereitstellung von Produkten:", document.getElementById('dropdown-filter-produkt').value],
-    ["Elektrische Produkte:", document.getElementById('dropdown-filter-elektro').value],
-    ["Energieverbrauchsrelevante Produkte:", document.getElementById('dropdown-filter-energie').value],
-    ["Verwendung von Batterien:", document.getElementById('dropdown-filter-batterien').value],
-    ["Verwendung von Chemikalien:", document.getElementById('dropdown-filter-chemikalien').value],
-    ["Produkte aus Einwegkunststoff:", document.getElementById('dropdown-filter-plastik').value],
-    ["Verwendung von Verpackung:", document.getElementById('dropdown-filter-verpackung').value],
-    ["Aufkommen von Abfällen:", document.getElementById('dropdown-filter-abfall').value],
-    ["Verwaltung von Digitalen Diensten:", document.getElementById('dropdown-filter-digi').value],
-    ["Verarbeitung von Personendaten:", document.getElementById('dropdown-filter-data').value]
+      ["Filterinformationen:"],
+      ["Derzeitige oder kommende Regularien:", document.getElementById('dropdown-filter-kommend').value],
+      ["Unterscheidung von Vorgaben und Anforderungen:", document.getElementById('dropdown-filter-gegenstand').value],
+      ["Gesellschaftsform:", document.getElementById('dropdown-filter-form').value],
+      ["Sitz oder Niederlassung:", document.getElementById('dropdown-filter-sitz').value],
+      ["Beschäftigtenzahl:", document.getElementById('dropdown-filter-ma').value],
+      ["Umsatzerlöse weltweit:", document.getElementById('dropdown-filter-umsatz').value],
+      ["Bilanzsumme:", document.getElementById('dropdown-filter-vermögen').value],
   ]);
-
-  // Füge das infoSheet zur Arbeitsmappe hinzu
   XLSX.utils.book_append_sheet(wb, infoSheet, "Filterinfo");
-
-  const wbout = XLSX.write(wb, { bookType: "xlsx", type: "binary" });
-  const blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
-
-  const url = URL.createObjectURL(blob);
-
-  // Erstellen Sie einen unsichtbaren Link und klicken Sie auf ihn, um den Download auszulösen.
-  const a = document.createElement("a");
-  a.style.display = "none";
-  a.href = url;
-  a.download = "used-Community Gesetzestabelle.xlsx";
-  document.body.appendChild(a);
-  a.click();
-
-  setTimeout(function () {
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-  }, 100);
+  XLSX.writeFile(wb, "table_with_filters.xlsx");
 });
-
-function toggleColumn(index) {
-  visibleColumns[index] = !visibleColumns[index];
-}
-
-// Funktion zum Konvertieren des binären Datenstroms in eine herunterladbare Datei
-function s2ab(s) {
-  const buf = new ArrayBuffer(s.length);
-  const view = new Uint8Array(buf);
-  for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-  return buf;
-}
